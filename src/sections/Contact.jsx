@@ -92,7 +92,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
                   <div 
                   onClick={() => setMessageCase(false)}
                   className="absolute z-100 cursor-pointer -right-6 -top-10">
-                    <img className="w-20 h-20 lg:w-25 lg:h-25" src="/images/8bit-PC-logo.gif" alt="pc logo" />
+                    <img className="w-20 h-20 lg:w-25 lg:h-25" src="./images/8bit-PC-logo.gif" alt="pc logo" />
                   </div>
                   <div className="flex lg:w-[50%] h-full lg:pt-10 px-5">
                     <form 

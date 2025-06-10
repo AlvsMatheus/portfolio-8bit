@@ -1,15 +1,15 @@
-const alves = '/images/alves-new.png';
+const alves = './images/alves-new.png';
 const star = {
-    purple : '/images/star-purplee.png',
-    red: '/images/star-red.png',
-    white:'/images/star-whitee.png',
-    green: '/images/star-green.png',
-    blue: '/images/star-blue.png'
+    purple : './images/star-purplee.png',
+    red: './images/star-red.png',
+    white:'./images/star-whitee.png',
+    green: './images/star-green.png',
+    blue: './images/star-blue.png'
 };
 
 const arrows = {
-    left : '/images/arrow-left.png',
-    right : '/images/arrow-right.png',
+    left : './images/arrow-left.png',
+    right : './images/arrow-right.png',
 }
 
 const words = [
@@ -19,7 +19,7 @@ const words = [
         <span className="text-purple-500">I'm</span> <span className="text-purple-500">M</span>a<span className="text-purple-500">th</span>eu<span className="text-purple-500">s</span>
       </>
     ),
-    imgPath: "/images/ideas.svg"
+    imgPath: "./images/ideas.svg"
   },
   {
     text: (
@@ -27,7 +27,7 @@ const words = [
         <span className="text-purple-500">I'm </span>a <span className="text-purple-500">D</span>eve<span className="text-purple-500">l</span>ope<span className="text-purple-500">r</span>
       </>
     ),
-    imgPath: "/images/concepts.svg"
+    imgPath: "./images/concepts.svg"
   },
   {
     text: (
@@ -51,7 +51,7 @@ const words = [
         <span className="text-purple-500">I'm</span> <span className="text-purple-500">M</span>a<span className="text-purple-500">th</span>eu<span className="text-purple-500">s</span>
       </>
     ),
-    imgPath: "/images/ideas.svg"
+    imgPath: "./images/ideas.svg"
   },
   {
     text: (
@@ -67,7 +67,7 @@ const words = [
         <span className="text-purple-500">It</span>'s my <span className="text-purple-500">P</span>ortfo<span className="text-purple-500">l</span>i<span className="text-purple-500">o</span>
       </>
     ),
-    imgPath: "/images/designs.svg"
+    imgPath: "./images/designs.svg"
   },
   {
     text: (
@@ -75,38 +75,38 @@ const words = [
         en<span className="text-purple-500">j</span>oy <span className="text-purple-500">y</span>our<span className="text-purple-500">s</span>e<span className="text-purple-500">l</span>f!
       </>
     ),
-    imgPath: "/images/code.svg"
+    imgPath: "./images/code.svg"
   }
   
 ];
 
 const skills = [
   {
-    imgPath: "/images/pacman.webp" ,
+    imgPath: "./images/pacman.webp" ,
     logo: "pacman"
   },
   {
-    imgPath: "/images/logo-tailwind.png",
+    imgPath: "./images/logo-tailwind.png",
     logo: "tailwind"
   },
   {
-    imgPath: "/images/logo-react.png",
+    imgPath: "./images/logo-react.png",
     logo: "react"
   },
   {
-    imgPath: "/images/logo-gsap.png",
+    imgPath: "./images/logo-gsap.png",
     logo: "gsap"
   },
   {
-    imgPath: "/images/logo-html.png",
+    imgPath: "./images/logo-html.png",
     logo: "html"
   },
   {
-    imgPath: "/images/logo-js.png",
+    imgPath: "./images/logo-js.png",
     logo: "JavaScript"
   },
   {
-    imgPath: "/images/logo-bootstrap.png",
+    imgPath: "./images/logo-bootstrap.png",
     logo: "bootstrap"
   },
 ];
@@ -115,7 +115,7 @@ const skills = [
 const projects = [
   {
     name:'Recipe Book',
-    img:'/images/project-recipe.jpg',
+    img:'./images/project-recipe.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-blue-600">React</span>
@@ -132,7 +132,7 @@ const projects = [
   },
   {
     name:'Search Cep',
-    img:'/images/project-cep.jpg',
+    img:'./images/project-cep.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-blue-600">React</span>
@@ -159,7 +159,7 @@ const projects = [
   },
   {
     name:'Google Search',
-    img:'/images/project-google.jpg',
+    img:'./images/project-google.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-amber-500">Html</span>
@@ -171,7 +171,7 @@ const projects = [
   },
   {
     name:'Spotify',
-    img:'/images/project-spotify.jpg',
+    img:'./images/project-spotify.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-amber-400">Html</span>
@@ -185,7 +185,7 @@ const projects = [
   },
   {
     name:'3D portfolio',
-    img:'/images/project-3d.jpg',
+    img:'./images/project-3d.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-blue-600">React</span>
@@ -200,7 +200,7 @@ const projects = [
   },
   {
     name:'Nike website',
-    img:'/images/project-nike.jpg',
+    img:'./images/project-nike.jpg',
     lenguages:(<>
     <div className="p-1">
       <span className="lenguages bg-blue-600">React</span>
@@ -216,27 +216,27 @@ const projects = [
 ]
 
 
-const crabinvader = '/images/space-invader.png';
-const crabanimated  = '/images/crab-animated.gif';
-const crabwhite = '/images/crab-white.gif';
+const crabinvader = './images/space-invader.png';
+const crabanimated  = './images/crab-animated.gif';
+const crabwhite = './images/crab-white.gif';
 
 const cards = {
-  book: '/images/card-recipe.png'
+  book: './images/card-recipe.png'
 }
 
 const ghosts = [
   {
-    vine: '/images/ghost-vine.gif',
+    vine: './images/ghost-vine.gif',
   }
 ]
 
-const pacman = '/images/pacman.webp';
+const pacman = './images/pacman.webp';
 
 const aboutimgs = {
-  me: '/images/me-8bit-circle.png',
-  id: '/images/id.png',
-  wizard: '/images/mago.png',
-  heart: '/images/heart.png',
+  me: './images/me-8bit-circle.png',
+  id: './images/id.png',
+  wizard: './images/mago.png',
+  heart: './images/heart.png',
 }
 
 const hardSkills = [
