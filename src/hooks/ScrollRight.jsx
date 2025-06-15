@@ -1,0 +1,6 @@
+const scrollRight = () => {
+
+}
+
+
+export scrollRight;
