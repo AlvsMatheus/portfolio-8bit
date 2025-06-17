@@ -56,7 +56,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
 
   return (
     <section id="contact" className="section">
-      <div className="absolute z-0 inset-0 bg-[url('src/assets/contact-me.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center ">
+      <div className="absolute z-0 inset-0 bg-[url('/backgrounds/contact-me.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center ">
       <div 
       className={ messageCase ? `absolute inset-0 bg-black/90 transition-all duration-700 ease` : `absolute inset-0 bg-black/70 transition-all duration-700 ease`} />
       </div>

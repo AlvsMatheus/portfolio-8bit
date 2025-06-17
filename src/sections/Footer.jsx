@@ -41,11 +41,11 @@ import Button from '../components/Button.jsx';
     <section id="footer" className="section overflow-hidden">
       <div className="absolute inset-0 bg-violet-950 bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
       <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute z-10 top-10 -left-260 w-1000 h-960 xl:w-1200 rounded-full bg-[url('src/assets/star-background.png')] bg-bottom"/>
+      <div className="absolute z-10 top-10 -left-260 w-1000 h-960 xl:w-1200 rounded-full bg-[url('/backgrounds/star-background.png')] bg-bottom"/>
       <div 
       ref={moonRef}
       onClick={() => setAfterMoon(prev => !prev)}
-      className={`absolute cursor-pointer z-10 xl:left-[10%]  lg:w-100 lg:h-100 bg-[url('src/assets/moon-8bit.png')] bg-cover bg-center
+      className={`absolute cursor-pointer z-10 xl:left-[10%]  lg:w-100 lg:h-100 bg-[url('/backgrounds/moon-8bit.png')] bg-cover bg-center
         ${afterMoon ? 'xl:-bottom-[20%]' : 'xl:top-[15%] ' } transition-all duration-700 ease-in-out
       `}/>
       </div>

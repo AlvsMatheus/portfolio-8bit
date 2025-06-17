@@ -13,7 +13,7 @@ import Title from "../components/Title.jsx";
 const Projects = ({ onScrollBack, onScrollNext }) => {
   return (
     <section id="about" className="section">
-      <div className="absolute z-0 inset-0 bg-[url('src/assets/background-about.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
+      <div className="absolute z-0 inset-0 bg-[url('/backgrounds/background-about.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
       <div className="absolute inset-0 bg-black/70" />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
