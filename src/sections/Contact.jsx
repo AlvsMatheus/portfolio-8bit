@@ -6,7 +6,7 @@ import BtnContact from "../components/BtnContact.jsx";
 import Logo from "../components/Logo"
 import NavBar from "../components/NavBar.jsx";
 import Title from "../components/Title.jsx";
-import {arrows, star} from '../constants/index.jsx';
+import {arrows, star, pcImg} from '../constants/index.jsx';
 
 
 
@@ -92,7 +92,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
                   <div 
                   onClick={() => setMessageCase(false)}
                   className="absolute z-100 cursor-pointer -right-6 -top-10">
-                    <img className="w-20 h-20 lg:w-25 lg:h-25" src="src/assets/8bit-PC-logo.gif" alt="pc logo" />
+                    <img className="w-20 h-20 lg:w-25 lg:h-25" src={pcImg} alt="pc logo" />
                   </div>
                   <div className="flex lg:w-[50%] h-full lg:pt-10 px-5">
                     <form 
@@ -153,7 +153,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
                       </div>
                     </form>
                   </div>
-                  <div className="w-[50%] h-[100%] rounded-new bg-[url('src/assets/coffee.png')] md:center lg:bg-left bg-cover">
+                  <div className="w-[50%] h-[100%] rounded-new bg-[url('backgrounds/coffee.png')] md:center lg:bg-left bg-cover">
                   </div>
                 </div>
               ) : (

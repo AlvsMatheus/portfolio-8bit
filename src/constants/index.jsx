@@ -40,6 +40,7 @@ import me from '../assets/me-8bit-circle.png';
 import id from '../assets/id.png';
 import wizard from '../assets/mago.png';
 import heart from '../assets/heart.png';
+import pcImg from '../assets/pc.gif'
 
 const star = {
   purple: starPurple,
@@ -247,6 +248,7 @@ const aboutimgs = {
   heart,
 };
 
+
 const hardSkills = [
   { label: 'React.js', percentage: 75 },
   { label: 'TypeScript', percentage: 70 },
@@ -280,4 +282,5 @@ export {
   aboutimgs,
   hardSkills,
   softSkills,
+  pcImg,
 };
