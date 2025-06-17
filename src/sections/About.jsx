@@ -26,7 +26,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
               <ArrowLeft onScrollBack={onScrollBack} img={arrows.left}/>
             </div>
         </div>
-        <div className="child-middle overflow-auto p-2 lg:pt-7 flex justify-between">
+        <div className="child-middle overflow-auto lg:overflow-hidden p-2 lg:pt-7 flex justify-between">
           {/* middle side md-lg*/}
           <div className="max-md:flex mt-10 md:mt-4 lg:mt-0">
             <NavBar bgColor='bg-[var(--color-red)]'/>
