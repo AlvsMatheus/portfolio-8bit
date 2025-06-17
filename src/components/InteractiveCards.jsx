@@ -75,7 +75,7 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
                   </div>
                 </div>
 
-                {/* Botão corrigido */}
+                {/* Button */}
                 <div className="flex justify-center items-center mb-4 relative z-20">
                   <button
                     onClick={(e) => {

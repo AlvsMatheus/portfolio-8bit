@@ -36,7 +36,9 @@ import AnimatedWords from '../components/AnimatedWords.jsx';
            onScrollNext={onScrollNext}/>
         </div>
         <div className='flex justify-center w-full h-auto md:hidden mb-50'>
-            <button className=' bg-white rounded-2xl p-4'>
+            <button 
+            onClick={onScrollNext}
+            className=' bg-white rounded-2xl p-4'>
               Start
             </button>
           </div>

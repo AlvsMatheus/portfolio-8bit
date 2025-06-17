@@ -54,15 +54,16 @@ const MobileCards = () => {
                           <p className='text-white text-center text-[11px]'>{project.info}</p>
                         </div>
                         <div className='flex w-full justify-center'>
-                          <a
-                           href="https://www.facebook.com"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           onClick={(e) => e.stopPropagation()}
-                           className="text-white text-[10px] p-2 bg-gradient-to-r border-3 border-black from-purple-900 via-purple-700 to-pink-600 rounded-full "
+
+                          <button
+                           onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(project.link, "_blank");
+                           }}
+                           className="relative z-20 text-white text-[10px] p-2 bg-gradient-to-r border-3 border-black from-purple-900 via-purple-700 to-pink-600 rounded-full "
                           >
                            visit website
-                         </a>
+                         </button>
                         </div>
                         <div>
                           <InfiniteRow/>
