@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 
 export default defineConfig({
-  base: '/',
+  base: '/portfolio-8bit/',
   plugins: [react(), tailwindcss()],
 })
