@@ -35,7 +35,7 @@ html {
 
 
   .hero-text {
-    @apply flex flex-col justify-center lg:text-[60px] md:text-[30px] text-[18px] font-semibold relative z-10 pointer-events-none whitespace-nowrap;
+    @apply flex flex-col justify-center xl:text-[50px] lg:text-[40px] md:text-[30px] text-[18px] font-semibold relative z-10 pointer-events-none whitespace-nowrap;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -243,7 +243,7 @@ html {
 
 @keyframes wordSlider {
   0% {
-    transform: translateY(0.2%);
+    transform: translateY(0.5%);
   }
   12.5% {
     transform: translateY(-12.5%);

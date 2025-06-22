@@ -254,7 +254,7 @@ const hardSkills = [
   { label: 'TypeScript', percentage: 70 },
   { label: 'Tailwind CSS', percentage: 70 },
   { label: 'JavaScript', percentage: 80 },
-  { label: 'Responsive design', percentage: 90 },
+  { label: 'Responsive', percentage: 90 },
   { label: 'Git / Github', percentage: 70 },
 ];
 

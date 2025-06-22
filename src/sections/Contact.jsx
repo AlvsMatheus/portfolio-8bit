@@ -77,14 +77,19 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
         <div className="child-middle relative z-10 md:overflow-auto lg:overflow-visible lg:pt-7 flex justify-between">
           {/* middle side md-lg*/}
           <div className="max-md:mt-10 max-md:flex">
-            <NavBar bgColor='bg-[var(--color-green)]'/>
-            <Title
+             { !messageCase && 
+             <>
+             <NavBar bgColor='bg-[var(--color-green)]'/>
+             <Title
             text={(
             <p className="text-white">
               <span className="text-[var(--color-green)]">C</span>on<span className="text-[var(--color-green)]">t</span>a<span className="text-[var(--color-green)]">ct</span> <span className="text-[var(--color-green)]" >M</span>e
             </p>)}
             gradient='from-green-300 via-green '
             width='w-50 md:w-50 lg:w-120'/>
+            </>
+             }
+            
           </div>
           <div className="flex justify-center items-center w-full md:mt-10 lg:mt-0 mb-20 px-10 lg:px-0">   
             {messageCase ? (
@@ -153,10 +158,11 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
                       </div>
                     </form>
                   </div>
-                  <div className="w-[50%] h-[100%] rounded-new bg-[url('backgrounds/coffee.png')] md:center lg:bg-left bg-cover">
+                  <div className="w-[50%] h-[100%] rounded-new bg-[url('/backgrounds/coffee.png')] md:center lg:bg-left bg-cover">
                   </div>
                 </div>
               ) : (
+
                 <BtnContact onClick={() => setMessageCase(true)} />
               )}
           </div>

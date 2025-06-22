@@ -65,7 +65,7 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
           <div className="gradient-content flex flex-col justify-between h-full w-full">
             {isHovered && (
               <div>
-                <div className="flex flex-col justify-center p-5 w-full h-auto">
+                <div className="flex flex-col justify-center p-3 w-full h-auto">
                   <div className="text-center pb-2">
                     <h1 className="text-purple text-2xl">About</h1>
                     <div className="h-[2px] w-full bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)] mt-1" />
@@ -89,7 +89,7 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
                 </div>
 
                 <div className="flex justify-center items-center w-full h-auto mb-2">
-                  <InfiniteRow />
+                  <InfiniteRow/>
                 </div>
               </div>
             )}

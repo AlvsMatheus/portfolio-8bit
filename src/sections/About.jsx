@@ -41,13 +41,13 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
             </div>
           </div>
           {/*middle pc */}
-          <div className="grid grid-cols-1 gap-5 lg:gap-10 w-full h-full lg:h-auto mb-20">
-            <div className="flex items-center lg:gap-10 h-auto">
+          <div className="grid grid-cols-1 gap-5 lg:gap-0 w-full h-full ">
+            <div className="flex items-center lg:gap-0 h-auto">
               {/*img pc*/}
-              <div className="hidden md:flex items-center  lg:w-[300px] h-full">
-                <img className="md:w-[170px] md:h-[120px]  lg:w-[200px] lg:h-[200px] object-cover rounded-3xl" src={aboutimgs.me} alt="Matheus Alves" />
+              <div className="hidden md:flex items-center  lg:w-[260px] h-full">
+                <img className="md:w-[170px] md:h-[120px]  lg:w-[160px] lg:h-[150px] object-cover rounded-3xl" src={aboutimgs.me} alt="Matheus Alves" />
               </div>
-              <div className="flex items-center lg:justify-evenly w-full lg:w-[50%] h-auto  bg-black/30 rounded-3xl">
+              <div className="flex items-center lg:justify-evenly w-full lg:w-[70%] bg-black/30 rounded-3xl">
                 <div className="flex flex-col justify-evenly w-full lg:w-full p-2">
                   <div className="flex items-center text-sm lg:text-1xl text-white">
                     <div className="flex w-full items-center lg:flex-row">
@@ -87,14 +87,14 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-6 lg:gap-10 bg-black/50 rounded-3xl w-full h-[86%] lg:h-auto p-4 lg:p-10">
+            <div className="flex flex-col gap-6 lg:gap-10 bg-black/50 rounded-3xl w-full h-[86%] lg:320 p-6 lg:p-6">
              <div className="flex flex-col gap-5 md:gap-2 text-white">
                 <h1 className="text-sm lg:text-2xl"><strong className="red">J</strong>o<strong className="red">ur</strong>ne<strong className="red">y</strong></h1>
-                <p className="text-[10px] md:text-[7px] lg:text-[12px] leading-4 md:leading-3 lg:leading-5">I started learning programming at <strong className="red">16 years old</strong>  through structured <strong className="red">courses</strong> and <strong className="red">self-directed study.</strong> I’ve built a <strong className="red">solid foundation</strong> in web development with <strong className="red">HTML, CSS, JavaScript, React, and others frameworks</strong>, and gained hands-on experience through personal projects. I'm currently seeking my first opportunity as a <strong className="red">junior developer or an intership.</strong></p>
+                <p className="text-[10px] md:text-[7px] lg:text-[12px] leading-4 md:leading-3 lg:leading-4">I started learning programming at <strong className="red">16 years old</strong>  through structured <strong className="red">courses</strong> and <strong className="red">self-directed study.</strong> I’ve built a <strong className="red">solid foundation</strong> in web development with <strong className="red">HTML, CSS, JavaScript, React, and others frameworks</strong>, and gained hands-on experience through personal projects. I'm currently seeking my first opportunity as a <strong className="red">junior developer or an intership.</strong></p>
              </div>
-             <div className="flex justify-center lg:justify-evenly flex-wrap  w-full h-full lg:h-[300px] ">
+             <div className="flex justify-center lg:justify-evenly flex-wrap  w-full h-full lg:h-[240px] ">
                 <div className="red w-[50%] lg:w-[30%]">
-                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-2xl text-nowrap">Hard skills</h1>
+                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-[14px] text-nowrap">Hard skills</h1>
                   <ul>
                     {hardSkills.map((hard, index) => (
                       <li 
@@ -104,7 +104,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
                   </ul>
                 </div>
                 <div className="red w-[50%] lg:w-[30%]">
-                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-2xl text-nowrap">Soft skills</h1>
+                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-[14px] text-nowrap">Soft skills</h1>
                   <ul>
                     {softSkills.map((soft, index) => (
                       <li 
