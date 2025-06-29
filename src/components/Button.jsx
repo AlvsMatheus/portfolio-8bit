@@ -7,7 +7,7 @@ const Button = ({onScrollNext, phrase, phrasetwo}) => {
 
   return (
     <button 
-    className="max-md:hidden"
+    className="hidden md:block"
     onClick={onScrollNext}>
       <span
         className="relative hover:cursor-pointer overflow-hidden bg-white flex items-center justify-center rounded-l-full lg:w-50 lg:h-15 w-30 h-10 md:pl-3 pl-5 border border-black"

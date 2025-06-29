@@ -28,7 +28,7 @@ import AnimatedWords from '../components/AnimatedWords.jsx';
       </div>
       <div className='flex flex-col w-full h-full justify-between md:justify-start px-10 md:pe-0 relative z-10'>
         <Logo className="logo" img={star.purple}/>
-        <div className='md:mt-100 lg:mt-120 flex max-md:flex-col '>
+        <div className='md:mt-36 lg:mt-120 flex max-md:flex-col '>
           <AnimatedWords/>
           <Button
            phrase={'Click Here'}
