@@ -145,7 +145,7 @@ html {
 }
 
 .animate-slide-two {
-  animation: slidetwo 15s linear infinite;
+  animation: slidetwo 8s linear infinite;
 }
 
 @keyframes slide {

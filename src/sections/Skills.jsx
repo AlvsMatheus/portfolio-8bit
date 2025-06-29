@@ -38,6 +38,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
           <div className="flex justify-center items-center w-full mb-20">
             <div className="overflow-hidden lg:w-[90vw] lg:max-w-[800px]">
               <InfiniteSkills/>
+              
               </div>
           </div>
           {/* middle cell */}

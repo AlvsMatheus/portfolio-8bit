@@ -42,6 +42,11 @@ import wizard from '../assets/mago.png';
 import heart from '../assets/heart.png';
 import pcImg from '../assets/pc.gif'
 
+import FileIcon from '../assets/file-archive.png'
+import UserIcon from '../assets/user.png'
+import Glasses from '../assets/glasses.png'
+import LaughIcon from '../assets/laugh.png'
+
 const star = {
   purple: starPurple,
   red: starRed,
@@ -62,6 +67,7 @@ const words = [
         <span className="text-purple-500">I'm</span> <span className="text-purple-500">M</span>a<span className="text-purple-500">th</span>eu<span className="text-purple-500">s</span>
       </>
     ),
+    imgPath: UserIcon,
     
   },
   {
@@ -70,6 +76,7 @@ const words = [
         <span className="text-purple-500">I'm </span>a <span className="text-purple-500">D</span>eve<span className="text-purple-500">l</span>ope<span className="text-purple-500">r</span>
       </>
     ),
+    imgPath: Glasses,
     
   },
   {
@@ -78,6 +85,7 @@ const words = [
         <span className="text-purple-500">It</span>'s my <span className="text-purple-500">P</span>ortfo<span className="text-purple-500">l</span>i<span className="text-purple-500">o</span>
       </>
     ),
+    imgPath: FileIcon,
     
   },
   {
@@ -86,6 +94,7 @@ const words = [
         en<span className="text-purple-500">j</span>oy <span className="text-purple-500">y</span>our<span className="text-purple-500">s</span>e<span className="text-purple-500">l</span>f!
       </>
     ),
+    imgPath: LaughIcon,
     
   },
   {
@@ -94,6 +103,7 @@ const words = [
         <span className="text-purple-500">I'm</span> <span className="text-purple-500">M</span>a<span className="text-purple-500">th</span>eu<span className="text-purple-500">s</span>
       </>
     ),
+    imgPath: UserIcon,
     
   },
   {
@@ -102,6 +112,7 @@ const words = [
         <span className="text-purple-500">I'm </span>a <span className="text-purple-500">D</span>eve<span className="text-purple-500">l</span>ope<span className="text-purple-500">r</span>
       </>
     ),
+    imgPath: Glasses,
     
   },
   {
@@ -110,6 +121,7 @@ const words = [
         <span className="text-purple-500">It</span>'s my <span className="text-purple-500">P</span>ortfo<span className="text-purple-500">l</span>i<span className="text-purple-500">o</span>
       </>
     ),
+    imgPath: FileIcon,
     
   },
   {
@@ -118,6 +130,7 @@ const words = [
         en<span className="text-purple-500">j</span>oy <span className="text-purple-500">y</span>our<span className="text-purple-500">s</span>e<span className="text-purple-500">l</span>f!
       </>
     ),
+    imgPath: LaughIcon,
     
   },
 ];
