@@ -149,10 +149,10 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
                         type="submit">
                           <div className="cta-button group">
                             <div className="bg-circle"/>
-                            <p className="text-white text-shadow text-sm lg:text-1xl text-nowrap text-shadow-gray-950 z-10 relative me-15 group-hover:text-green-950">
+                            <p className="text-white text-shadow text-sm lg:text-1xl text-nowrap text-shadow-gray-950 z-10 relative me-15 lg:me-2 group-hover:text-green-950">
                               {loading ? 'Sending...' : 'Send Message'}
                             </p>
-                            <img src={arrows.right} width={40} height={15} alt="arrow right" className="z-10 wobble " />
+                            <img src={arrows.right} width={40} height={15} alt="arrow right" className="z-10 wobble" />
                           </div>
                         </button>
                       </div>

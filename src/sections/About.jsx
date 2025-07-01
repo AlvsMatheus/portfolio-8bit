@@ -57,7 +57,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
                           <h2 className="text-center lg:text-start">Name:</h2>
                         </div>
                       </div>
-                      <p className="text-nowrap text-[10px] lg:text-sm">Matheus Alves</p>
+                      <p className="text-nowrap text-[10px]">Matheus Alves</p>
                     </div>
                   </div>
                   <div className="flex items-center text-sm lg:text-1xl text-white">
@@ -66,7 +66,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
                         <img className="w-10 h-10 " src={aboutimgs.wizard} alt="wizard image" />
                         <h2>Class:</h2>
                       </div>
-                      <p className="text-nowrap text-[10px] lg:text-sm">front end Developer</p>
+                      <p className="text-nowrap text-[10px]">front end Developer</p>
                     </div>
                   </div>
                   <div className="flex text-sm lg:text-1xl text-white">
