@@ -22,6 +22,7 @@ import js from '../assets/logo-js.png';
 import bootstrap from '../assets/logo-bootstrap.png';
 
 import recipe from '../assets/project-recipe.jpg';
+import lune from '../assets/project-lune-login.jpg';
 import cep from '../assets/project-cep.jpg';
 import street from '../assets/project-street.jpg';
 import google from '../assets/project-google.jpg';
@@ -159,8 +160,22 @@ const projects = [
         <span className="lenguages bg-gray-600 whitespace-nowrap">Framer Motion</span>
       </div>
     ),
-    link: 'https://github.com/AlvsMatheus',
+    link: 'https://recipe-book-eight-olive.vercel.app/',
     info: 'That website is a blog with a recipe book theme and the first site that I made using React.',
+  },
+  {
+    name: 'Lune Login',
+    img: lune,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span> <br />
+        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+        
+      </div>
+    ),
+    link: 'https://lune-login-389z.vercel.app/',
+    info: 'An simple login page with lunar theme made with Next.js and Tailwind CSS',
   },
   {
     name: 'Search Cep',
@@ -227,7 +242,7 @@ const projects = [
         <span className="lenguages bg-blue-200 whitespace-nowrap">TypeScript</span>
       </div>
     ),
-    info: 'A modern portfolio with 3D animations, based on a JavaScript Mastery tutorial. I added TypeScript myself.',
+    info: 'A modern portfolio with 3D animations, based on a JavaScript Mastery tutorial.',
     link: 'https://github.com/AlvsMatheus',
   },
   {
