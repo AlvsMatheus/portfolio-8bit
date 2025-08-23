@@ -1,10 +1,12 @@
-import { useState, useRef } from 'react';
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import Logo from '../components/Logo';
-import {arrows, star} from '../constants/index.jsx';
 import ArrowLeft from '../components/ArrowLeft';
 import Button from '../components/Button.jsx';
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import {arrows, star, github, linkedin} from '../constants/index.jsx';
+
+
 
  
  const Footer = ({onScrollBack, onScrollNext}) => {
@@ -57,27 +59,21 @@ import Button from '../components/Button.jsx';
               <ArrowLeft onScrollBack={onScrollBack} img={arrows.left}/>
             </div>
         </div>
-       <div className="flex flex-col h-full md:w-1/2 lg:pt-7 justify-end">
-        <div className="flex justify-evenly h-[50%]">
+       <div className="flex flex-col justify-evenly md:gap-20 lg:gap-0 h-full md:w-1/2 lg:pt-7">
+        <div className="flex justify-center">
           <div className='flex items-center flex-col'>
             <p className="text-3xl md:text-4xl lg:text-[90px] text-violet-700/90 whitespace-nowrap backdrop-blur-md bg-gray-950/60 p-5 rounded-3xl border-b border-white/20 ">THE END</p>
           </div>
         </div>
-        <div>
-          <div className='flex'>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
-            <a href="">
-
-            </a>
+        <div className='flex flex-col w-[100%] h-40 gap-10 text-center justify-center text-violet-700/70 lg:whitespace-nowrap backdrop-blur-md bg-gray/70 p-5 border-white/20'>
+          <div className='flex flex-col gap-2 text-sm'>
+            <p className='text-sm'>Matheus Alves</p>
+            <p>All rights reserved © 2025</p>
           </div>
-        </div>
-        <div className='flex w-[100%] text-center justify-center mb-30 text-violet-700/70 lg:whitespace-nowrap backdrop-blur-md bg-gray/70 p-5 border-white/20'>
-          <p className='text-sm'>Matheus Alves <br /> All rights reserved © 2025</p>
+          <div className='flex justify-center gap-10 h-20 w-[100%]'>
+            <a target='_blank' href="https://github.com/AlvsMatheus"><img className='w-12 h-12 hover:scale-140 transition-all ease-in-out duration-200' src={github} alt="" /></a>
+            <a target='_black' href="https://www.linkedin.com/in/alvmatheuus/"><img className='w-12 h-12 hover:scale-140 transition-all ease-in-out duration-200' src={linkedin} alt="" /></a>
+          </div>
         </div>
       </div>
         <div className="child items-end h-auto md:h-full w-full">

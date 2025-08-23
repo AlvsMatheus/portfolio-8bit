@@ -48,6 +48,9 @@ import UserIcon from '../assets/user.png'
 import Glasses from '../assets/glasses.png'
 import LaughIcon from '../assets/laugh.png'
 
+import github from '../assets/github-logo.png'
+import linkedin from '../assets/linkedin-logo.png'
+
 const star = {
   purple: starPurple,
   red: starRed,
@@ -311,4 +314,6 @@ export {
   hardSkills,
   softSkills,
   pcImg,
+  github,
+  linkedin
 };
