@@ -26,7 +26,7 @@ import lune from '../assets/project-lune-login.jpg';
 import cep from '../assets/project-cep.jpg';
 import street from '../assets/project-street.jpg';
 import google from '../assets/project-google.jpg';
-import spotify from '../assets/project-spotify.jpg';
+import laclothes from '../assets/laclothes.jpg';
 import project3d from '../assets/project-3d.jpg';
 import nike from '../assets/project-nike.jpg';
 
@@ -148,6 +148,21 @@ const skills = [
 
 const projects = [
   {
+    name: 'La Clothes',
+    img: laclothes,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span> <br />
+        <span className="lenguages bg-blue">Tailwind</span> <br /> 
+        <span className="lenguages bg-red-400">Firebase</span> 
+        <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+      </div>
+    ),
+    info: 'An complete ecommerce made using Next and Firebase Api',
+    link: 'https://la-clothes-sage.vercel.app/',
+  },
+  {
     name: 'Recipe Book',
     img: recipe,
     lenguages: (
@@ -171,7 +186,6 @@ const projects = [
         <span className="lenguages bg-gray-500">Next</span> <br />
         <span className="lenguages bg-blue">TailwindCss</span> <br />
         <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-        
       </div>
     ),
     link: 'https://lune-login-389z.vercel.app/',
@@ -182,14 +196,14 @@ const projects = [
     img: cep,
     lenguages: (
       <div className="p-1">
-        <span className="lenguages bg-blue-600">React</span>
+        <span className="lenguages bg-blue-600">React</span> <br />
         <span className="lenguages bg-blue">Css</span>
         <span className="lenguages bg-amber-200">Axios</span>
         <span className="lenguages bg-green-400">Api</span>
       </div>
     ),
     info: 'Simple app made with React to fetch address data from an API using Axios.',
-    link: 'https://github.com/AlvsMatheus',
+    link: 'https://search-cep-seven-roan.vercel.app',
   },
   {
     name: 'Street Style',
@@ -215,20 +229,6 @@ const projects = [
     ),
     info: 'That project was a challenge from Harvard’s CS50W course to practice HTML and CSS basics.',
     link: 'https://alvsmatheus.github.io/google-search/',
-  },
-  {
-    name: 'Spotify',
-    img: spotify,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-amber-400">Html</span>
-        <span className="lenguages bg-blue">Css</span>
-        <span className="lenguages bg-amber-300">JavaScript</span> <br />
-        <span className="lenguages bg-cyan-300">json-server</span>
-      </div>
-    ),
-    info: 'A homepage clone of Spotify with a working search, built using JavaScript and json-server.',
-    link: 'https://alvsmatheus.github.io/home-spotify/',
   },
   {
     name: '3D portfolio',

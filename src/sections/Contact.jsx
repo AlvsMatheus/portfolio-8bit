@@ -7,6 +7,7 @@ import Logo from "../components/Logo"
 import NavBar from "../components/NavBar.jsx";
 import Title from "../components/Title.jsx";
 import {arrows, star, pcImg} from '../constants/index.jsx';
+import ProgressBar from "../components/ProgressBar.jsx";
 
 
 
@@ -168,8 +169,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
           </div>
           <div>
             {/* Progress Bar pc */}
-            <div className="hidden lg:block bg-pink w-full h-4 mb-10 rounded-2xl">  
-            </div>
+            <ProgressBar/>
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">

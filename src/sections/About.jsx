@@ -7,6 +7,7 @@ import Percentage from "../components/Percentage.jsx";
 
 import { arrows, star, aboutimgs, hardSkills, softSkills } from "../constants/index.jsx";
 import Title from "../components/Title.jsx";
+import ProgressBar from "../components/ProgressBar.jsx";
 
 
 
@@ -118,8 +119,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
           </div>
           <div>
             {/* Progress Bar pc */}
-            <div className="hidden lg:block bg-pink w-full h-4 mb-10 rounded-2xl">  
-            </div>
+            <ProgressBar/>
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">

@@ -6,6 +6,7 @@ import Title from "../components/Title.jsx";
 import MobileCards from "../components/MobileCards.jsx"
 import InteractiveCards from "../components/InteractiveCards.jsx";
 import {arrows, star} from '../constants/index.jsx';
+import ProgressBar from "../components/ProgressBar.jsx";
 
 
 
@@ -37,7 +38,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
             gradient='from-purple-600 via-purple-500'
             width='w-50 md:w-50 lg:w-100'/>
           </div>
-          <div className="hidden lg:flex justify-center items-center w-full mb-20">
+          <div className="hidden lg:flex justify-center items-center w-full">
             <InteractiveCards/>
           </div>
           <div className="lg:hidden flex justify-center items-center w-full">
@@ -45,8 +46,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
           </div>
           <div>
             {/* Progress Bar pc */}
-            <div className="hidden lg:block bg-pink w-full h-4 mb-10 rounded-2xl">  
-            </div>
+            <ProgressBar ghostPos={0}/>
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">

@@ -2,7 +2,7 @@ import {words} from '../constants/index.jsx';
 const AnimatedWords = () => {
   
   return (
-    <div className="animatedwords relative flex flex-col justify-start md:items-start items-start w-full h-auto"> 
+    <div className="animatedwords flex flex-col justify-start md:items-start items-start w-full h-auto"> 
       <h1 className='text-white'>
         <div className='hero-text'>
           <span className="slide">

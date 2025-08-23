@@ -3,6 +3,7 @@ import ArrowRight from "../components/ArrowRight.jsx";
 import InfiniteSkills from "../components/InfiniteSkills.jsx";
 import Logo from "../components/Logo"
 import NavBar from "../components/NavBar.jsx";
+import ProgressBar from "../components/ProgressBar.jsx";
 import Title from "../components/Title.jsx";
 import {arrows, star} from '../constants/index.jsx';
 
@@ -44,8 +45,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
           {/* middle cell */}
           <div>
             {/* Progress Bar pc */}
-            <div className="hidden lg:block bg-pink w-full h-4 mb-10 rounded-2xl">  
-            </div>
+           <ProgressBar ghostPos={25}/>
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">

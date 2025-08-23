@@ -105,7 +105,7 @@ const InteractiveCards = () => {
   const [flippedIndex, setFlippedIndex] = useState(null);
 
   return (
-    <div className="flex mt-32 flex-row items-center justify-center gap-4 h-full px-4 overflow-x-auto">
+    <div className="flex mt-6 flex-row items-center justify-center gap-4 h-full px-4 overflow-x-auto">
       {projects.map((project, index) => (
         <Card
           key={project.name}
