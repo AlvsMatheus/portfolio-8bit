@@ -21,6 +21,7 @@ import html from '../assets/logo-html.png';
 import js from '../assets/logo-js.png';
 import bootstrap from '../assets/logo-bootstrap.png';
 
+import rick from '../assets/project-rick.jpg';
 import recipe from '../assets/project-recipe.jpg';
 import lune from '../assets/project-lune-login.jpg';
 import cep from '../assets/project-cep.jpg';
@@ -150,6 +151,7 @@ const skills = [
 ];
 
 const projects = [
+  
   {
     name: 'La Clothes',
     img: laclothes,
@@ -180,6 +182,19 @@ const projects = [
     ),
     link: 'https://recipe-book-eight-olive.vercel.app/',
     info: 'That website is a blog with a recipe book theme and the first site that I made using React.',
+  },
+  {
+    name: 'Rick and Morty API',
+    img: rick,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-blue-600">React</span> <br />
+        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+      </div>
+    ),
+    link: 'https://project-rick-and-morty-two.vercel.app/',
+    info: 'A website made for practice fetch Api and animated using GSAP',
   },
   {
     name: 'Lune Login',
