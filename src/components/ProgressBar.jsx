@@ -32,7 +32,6 @@ const ProgressBar = () => {
         <p className='text-white'>You</p>
         <img src={ghosts[0].vine} alt="vine ghost" className='h-10 w-10' />
       </div>
-
       <div className='relative h-5 w-full'>
         <div className="flex justify-between bg-indigo-800 w-full h-2 rounded-2xl">
           {[...Array(6)].map((_, i) => (

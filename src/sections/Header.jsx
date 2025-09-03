@@ -21,28 +21,54 @@ import AnimatedWords from '../components/AnimatedWords.jsx';
     } )
   }, [])
 
+  useGSAP(() => {
+    gsap.fromTo('.animatedbutton', {
+      opacity: 0,
+      scale: 0,
+      blur: 10,
+    }, {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      ease: 'power2.inOut',
+      blur: 0,
+    })
+  })
+
+  
+
   return (
     <header id="home" className='section '>
       <div className="absolute inset-0 bg-[url('/backgrounds/purple-house.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
       <div className="absolute inset-0 bg-black/60" />
       </div>
-      <div className='flex flex-col w-full h-full justify-evenly md:justify-start px-10 md:pe-0 relative z-10'>
+      <div className='flex flex-col w-full h-full justify-between md:justify-start px-10 md:pe-0 relative z-10'>
         <Logo className="logo" img={star.purple}/>
         <div className='md:mt-36 lg:mt-120 flex max-md:flex-col '>
           <AnimatedWords/>
+          {/*Desktop*/}
           <Button
            phrase={'Click Here'}
            phrasetwo={'Start'}
            onScrollNext={onScrollNext}/>
         </div>
-        <div className='flex justify-center w-full h-auto md:hidden mb-50'>
-            <button 
-            onClick={onScrollNext}
-            className=' bg-white rounded-2xl p-4'>
-              Start
-            </button>
+        {/*Mobile*/}
+        <div className='md:hidden flex justify-center h-15 w-full mb-60 '>
+            <div className='button-wrapper'>
+              <button
+              onClick={onScrollNext}
+              className='animatedbutton button-shine button-front'>
+                Start
+              </button>
+              <button 
+              onClick={onScrollNext}
+              className='animatedbutton button-shine button-back'>
+                Start
+              </button>
+            </div>
+
           </div>
-      </div>  
+        </div>  
     </header>
   )
 }

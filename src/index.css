@@ -33,7 +33,6 @@ html {
       @apply text-[var(--color-red)] font-bold;
     }
 
-
   .hero-text {
     @apply flex flex-col justify-center xl:text-[50px] lg:text-[40px] md:text-[30px] text-[18px] font-semibold relative z-10 pointer-events-none whitespace-nowrap;
     img {
@@ -77,6 +76,65 @@ html {
   z-index: 0;
 }
 
+ .button-wrapper {
+  height: 100%;
+  width: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.button-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* garante sobreposição perfeita */
+  height: 100%;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+}
+
+/* camada da frente */
+.button-front {
+  background: white;
+  color: black;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* camada de trás */
+.button-back {
+  background: linear-gradient(90deg, black, purple, black);
+  color: white;
+  z-index: 1;
+}
+
+/* feixe que revela a camada de trás */
+.button-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.5); /* feixe */
+  transform: skewX(-20deg);
+  animation: shine 5s infinite;
+}
+
+/* animação do feixe */
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+  30% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
 
 
 
