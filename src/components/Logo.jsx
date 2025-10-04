@@ -2,7 +2,7 @@ import {alves} from '../constants/index.jsx';
 
 const Logo = ({img}) => {
   return (
-    <div className='logo flex flex-col w-full h-auto pt-10'>
+    <div className='flex flex-col w-full h-auto pt-10'>
       <div className='flex'>
           <div className='w-[60px] lg:w-[80px]'><img className='relative' src={alves} alt="alves"  /></div>
           <div className='w-[35px] lg:w-[40px] h-[40px] ps-4'><img src={img} alt="purple star" /></div>

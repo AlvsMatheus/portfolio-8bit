@@ -3,7 +3,7 @@
  import gsap from 'gsap';
  import { useGSAP } from '@gsap/react';
  import {star} from '../constants/index.jsx'; 
-import AnimatedWords from '../components/AnimatedWords.jsx';
+ import AnimatedWords from '../components/AnimatedWords.jsx';
 
  
  const Header = ({onScrollNext}) => {
@@ -43,7 +43,9 @@ import AnimatedWords from '../components/AnimatedWords.jsx';
       <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className='flex flex-col w-full h-full justify-between md:justify-start px-10 md:pe-0 relative z-10'>
-        <Logo className="logo" img={star.purple}/>
+        <Logo 
+        className="logo" 
+        img={star.purple}/>
         <div className='md:mt-36 lg:mt-120 flex max-md:flex-col '>
           <AnimatedWords/>
           {/*Desktop*/}

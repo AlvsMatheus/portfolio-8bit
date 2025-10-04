@@ -27,7 +27,8 @@ const ProgressBar = () => {
   }, [])
 
   return (
-    <div className='hidden relative lg:flex flex-col gap-2 h-20 w-full mb-5'>
+    /*HIDDEN CUZ IT ISEN'T DONE */
+    <div className='hidden relative  flex-col gap-2 h-20 w-full mb-5'>
       <div className='flex flex-col gap-1 absolute' style={{ left: `${ghostPos}%`, transition: 'left 0.1s linear' }}>
         <p className='text-white'>You</p>
         <img src={ghosts[0].vine} alt="vine ghost" className='h-10 w-10' />
