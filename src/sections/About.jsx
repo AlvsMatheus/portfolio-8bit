@@ -8,12 +8,16 @@ import Percentage from "../components/Percentage.jsx";
 import { arrows, star, aboutimgs, hardSkills, softSkills } from "../constants/index.jsx";
 import Title from "../components/Title.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
+import { useScroll } from "../contexts/Scroll.context.jsx";
 
 
 
-const Projects = ({ onScrollBack, onScrollNext }) => {
+const About = () => {
+
+  const { skillsRef, contactRef } = useScroll();
+
   return (
-    <section id="about" className="section">
+    <section id="about">
       <div className="absolute z-0 inset-0 bg-[url('/backgrounds/background-about.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
       <div className="absolute inset-0 bg-black/70" />
       </div>
@@ -24,7 +28,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
             <Logo img={star.red}/>
           </div>
             <div className="hidden md:block ">
-              <ArrowLeft onScrollBack={onScrollBack} img={arrows.left}/>
+              <ArrowLeft refBack={skillsRef} img={arrows.left}/>
             </div>
         </div>
         <div className="child-middle overflow-auto lg:overflow-hidden p-2 lg:pt-7 flex justify-between">
@@ -126,7 +130,7 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
           {/* right side md-lg*/}
           
           <div className="hidden md:flex md:justify-end ">
-              <ArrowRight onScrollNext={onScrollNext}  img={arrows.right}/>
+              <ArrowRight refNext={contactRef}  img={arrows.right}/>
           </div>
         </div>
       </div>
@@ -134,4 +138,4 @@ const Projects = ({ onScrollBack, onScrollNext }) => {
   )
 }
 
-export default Projects
+export default About

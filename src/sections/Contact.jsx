@@ -8,11 +8,13 @@ import NavBar from "../components/NavBar.jsx";
 import Title from "../components/Title.jsx";
 import {arrows, star, pcImg} from '../constants/index.jsx';
 import ProgressBar from "../components/ProgressBar.jsx";
+import { useScroll } from "../contexts/Scroll.context.jsx";
 
 
 
-const Contact = ({ onScrollBack, onScrollNext}) => {
+const Contact = () => {
 
+  const { aboutRef, footerRef } = useScroll();
   const formRef = useRef(null);
   
   const [formData, setFormData] = useState({
@@ -56,7 +58,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" >
       <div className="absolute z-0 inset-0 bg-[url('/backgrounds/contact-me.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center ">
       <div 
       className={ messageCase ? `absolute inset-0 bg-black/90 transition-all duration-700 ease` : `absolute inset-0 bg-black/70 transition-all duration-700 ease`} />
@@ -72,7 +74,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
           {/* left side md-lg*/}
           <Logo img={star.green}/>
             <div className="hidden md:block ">
-              <ArrowLeft onScrollBack={onScrollBack} img={arrows.left}/>
+              <ArrowLeft refBack={aboutRef} img={arrows.left}/>
             </div>
         </div>
         <div className="child-middle relative z-10 md:overflow-auto lg:overflow-visible lg:pt-7 flex justify-between">
@@ -176,7 +178,7 @@ const Contact = ({ onScrollBack, onScrollNext}) => {
           {/* right side md-lg*/}
           
           <div className="hidden md:flex md:justify-end ">
-              <ArrowRight onScrollNext={onScrollNext}  img={arrows.right}/>
+              <ArrowRight refNext={footerRef}  img={arrows.right}/>
           </div>
         </div>
       </div>

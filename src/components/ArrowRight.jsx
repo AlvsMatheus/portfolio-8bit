@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useScroll } from "../contexts/Scroll.context";
 
-const ArrowRight = ({onScrollNext,img}) => {
+const ArrowRight = ({refNext,img}) => {
   const [isHover, setIsHover] = useState(false);
   const tooltipRef = useRef(null);
+  const {scrollTo} = useScroll();
 
   useEffect(() => {
     if (tooltipRef.current) {
@@ -32,7 +34,7 @@ const ArrowRight = ({onScrollNext,img}) => {
         <button 
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        onClick={onScrollNext} 
+        onClick={() => scrollTo(refNext)} 
         className="flex cursor-pointer justify-end md:w-10 lg:w-40 ">
           <div
             ref={tooltipRef}

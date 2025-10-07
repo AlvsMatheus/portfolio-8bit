@@ -1,6 +1,0 @@
-const scrollRight = () => {
-
-}
-
-
-export scrollRight;

@@ -1,63 +1,66 @@
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
 import InfiniteSkills from "../components/InfiniteSkills.jsx";
-import Logo from "../components/Logo"
+import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
 import Title from "../components/Title.jsx";
-import {arrows, star} from '../constants/index.jsx';
+import { arrows, star } from "../constants/index.jsx";
+import { useScroll } from "../contexts/Scroll.context.jsx";
 
+const Skills = () => {
+  const { projectsRef, aboutRef } = useScroll();
 
-
-
-const Projects = ({ onScrollBack, onScrollNext }) => {
   return (
-    <section id="skills" className="section">
+    <section id="skills" >
       <div className="absolute z-0 inset-0 bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
-      <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
           {/* left side md-lg*/}
-          <Logo img={star.blue}/>
-            <div className="hidden md:block ">
-              <ArrowLeft onScrollBack={onScrollBack} img={arrows.left}/>
-            </div>
+          <Logo img={star.blue} />
+          <div className="hidden md:block ">
+            <ArrowLeft refBack={projectsRef} img={arrows.left} />
+          </div>
         </div>
         <div className="child-middle lg:pt-7 flex justify-between">
           {/* middle side pc*/}
           <div className="max-md:mt-10 max-md:flex">
-            <NavBar bgColor='bg-[var(--color-blue)]'/>
+            <NavBar bgColor="bg-[var(--color-blue)]" />
             <Title
-            text={(
-            <p className="text-white">
-              <span className="text-[var(--color-blue)]">S</span>k<span className="text-[var(--color-blue)]">i</span>ll<span className="text-[var(--color-blue)]">s</span>
-            </p>)}
-            gradient='from-blue via-blue-400 '
-            width='w-50 md:w-50 lg:w-75'/>
+              text={
+                <p className="text-white">
+                  <span className="text-[var(--color-blue)]">S</span>k
+                  <span className="text-[var(--color-blue)]">i</span>ll
+                  <span className="text-[var(--color-blue)]">s</span>
+                </p>
+              }
+              gradient="from-blue via-blue-400 "
+              width="w-50 md:w-50 lg:w-75"
+            />
           </div>
           <div className="flex justify-center items-center w-full mb-20">
             <div className="overflow-hidden lg:w-[90vw] lg:max-w-[800px]">
-              <InfiniteSkills/>
-              
-              </div>
+              <InfiniteSkills />
+            </div>
           </div>
           {/* middle cell */}
           <div>
             {/* Progress Bar pc */}
-           <ProgressBar ghostPos={25}/>
+            <ProgressBar ghostPos={25} />
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">
           {/* right side md-lg*/}
-          
+
           <div className="hidden md:flex md:justify-end ">
-              <ArrowRight onScrollNext={onScrollNext}  img={arrows.right}/>
+            <ArrowRight refNext={aboutRef} img={arrows.right} />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Skills;

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { crabanimated, crabwhite } from "../constants";
+import { useScroll } from "../contexts/Scroll.context";
 
-const Button = ({onScrollNext, phrase, phrasetwo}) => {
+const Button = ({ref, phrase, phrasetwo}) => {
+
+  const { scrollTo } = useScroll()
+
   const [label, setLabel] = useState(phrasetwo);
   const [hovered, setHovered] = useState(false);
 
   return (
     <button 
     className="hidden md:block"
-    onClick={onScrollNext}>
+    onClick={() => scrollTo(ref)}>
       <span
         className="relative hover:cursor-pointer overflow-hidden bg-white flex items-center justify-center rounded-l-full lg:w-50 lg:h-15 w-30 h-10 md:pl-3 pl-5 border border-black"
         onMouseEnter={() => {

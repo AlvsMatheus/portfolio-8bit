@@ -17,7 +17,7 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
       className={`
         lg:overflow-hidden relative cursor-pointer rounded-xl transition-all duration-500 ease-in-out perspective
         h-[200px] md:h-[250px] lg:h-[400px]
-        ${isHovered ? 'w-[500px] scale-105 z-10 shadow-purplee' : 'w-[80px]'}
+        ${isHovered ? 'w-[800px] scale-105 z-10 shadow-purplee' : 'w-[80px]'}
         ${hoveredIndex !== null && !isHovered ? 'opacity-50 scale-90' : ''}
       `}
       onMouseEnter={() => setHoveredIndex(index)}
@@ -71,7 +71,7 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
                     <div className="h-[2px] w-full bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)] mt-1" />
                   </div>
                   <div className="flex w-full h-auto">
-                    <p className="text-sm mt-5 text-gray-400 text-center leading-normal">{info}</p>
+                    <p className="text-[10px] mt-5 text-gray-400 text-center leading-normal">{info}</p>
                   </div>
                 </div>
 
@@ -105,7 +105,7 @@ const InteractiveCards = () => {
   const [flippedIndex, setFlippedIndex] = useState(null);
 
   return (
-    <div className="flex mt-6 flex-row items-center justify-center gap-4 h-full px-4 overflow-x-auto">
+    <div className="flex flex-row items-center justify-center gap-4 h-full w-full px-4 ">
       {projects.map((project, index) => (
         <Card
           key={project.name}

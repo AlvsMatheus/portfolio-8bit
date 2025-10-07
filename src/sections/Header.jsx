@@ -4,9 +4,12 @@
  import { useGSAP } from '@gsap/react';
  import {star} from '../constants/index.jsx'; 
  import AnimatedWords from '../components/AnimatedWords.jsx';
+ import { useScroll } from '../contexts/Scroll.context.jsx';
+
 
  
- const Header = ({onScrollNext}) => {
+ const Header = () => {
+  const { projectsRef } = useScroll()
 
   useGSAP(() => {
     gsap.fromTo('.animatedwords', {
@@ -38,38 +41,42 @@
   
 
   return (
-    <header id="home" className='section '>
+    <header id="home">
       <div className="absolute inset-0 bg-[url('/backgrounds/purple-house.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
       <div className="absolute inset-0 bg-black/60" />
       </div>
-      <div className='flex flex-col w-full h-full justify-between md:justify-start px-10 md:pe-0 relative z-10'>
+      <div className='flex flex-col w-full min-h-screen justify-start px-10 md:pe-0 relative z-10 gap-80 md:gap-0'>
         <Logo 
         className="logo" 
         img={star.purple}/>
-        <div className='md:mt-36 lg:mt-120 flex max-md:flex-col '>
+        <div className='md:mt-36 lg:mt-120 flex max-md:flex-col gap-20 md:gap-0 '>
           <AnimatedWords/>
           {/*Desktop*/}
           <Button
            phrase={'Click Here'}
            phrasetwo={'Start'}
-           onScrollNext={onScrollNext}/>
-        </div>
-        {/*Mobile*/}
-        <div className='md:hidden flex justify-center h-15 w-full mb-60 '>
+           ref={projectsRef}
+           />
+          
+        <div className='md:hidden flex justify-center h-15 w-full '>
             <div className='button-wrapper'>
               <button
-              onClick={onScrollNext}
+              onClick={() => scrollTo(projectsRef)}
               className='animatedbutton button-shine button-front'>
                 Start
               </button>
               <button 
-              onClick={onScrollNext}
+              onClick={() => scrollTo(projectsRef)}
               className='animatedbutton button-shine button-back'>
                 Start
               </button>
             </div>
 
           </div>
+        </div>
+        
+        {/*Mobile*/}
+        
         </div>  
     </header>
   )
