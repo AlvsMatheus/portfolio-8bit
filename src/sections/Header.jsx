@@ -9,6 +9,7 @@
 
  
  const Header = () => {
+  const { scrollTo } = useScroll()
   const { projectsRef } = useScroll()
 
   useGSAP(() => {

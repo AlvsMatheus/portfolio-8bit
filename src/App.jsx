@@ -11,7 +11,7 @@ function App() {
     useScroll();
 
   return (
-    <main className="flex overflow-hidden overflow-y-hidden snap-x snap-mandatory w-screen h-screen scroll-smooth">
+    <main className="flex lg:overflow-hidden overflow-y-hidden snap-x snap-mandatory w-screen h-screen scroll-smooth">
       <section ref={headerRef} className="section">
         <Header />
       </section>
