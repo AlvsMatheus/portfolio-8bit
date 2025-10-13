@@ -2,7 +2,8 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Pixelify+Sans&weight=500&size=25&duration=4987&pause=1000&color=D122F7&background=FF000300&vCenter=true&width=435&lines=Welcome+to+Portfolio+Retro!)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Pixelify+Sans&weight=500&size=20&duration=4987&pause=1000&color=D122F7&background=FF000300&vCenter=true&width=435&lines=About+my+project)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Pixelify+Sans&pause=1000&color=F7F7F7&vCenter=true&repeat=false&width=443&lines=About+)](https://git.io/typing-svg)
+
 This is my portfólio with 8 bit theme and I created it to showcase my projects, skills, about me and how to contact me. I hope you enjoy the experience of meet it. Enjoy yourself!
 
 ## Technologies
