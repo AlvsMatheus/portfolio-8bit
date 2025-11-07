@@ -1,4 +1,4 @@
-![Texto Alternativo para o GIF](./public/backgrounds/purple-house.gif)
+![gif do projeto](./public/backgrounds/purple-house.gif)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Pixelify+Sans&weight=500&size=25&duration=4987&pause=1000&color=D122F7&background=FF000300&vCenter=true&width=435&lines=Welcome+to+Portfolio+Retro!)](https://git.io/typing-svg)
 
