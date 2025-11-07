@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { projects } from '../constants/index.jsx';
 import InfiniteRow from './InfiniteRow.jsx';
+import { useTheme } from '../contexts/ThemeContext.jsx';
 
 const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIndex, name, bg, resource, info, link }) => {
   const isHovered = hoveredIndex === index;
   const isFlipped = flippedIndex === index;
+  const { is8Bit } = useTheme()
+
+  const backBorderCard = is8Bit
+  ? "gradient-border"
+  : "gradient-border-prof"
 
   const handleFlip = (e) => {
     const tag = e.target.tagName.toLowerCase();
@@ -61,14 +67,14 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
         </div>
 
         {/* Back of card */}
-        <div className="gradient-border absolute w-full h-full text-white rounded-4xl shadow-md [backface-visibility:hidden] rotate-y-180 flex items-center justify-center font-bold text-xs md:text-base z-10">
+        <div className={`${backBorderCard} absolute w-full h-full text-white rounded-4xl shadow-md [backface-visibility:hidden] rotate-y-180 flex items-center justify-center font-bold text-xs md:text-base z-10`}>
           <div className="gradient-content flex flex-col justify-between h-full w-full">
             {isHovered && (
               <div>
                 <div className="flex flex-col justify-center p-3 w-full h-auto">
                   <div className="text-center pb-2">
-                    <h1 className="text-purple text-2xl">About</h1>
-                    <div className="h-[2px] w-full bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)] mt-1" />
+                    <h1 className={`text-2xl ${is8Bit ? "text-purple" : "text-orange-700"}`}>About</h1>
+                    <div className={`h-[2px] w-full mt-1 ${ is8Bit ? "bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)]" : "bg-[linear-gradient(to_right,_transparent,_indigo,_orange,_orange,_indigo,_transparent)]" }   `} />
                   </div>
                   <div className="flex w-full h-auto">
                     <p className="text-[10px] mt-5 text-gray-400 text-center leading-normal">{info}</p>
@@ -88,9 +94,13 @@ const Card = ({ index, hoveredIndex, setHoveredIndex, flippedIndex, setFlippedIn
                   </button>
                 </div>
 
-                <div className="flex justify-center items-center w-full h-auto mb-2">
+                { 
+                  is8Bit &&
+                  <div className="flex justify-center items-center w-full h-auto mb-2">
                   <InfiniteRow/>
                 </div>
+                }
+
               </div>
             )}
           </div>

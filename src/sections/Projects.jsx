@@ -8,22 +8,31 @@ import InteractiveCards from "../components/InteractiveCards.jsx";
 import { arrows, star } from "../constants/index.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx";
+import NavBarProf from "../components/NavBarProf.jsx";
 
 const Projects = () => {
 
   const { headerRef, skillsRef } = useScroll();
+  const { is8Bit } = useTheme()
+
+  const backgroundStyle = is8Bit 
+  ? "bg-[url('/backgrounds/space-invaders.jpg')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center" 
+  : "bg-radial from-black via-indigo-600 to-black"
 
   return (
     <section id="projects">
       <div
-        className={`absolute z-0 inset-0 bg-[url('/backgrounds/space-invaders.jpg')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center`}
+        className={`absolute z-0 inset-0 ${backgroundStyle}`}
       >
         <div className="absolute inset-0 bg-black/80" />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
-          {/* left side md-lg*/}
-          <Logo img={star.purple} />
+          {
+            is8Bit &&
+            <Logo img={star.purple} />
+          }
           <div className="hidden md:block ">
             <ArrowLeft refBack={headerRef} img={arrows.left} />
           </div>
@@ -31,8 +40,13 @@ const Projects = () => {
         <div className="child-middle lg:pt-7 flex justify-between">
           {/* middle side md-lg*/}
           <div className="max-md:mt-10 max-md:flex">
+            { is8Bit ?
             <NavBar bgColor="bg-[var(--color-pink)]" />
-            <Title
+            :
+            <NavBarProf/>
+          }
+            { is8Bit ?
+              <Title
               text={
                 <p className="text-white">
                   <span className="text-purple">Pr</span>o
@@ -43,6 +57,17 @@ const Projects = () => {
               gradient="from-purple-600 via-purple-500"
               width="w-50 md:w-50 lg:w-100"
             />
+            :
+            <Title
+              text={
+                <p className="text-orange-600 font-sans uppercase">
+                  Projects
+                </p>
+              }
+              gradient="from-black via-orange-500 to-black"
+              width="w-50 md:w-50 lg:w-100"
+            />
+            }
           </div>
           <div className="hidden lg:flex justify-center items-center w-full">
             <InteractiveCards />

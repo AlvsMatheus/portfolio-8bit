@@ -161,6 +161,19 @@ html {
     display: inline-block;
   }
 
+  .gradient-border-prof {
+    background: linear-gradient(
+      to right bottom,
+      transparent,
+      #fd5d00,
+      #0d01b9,
+      transparent
+    );
+    padding: 3px; /* Largura da "borda" */
+    border-radius: 30px; /* Opcional */
+    display: inline-block;
+  }
+
   .gradient-content {
     background: rgb(0, 0, 0);
     padding: 10px;

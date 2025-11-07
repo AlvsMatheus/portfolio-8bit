@@ -1,87 +1,164 @@
- import Logo from '../components/Logo'
- import Button from '../components/Button'
- import gsap from 'gsap';
- import { useGSAP } from '@gsap/react';
- import {star} from '../constants/index.jsx'; 
- import AnimatedWords from '../components/AnimatedWords.jsx';
- import { useScroll } from '../contexts/Scroll.context.jsx';
+import Logo from "../components/Logo";
+import Button from "../components/Button";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { star } from "../constants/index.jsx";
+import AnimatedWords from "../components/AnimatedWords.jsx";
+import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx";
+import headerVideo from "../assets/videos/header.mp4"
+import ProfessionalWords from "../components/ProfessionalWords.jsx";
 
+const Header = () => {
+  const { scrollTo } = useScroll();
+  const { projectsRef } = useScroll();
+  const { is8Bit, toggleTheme } = useTheme();
 
- 
- const Header = () => {
-  const { scrollTo } = useScroll()
-  const { projectsRef } = useScroll()
+  const backgroundStyle = is8Bit
+    ? "bg-[url('/backgrounds/purple-house.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center"
+    : " w-full h-full object-cover";
+
+  const middleContentStyle = is8Bit
+    ? "md:row-start-2 md:self-center flex max-md:flex-col gap-20 md:gap-0  md:grid md:grid-cols-2 md:items-center"
+    : "md:row-start-2 md:self-center flex max-md:flex-col gap-20 md:gap-0 h-full  md:grid md:grid-cols-2 md:items-center"                      
+                         
+
+  const logoIcon = is8Bit ? star.purple : star.professional || star.purple;
+  const logoTextStyle = is8Bit ? "font-8bit" : "font-sans text-xl font-bold";
 
   useGSAP(() => {
-    gsap.fromTo('.animatedwords', {
-      opacity: 0,
-      x: -50,
-    }, {
-      opacity: 1,
-      x: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power2.out',
-    } )
-  }, [])
+    gsap.fromTo(
+      ".animatedwords",
+      {
+        opacity: 0,
+        x: -50,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power2.out",
+      }
+    );
+  }, [is8Bit]);
 
   useGSAP(() => {
-    gsap.fromTo('.animatedbutton', {
-      opacity: 0,
-      scale: 0,
-      blur: 10,
-    }, {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-      ease: 'power2.inOut',
-      blur: 0,
-    })
-  })
-
-  
+    gsap.fromTo(
+      ".animatedbutton",
+      {
+        opacity: 0,
+        scale: 0,
+        blur: 10,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.inOut",
+        blur: 0,
+      }
+    );
+  }, [is8Bit]);
 
   return (
-    <header id="home">
-      <div className="absolute inset-0 bg-[url('/backgrounds/purple-house.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
-      <div className="absolute inset-0 bg-black/60" />
-      </div>
-      <div className='flex flex-col w-full min-h-screen justify-start px-10 md:pe-0 relative z-10 gap-80 md:gap-0'>
-        <Logo 
-        className="logo" 
-        img={star.purple}/>
-        <div className='md:mt-36 lg:mt-120 flex max-md:flex-col gap-20 md:gap-0 '>
-          <AnimatedWords/>
-          {/*Desktop*/}
-          <Button
-           phrase={'Click Here'}
-           phrasetwo={'Start'}
-           ref={projectsRef}
-           />
-          
-        <div className='md:hidden flex justify-center h-15 w-full '>
-            <div className='button-wrapper'>
-              <button
-              onClick={() => scrollTo(projectsRef)}
-              className='animatedbutton button-shine button-front'>
-                Start
-              </button>
-              <button 
-              onClick={() => scrollTo(projectsRef)}
-              className='animatedbutton button-shine button-back'>
-                Start
-              </button>
+    <header className="relative" id="home">
+      {/* Fundo Condicional */}
+      {is8Bit ? (
+        <div className={`absolute inset-0 ${backgroundStyle}`}>
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+      ) : (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={`absolute inset-0 ${backgroundStyle}`}
+          >
+            <source src={headerVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/30" />
+        </>
+      )}
+
+      {/* Container Principal com Estrutura Grid (Desktop) / Flex (Mobile) */}
+      <div
+        className="flex flex-col w-full min-h-screen px-10 md:pe-0 relative z-10 gap-80 md:gap-0 
+                     md:grid md:grid-rows-[auto_1fr] md:p-10"
+      >
+        {/* Toggle de Tema no Topo e Canto Direito absolute*/}
+        <button
+          onClick={toggleTheme}
+          className={`absolute top-5 right-5 w-30 p-2 cursor-pointer text-white border-2 z-20 transition-all duration-300 
+                     ${is8Bit ? "bg-purple-700 border-white font-8bit text-[10px] " : "bg-indigo-700 border-indigo-500 font-sans text-sm"}`}
+        >
+          {is8Bit ? "Mudar para PF" : "Voltar para 8-bit"}
+        </button>
+         {/* Fim Toggle de Tema no Topo e Canto Direito */}
+
+        {/*Logo*/}
+        {
+          is8Bit &&
+          <div className="md:row-start-1">
+          <Logo className={logoTextStyle} img={logoIcon} />
+        </div>
+        }
+        {/*Fim logo*/}
+
+        {/* 2. MEIO: Conteúdo Principal (Centralizado Verticalmente) */}
+        <div
+          className={`${middleContentStyle}`}
+        >
+          {/* Título Condicional */}
+          {is8Bit ? (
+            <AnimatedWords />
+          ) : (
+            <ProfessionalWords />
+          )}
+
+          <div className="md:col-start-2 flex justify-end">
+            {/* Botão Condicional (Desktop) */}
+            <div className="hidden md:block">
+              {is8Bit ? (
+                <Button
+                  phrase={"Click Here"}
+                  phrasetwo={"Start"}
+                  ref={projectsRef}
+                />
+              ) : (
+                <button
+                  onClick={() => scrollTo(projectsRef)}
+                  className="px-8 py-3 bg-indigo-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-indigo-500 transition"
+                >
+                  View Projects
+                </button>
+              )}
             </div>
 
+            {/* Botão Mobile (Mantido 8-bit, mas você deve criar a versão condicional aqui também) */}
+            <div className="md:hidden flex justify-center h-15 w-full ">
+              <div className="button-wrapper">
+                <button
+                  onClick={() => scrollTo(projectsRef)}
+                  className="animatedbutton button-shine button-front"
+                >
+                  Start
+                </button>
+                <button
+                  onClick={() => scrollTo(projectsRef)}
+                  className="animatedbutton button-shine button-back"
+                >
+                  Start
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        
-        {/*Mobile*/}
-        
-        </div>  
+      </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
- 
+export default Header;

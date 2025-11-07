@@ -95,7 +95,9 @@ const About = () => {
             <div className="flex flex-col gap-6 lg:gap-10 bg-black/50 rounded-3xl w-full h-[86%] lg:320 p-6 lg:p-6">
              <div className="flex flex-col gap-5 md:gap-2 text-white">
                 <h1 className="text-sm lg:text-2xl"><strong className="red">J</strong>o<strong className="red">ur</strong>ne<strong className="red">y</strong></h1>
-                <p className="text-[10px] md:text-[7px] lg:text-[12px] leading-4 md:leading-3 lg:leading-4">I started learning programming at <strong className="red">16 years old</strong>  through structured <strong className="red">courses</strong> and <strong className="red">self-directed study.</strong> I’ve built a <strong className="red">solid foundation</strong> in web development with <strong className="red">HTML, CSS, JavaScript, React, and others frameworks</strong>, and gained hands-on experience through personal projects. I'm currently seeking my first opportunity as a <strong className="red">junior developer or an intership.</strong></p>
+                <p className="text-[10px] md:text-[7px] lg:text-[12px] leading-4 md:leading-3 lg:leading-4">
+                  Front End Developer with <strong className="red">hands-on experience</strong> building responsive and user-focused web applications. <strong className="red">Strong background</strong> in <strong className="red">React, Next.js, Node.js, and Typescript</strong>. Proven ability to deliver <strong className="red">freelance projects</strong>. <strong className="red">Fast learner</strong> and motivated to grow into <strong className="red">mid-level positions</strong>.
+                </p>
              </div>
              <div className="flex justify-center lg:justify-evenly flex-wrap  w-full h-full lg:h-[240px] ">
                 <div className="red w-[50%] lg:w-[30%]">
