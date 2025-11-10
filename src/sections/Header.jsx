@@ -85,8 +85,8 @@ const Header = () => {
 
       {/* Container Principal com Estrutura Grid (Desktop) / Flex (Mobile) */}
       <div
-        className="flex flex-col w-full min-h-screen px-10 md:pe-0 relative z-10 gap-80 md:gap-0 
-                     md:grid md:grid-rows-[auto_1fr] md:p-10"
+        className={`flex flex-col ${is8Bit ? '' : 'max-md:justify-center'} w-full min-h-screen px-10 md:pe-0 relative z-10 gap-80 md:gap-0 
+                     md:grid md:grid-rows-[auto_1fr] md:p-10`}
       >
         {/* Toggle de Tema no Topo e Canto Direito absolute*/}
         <button

@@ -17,15 +17,15 @@ const Projects = () => {
   const { is8Bit } = useTheme()
 
   const backgroundStyle = is8Bit 
-  ? "bg-[url('/backgrounds/space-invaders.jpg')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center" 
-  : "bg-radial from-black via-indigo-600 to-black"
+  ? "bg-[url('/backgrounds/space-invaders.jpg')] md:bg-right lg:bg-center" 
+  : "bg-[url('/backgrounds/background-prof.png')]"
 
   return (
     <section id="projects">
       <div
-        className={`absolute z-0 inset-0 ${backgroundStyle}`}
+        className={`absolute z-0 inset-0 bg-cover bg-no-repeat bg-center  ${backgroundStyle}`}
       >
-        <div className="absolute inset-0 bg-black/80" />
+        <div className={`absolute inset-0 ${is8Bit ? "bg-black/80" : "bg-black/40" } `} />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">

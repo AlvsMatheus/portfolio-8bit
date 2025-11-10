@@ -13,13 +13,14 @@ const Skills = () => {
   const { projectsRef, aboutRef } = useScroll();
   const { is8Bit } = useTheme()
 
-  const backgroundStyle = is8Bit
-  ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center"
-  : "bg-radial from-black via-indigo-600 to-black"
+  const backgroundStyle = is8Bit 
+  ? "bg-[url('/backgrounds/space-invaders.jpg')] md:bg-right lg:bg-center" 
+  : "bg-[url('/backgrounds/background-prof.png')]"
+
   return (
     <section id="skills" >
-      <div className={`absolute z-0 inset-0 ${backgroundStyle} `} >
-        <div className="absolute inset-0 bg-black/60" />
+      <div className={`absolute z-0 inset-0 bg-cover bg-no-repeat bg-center  ${backgroundStyle} `} >
+        <div className={`absolute inset-0 ${is8Bit ? "bg-black/80" : "bg-black/40" } `} />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
