@@ -167,10 +167,10 @@ const projects = [
     img: laclothes,
     lenguages: (
       <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> <br />
+        <span className="lenguages bg-gray-500">Next</span> 
+        <span className="lenguages bg-green-800">Node.js</span> 
         <span className="lenguages bg-blue">Tailwind</span> <br />
         <span className="lenguages bg-red-400">Firebase</span>
-        <br />
         <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
       </div>
     ),
@@ -208,45 +208,6 @@ const projects = [
     ),
     link: "https://recipe-book-eight-olive.vercel.app/",
     info: "That website is a blog with a recipe book theme and the first site that I made using React.",
-  },
-  {
-    name: "Rick and Morty API",
-    img: rick,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-blue-600">React</span> <br />
-        <span className="lenguages bg-blue">TailwindCss</span> <br />
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-      </div>
-    ),
-    link: "https://project-rick-and-morty-two.vercel.app/",
-    info: "A website made for practice fetch Api and animated using GSAP",
-  },
-  {
-    name: "Lune Login",
-    img: lune,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> <br />
-        <span className="lenguages bg-blue">TailwindCss</span> <br />
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-      </div>
-    ),
-    link: "https://lune-login-389z.vercel.app/",
-    info: "An simple login page with lunar theme made with Next.js and Tailwind CSS",
-  },
-  {
-    name: "Street Style",
-    img: street,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-amber-400">Html</span>
-        <span className="lenguages bg-blue">Css</span>
-        <span className="lenguages bg-cyan-400 whitespace-nowrap">AOS</span>
-      </div>
-    ),
-    info: "My first website: a landing page for a clothing store with a streetwear vibe.",
-    link: "https://alvsmatheus.github.io/Template-vendas/",
   },
   {
     name: "Client's Portfolio",
@@ -297,6 +258,46 @@ const projects = [
     info: "That is a copy of Nike website was made by following a JavaScript Mastery project and includes my TypeScript implementation.",
     link: "https://alvsmatheus.github.io/nike-project/",
   },
+  {
+    name: "Lune Login",
+    img: lune,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span> <br />
+        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+      </div>
+    ),
+    link: "https://lune-login-389z.vercel.app/",
+    info: "An simple login page with lunar theme made with Next.js and Tailwind CSS",
+  },
+  {
+    name: "Rick and Morty API",
+    img: rick,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-blue-600">React</span> <br />
+        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+      </div>
+    ),
+    link: "https://project-rick-and-morty-two.vercel.app/",
+    info: "A website made for practice fetch Api and animated using GSAP",
+  },
+  {
+    name: "Street Style",
+    img: street,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-amber-400">Html</span>
+        <span className="lenguages bg-blue">Css</span>
+        <span className="lenguages bg-cyan-400 whitespace-nowrap">AOS</span>
+      </div>
+    ),
+    info: "My first website: a landing page for a clothing store with a streetwear vibe.",
+    link: "https://alvsmatheus.github.io/Template-vendas/",
+  },
+  
 ];
 
 const ghosts = [
