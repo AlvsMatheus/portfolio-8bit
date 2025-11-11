@@ -9,13 +9,19 @@ import Title from "../components/Title.jsx";
 import {arrows, star, pcImg} from '../constants/index.jsx';
 import ProgressBar from "../components/ProgressBar.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx";
 
 
 
 const Contact = () => {
 
   const { aboutRef, footerRef } = useScroll();
+  const { is8Bit } = useTheme()
   const formRef = useRef(null);
+
+  const backgroundStyle = is8Bit
+  ? "bg-[url('/backgrounds/contact-me.gif')] md:bg-right lg:bg-center "
+  : "bg-[url('/backgrounds/background-prof.png')]"
   
   const [formData, setFormData] = useState({
     name: '',
@@ -59,7 +65,7 @@ const Contact = () => {
 
   return (
     <section id="contact" >
-      <div className="absolute z-0 inset-0 bg-[url('/backgrounds/contact-me.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center ">
+      <div className={`absolute z-0 inset-0 bg-cover bg-no-repeat bg-center ${backgroundStyle}`}>
       <div 
       className={ messageCase ? `absolute inset-0 bg-black/90 transition-all duration-700 ease` : `absolute inset-0 bg-black/70 transition-all duration-700 ease`} />
       </div>

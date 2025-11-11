@@ -6,11 +6,14 @@ import { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { arrows, star, github, linkedin } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx"; 
 
 const Footer = () => {
   const { contactRef, headerRef } = useScroll();
+  const { is8Bit } = useTheme();
   const moonRef = useRef(null);
   const [afterMoon, setAfterMoon] = useState(false);
+
 
   useGSAP(() => {
     if (!moonRef.current) return;
@@ -49,6 +52,9 @@ const Footer = () => {
 
   return (
     <section id="footer" className="overflow-hidden">
+      {
+        is8Bit ?
+
       <div className="absolute inset-0 bg-violet-950 bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
         <div className="absolute inset-0 bg-black/70" />
         <div className="absolute z-10 top-10 -left-260 w-1000 h-960 xl:w-1200 rounded-full bg-[url('/backgrounds/star-background.png')] bg-bottom" />
@@ -60,6 +66,13 @@ const Footer = () => {
       `}
         />
       </div>
+      :
+
+      <div className="absolute inset-0 bg-[url('/backgrounds/background-prof.png')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
+
+      </div>
+      }
+
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
           {/* left side md-lg*/}

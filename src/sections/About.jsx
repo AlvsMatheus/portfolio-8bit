@@ -4,21 +4,26 @@ import NavBar from "../components/NavBar.jsx";
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
 import Percentage from "../components/Percentage.jsx";
-
 import { arrows, star, aboutimgs, hardSkills, softSkills } from "../constants/index.jsx";
 import Title from "../components/Title.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx";
 
 
 
 const About = () => {
 
   const { skillsRef, contactRef } = useScroll();
+  const { is8Bit } = useTheme()
+
+  const backgroundStyle = is8Bit
+  ? "bg-[url('/backgrounds/background-about.gif')] md:bg-right lg:bg-center"
+  : "bg-[url('/backgrounds/background-prof.png')]"
 
   return (
     <section id="about">
-      <div className="absolute z-0 inset-0 bg-[url('/backgrounds/background-about.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
+      <div className={`absolute z-0 inset-0 bg-cover bg-no-repeat bg-center ${backgroundStyle}`}>
       <div className="absolute inset-0 bg-black/70" />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
