@@ -3,6 +3,7 @@ import ArrowRight from "../components/ArrowRight.jsx";
 import InfiniteSkills from "../components/InfiniteSkills.jsx";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
+import NavBarProf from "../components/NavBarProf.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
 import Title from "../components/Title.jsx";
 import { arrows, star } from "../constants/index.jsx";
@@ -33,7 +34,16 @@ const Skills = () => {
         <div className="child-middle lg:pt-7 flex justify-between">
           {/* middle side pc*/}
           <div className="max-md:mt-10 max-md:flex">
-            <NavBar bgColor="bg-[var(--color-blue)]" />
+
+            {
+              is8Bit ?
+              <NavBar bgColor="bg-[var(--color-blue)]" />
+              :
+              <NavBarProf />
+            }
+            {
+
+              is8Bit ?
             <Title
               text={
                 <p className="text-white">
@@ -45,6 +55,18 @@ const Skills = () => {
               gradient="from-blue via-blue-400 "
               width="w-50 md:w-50 lg:w-75"
             />
+            :
+            <Title
+              text={
+                <p className="text-indigo-600 font-sans uppercase">
+                  Skills
+                </p>
+              }
+              gradient="from-transparent via-pink-700 to-transparent"
+              width="w-50 md:w-50 lg:w-100"
+            />
+            }
+
           </div>
           <div className="flex justify-center items-center w-full mb-20">
             <div className="overflow-hidden lg:w-[90vw] lg:max-w-[800px]">

@@ -1,14 +1,14 @@
-// Agrupe externas, depois internas, e remova duplicatas
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
-import Percentage from "../components/Percentage.jsx";
-import { arrows, star, aboutimgs, hardSkills, softSkills } from "../constants/index.jsx";
+import { arrows, star, aboutimgs } from "../constants/index.jsx";
 import Title from "../components/Title.jsx";
 import ProgressBar from "../components/ProgressBar.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
+import AboutTitle from "../components/AboutTitle.jsx";
+import AboutExp from "../components/AboutExp.jsx";
 
 
 
@@ -57,76 +57,9 @@ const About = () => {
               <div className="hidden md:flex items-center  lg:w-[260px] h-full">
                 <img className="md:w-[170px] md:h-[120px]  lg:w-[160px] lg:h-[150px] object-cover rounded-3xl" src={aboutimgs.me} alt="Matheus Alves" />
               </div>
-              <div className="flex items-center lg:justify-evenly w-full lg:w-[70%] bg-black/30 rounded-3xl">
-                <div className="flex flex-col justify-evenly w-full lg:w-full p-2">
-                  <div className="flex items-center text-sm lg:text-1xl text-white">
-                    <div className="flex w-full items-center lg:flex-row">
-                      <div className="flex items-center">
-                        <div className="flex items-center">
-                          <img className="w-12 h-10 pe-2" src={aboutimgs.id} alt="id image" />
-                          <h2 className="text-center lg:text-start">Name:</h2>
-                        </div>
-                      </div>
-                      <p className="text-nowrap text-[10px]">Matheus Alves</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center text-sm lg:text-1xl text-white">
-                    <div className="flex w-full items-center lg:flex-row">
-                      <div className="flex items-center">
-                        <img className="w-10 h-10 " src={aboutimgs.wizard} alt="wizard image" />
-                        <h2>Class:</h2>
-                      </div>
-                      <p className="text-nowrap text-[10px]">front end Developer</p>
-                    </div>
-                  </div>
-                  <div className="flex text-sm lg:text-1xl text-white">
-                    <div className="flex w-full lg:justify-start items-center lg:flex-row">
-                      <div className="flex items-center">
-                        <img className="w-6 h-6 me-2" src={aboutimgs.heart} alt="heart image" />
-                        <h2>Lv:</h2>
-                      </div>
-                      <div className="relative">
-                        <p
-                        className="font-bold text-[10px] bg-gradient-to-b from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent">
-                        19
-                        </p>
-                        <img className="absolute -top-2 left-7 w-4 h-4" src={star.white} alt="White Star" />
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AboutTitle />
             </div>
-            <div className="flex flex-col gap-6 lg:gap-10 bg-black/50 rounded-3xl w-full h-[86%] lg:320 p-6 lg:p-6">
-             <div className="flex flex-col gap-5 md:gap-2 text-white">
-                <h1 className="text-sm lg:text-2xl"><strong className="red">J</strong>o<strong className="red">ur</strong>ne<strong className="red">y</strong></h1>
-                <p className="text-[10px] md:text-[7px] lg:text-[12px] leading-4 md:leading-3 lg:leading-4">
-                  Front End Developer with <strong className="red">hands-on experience</strong> building responsive and user-focused web applications. <strong className="red">Strong background</strong> in <strong className="red">React, Next.js, Node.js, and Typescript</strong>. Proven ability to deliver <strong className="red">freelance projects</strong>. <strong className="red">Fast learner</strong> and motivated to grow into <strong className="red">mid-level positions</strong>.
-                </p>
-             </div>
-             <div className="flex justify-center lg:justify-evenly flex-wrap  w-full h-full lg:h-[240px] ">
-                <div className="red w-[50%] lg:w-[30%]">
-                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-[14px] text-nowrap">Hard skills</h1>
-                  <ul>
-                    {hardSkills.map((hard, index) => (
-                      <li 
-                      key={index}> <Percentage label={hard.label} percentage={hard.percentage}/> 
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="red w-[50%] lg:w-[30%]">
-                  <h1 className="bg-gradient-to-r from-[#F9B700] to-[#FFEB50] bg-clip-text text-transparent underline md:text-[10px] lg:text-[14px] text-nowrap">Soft skills</h1>
-                  <ul>
-                    {softSkills.map((soft, index) => (
-                      <li 
-                      key={index}> <Percentage label={soft.label} percentage={soft.percentage}/> 
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-             </div>
-            </div>
+            <AboutExp />
           </div>
           <div>
             {/* Progress Bar pc */}

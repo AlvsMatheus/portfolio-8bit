@@ -37,7 +37,7 @@ const Projects = () => {
             <ArrowLeft refBack={headerRef} img={arrows.left} />
           </div>
         </div>
-        <div className="child-middle lg:pt-7 flex justify-between">
+        <div className="child-middle lg:pt-7 flex gap-40 lg:gap-35 md:gap-10">
           {/* middle side md-lg*/}
           <div className="max-md:mt-10 max-md:flex">
             { is8Bit ?
@@ -60,11 +60,11 @@ const Projects = () => {
             :
             <Title
               text={
-                <p className="text-orange-600 font-sans uppercase">
+                <p className="text-indigo-600 font-sans uppercase">
                   Projects
                 </p>
               }
-              gradient="from-black via-orange-500 to-black"
+              gradient="from-transparent via-pink-700 to-transparent"
               width="w-50 md:w-50 lg:w-100"
             />
             }
@@ -74,10 +74,6 @@ const Projects = () => {
           </div>
           <div className="lg:hidden flex justify-center items-center w-full">
             <MobileCards />
-          </div>
-          <div>
-            {/* Progress Bar pc */}
-            <ProgressBar ghostPos={0} />
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">
