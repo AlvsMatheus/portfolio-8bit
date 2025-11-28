@@ -47,20 +47,20 @@ const ProfessionalWords = () => {
   }, []); // O array vazio [] garante que isso rode toda vez que o componente for montado
 
   return (
-    <div className="grid grid-cols-3 justify-center h-full w-full font-sans font-bold">
+    <div className="grid grid-cols-3 justify-center h-full w-full font-sans font-bold font-fair">
       {/*
         Note as classes de animação adicionadas abaixo:
         .prof-line-1, .prof-line-2, .prof-line-3, e .prof-welcome
       */}
       <section className="mainwords flex flex-col gap-5 col-span-3 row-start-2">
-        <h1 className="text-white lg:text-6xl prof-line-1">Hi</h1>
-        <h1 className="lg:text-6xl text-indigo-600 prof-line-2">
+        <h1 className="text-white text-4xl lg:text-6xl prof-line-1">Hi</h1>
+        <h1 className="text-4xl lg:text-6xl text-pink-700 prof-line-2">
           I'm Matheus Alves
         </h1>
-        <h1 className="text-white lg:text-6xl prof-line-3">Web Developer</h1>
+        <h1 className="text-white text-4xl lg:text-6xl prof-line-3">Web Developer</h1>
       </section>
       <section className="prof-welcome col-span-3 row-start-3 w-full">
-        <p className="text-4xl text-indigo-400 font-light text-nowrap">
+        <p className="text-[18px] lg:text-3xl text-indigo-300 font-[100] text-nowrap mt-10 md:mt-0">
           Welcome to my portfolio
         </p>
       </section>

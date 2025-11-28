@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useScroll } from "../contexts/Scroll.context";
+import { useTheme } from "../contexts/ThemeContext";
 
 const ArrowRight = ({refNext,img}) => {
   const [isHover, setIsHover] = useState(false);
   const tooltipRef = useRef(null);
-  const {scrollTo} = useScroll();
+  const { scrollTo } = useScroll();
+  const { is8Bit } = useTheme();
+
 
   useEffect(() => {
     if (tooltipRef.current) {
@@ -39,11 +42,11 @@ const ArrowRight = ({refNext,img}) => {
           <div
             ref={tooltipRef}
             style={{ opacity: 0, transform: "translateY(-50%) translateX(-10px)", pointerEvents: "none" }}
-            className="absolute right-14 top-1/2 text-white px-2 py-1 rounded-md shadow-md whitespace-nowrap md:text-[12px]"
+            className={`absolute right-14 top-1/2 text-white px-2 py-1 rounded-md shadow-md whitespace-nowrap md:text-[12px] ${!is8Bit && "font-fair md:text-[20px]"}`}
           >
             Next
           </div>
-          <div className=" bg-black rounded-full p-2">
+          <div className="anim-arrow-right bg-black rounded-full p-2">
             <img
               src={img}
               className="lg:w-[40px] wobble"

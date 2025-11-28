@@ -16,17 +16,20 @@ const Skills = () => {
 
   const backgroundStyle = is8Bit 
   ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center" 
-  : "bg-[url('/backgrounds/background-prof.png')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center"
+  : "bg-gradient-to-b from-black via-black to-indigo-700"
 
   return (
     <section id="skills" >
       <div className={`absolute z-0 inset-0 ${backgroundStyle} `} >
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
           {/* left side md-lg*/}
-          <Logo img={star.blue} />
+          {
+            is8Bit &&
+            <Logo img={star.blue} />
+          }
           <div className="hidden md:block ">
             <ArrowLeft refBack={projectsRef} img={arrows.left} />
           </div>
@@ -39,7 +42,7 @@ const Skills = () => {
               is8Bit ?
               <NavBar bgColor="bg-[var(--color-blue)]" />
               :
-              <NavBarProf />
+              <NavBarProf bgColor="from-indigo-950 to-black text-indigo-600"/>
             }
             {
 
@@ -58,11 +61,11 @@ const Skills = () => {
             :
             <Title
               text={
-                <p className="text-indigo-600 font-sans uppercase">
+                <p className="font-fair text-indigo-600 font-sans uppercase">
                   Skills
                 </p>
               }
-              gradient="from-transparent via-pink-700 to-transparent"
+              gradient="from-transparent via-indigo-700 to-transparent"
               width="w-50 md:w-50 lg:w-100"
             />
             }

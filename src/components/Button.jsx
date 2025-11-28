@@ -2,17 +2,25 @@ import { useState } from "react";
 import { crabanimated, crabwhite } from "../constants";
 import { useScroll } from "../contexts/Scroll.context";
 
-const Button = ({ref, phrase, phrasetwo}) => {
-
-  const { scrollTo } = useScroll()
+const Button = ({ ref, phrase, phrasetwo }) => {
+  const { scrollTo } = useScroll();
 
   const [label, setLabel] = useState(phrasetwo);
   const [hovered, setHovered] = useState(false);
 
+  const handleClick = () => {
+    // 1. Move para a section
+    scrollTo(ref);
+
+    setTimeout(() => {
+      if (window.projectsEnterAnimation) {
+        window.projectsEnterAnimation.restart();
+      }
+    }, 50);
+  };
+
   return (
-    <button 
-    className="hidden md:block"
-    onClick={() => scrollTo(ref)}>
+    <button className="hidden md:block" onClick={handleClick}>
       <span
         className="relative hover:cursor-pointer overflow-hidden bg-white flex items-center justify-center rounded-l-full lg:w-50 lg:h-15 w-30 h-10 md:pl-3 pl-5 border border-black"
         onMouseEnter={() => {

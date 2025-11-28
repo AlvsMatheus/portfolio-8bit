@@ -7,8 +7,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "playfair";
+  src: url("/public/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  font-family: "pixel", sans-serif;
+  font-family: "pixel", Arial, Helvetica, sans-serif;
 }
 
 @theme {
@@ -21,6 +28,7 @@ html {
 }
 
 @layer utilities {
+
   .child {
     @apply flex flex-col w-full md:w-1/4;
   }
@@ -56,6 +64,10 @@ html {
     .flip-card {
       translate: 0 100%;
     }
+  }
+
+  .font-fair {
+    font-family: "playfair", Arial, Helvetica, sans-serif;
   }
 
   .glow-circle {
@@ -346,5 +358,12 @@ html {
     87.5% {
       transform: translateY(-87.5%);
     }
+  }
+}
+
+
+@media (min-width: 1024px) {
+   .animate-slide-two:hover {
+    animation-play-state: paused;
   }
 }

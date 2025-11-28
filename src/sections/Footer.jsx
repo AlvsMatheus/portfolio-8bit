@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { arrows, star, github, linkedin } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx"; 
+import footerVideo from "../assets/videos/footer.mp4"
 
 const Footer = () => {
   const { contactRef, headerRef } = useScroll();
@@ -67,10 +68,17 @@ const Footer = () => {
         />
       </div>
       :
-
-      <div className="absolute inset-0 bg-[url('/backgrounds/background-prof.png')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
-
-      </div>
+      <>
+          <video
+            autoPlay
+            muted
+            playsInline
+            className={`absolute inset-0 w-full h-full object-cover`}
+          >
+            <source src={footerVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/30" />
+      </>
       }
 
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">

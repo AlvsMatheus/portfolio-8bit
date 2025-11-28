@@ -13,7 +13,17 @@ const Header = () => {
   const { scrollTo } = useScroll();
   const { projectsRef } = useScroll();
   const { is8Bit, toggleTheme } = useTheme();
+  
+  const handleClick = () => {
+    scrollTo(projectsRef);
 
+    setTimeout(() => {
+      if (window.projectsEnterAnimation) {
+        window.projectsEnterAnimation.restart();
+      }
+    }, 50);
+  }
+  
   const backgroundStyle = is8Bit
     ? "bg-[url('/backgrounds/purple-house.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center"
     : " w-full h-full object-cover";
@@ -25,6 +35,7 @@ const Header = () => {
 
   const logoIcon = is8Bit ? star.purple : star.professional || star.purple;
   const logoTextStyle = is8Bit ? "font-8bit" : "font-sans text-xl font-bold";
+
 
   useGSAP(() => {
     gsap.fromTo(
@@ -64,6 +75,7 @@ const Header = () => {
   return (
     <header className="relative" id="home">
       {/* Fundo Condicional */}
+      
       {is8Bit ? (
         <div className={`absolute inset-0 ${backgroundStyle}`}>
           <div className="absolute inset-0 bg-black/60" />
@@ -92,7 +104,7 @@ const Header = () => {
         <button
           onClick={toggleTheme}
           className={`absolute top-5 right-5 w-30 p-2 cursor-pointer text-white border-2 z-20 transition-all duration-300 
-                     ${is8Bit ? "bg-purple-700 border-white font-8bit text-[10px] " : "bg-indigo-700 border-indigo-500 font-sans text-sm"}`}
+                     ${is8Bit ? "bg-purple-700 border-white font-8bit text-[10px] rounded-full" : "font-fair bg-transparent border-pink-500 rounded-full font-sans text-sm text-nowrap"}`}
         >
           {is8Bit ? "Mudar para PF" : "Voltar para 8-bit"}
         </button>
@@ -129,8 +141,8 @@ const Header = () => {
                 />
               ) : (
                 <button
-                  onClick={() => scrollTo(projectsRef)}
-                  className="px-8 py-3 bg-indigo-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-indigo-500 transition"
+                  onClick={handleClick}
+                  className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-pink-800 transition"
                 >
                   View Projects
                 </button>
@@ -138,7 +150,9 @@ const Header = () => {
             </div>
 
             {/* Botão Mobile (Mantido 8-bit, mas você deve criar a versão condicional aqui também) */}
-            <div className="md:hidden flex justify-center h-15 w-full ">
+            <div className={`md:hidden flex justify-center h-15 w-full ${!is8Bit && "items-center"}`}>
+              {
+                is8Bit ?
               <div className="button-wrapper">
                 <button
                   onClick={() => scrollTo(projectsRef)}
@@ -153,6 +167,14 @@ const Header = () => {
                   Start
                 </button>
               </div>
+                :
+                <button
+                  onClick={() => scrollTo(projectsRef)}
+                  className="p-2 rounded-2xl bg-gradient-to-br from-indigo-800/60 to-black border-1 text-pink-600 w-[50%] font-fair"
+                >
+                  View Projects
+                </button>
+              }
             </div>
           </div>
         </div>

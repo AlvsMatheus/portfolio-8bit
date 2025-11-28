@@ -115,7 +115,7 @@ const InteractiveCards = () => {
   const [flippedIndex, setFlippedIndex] = useState(null);
 
   return (
-    <div className="flex flex-row items-center justify-center gap-4 h-full w-full px-4 ">
+    <div className="anim-cards flex flex-row items-center justify-center gap-4 h-full w-full px-4 ">
       {projects.map((project, index) => (
         <Card
           key={project.name}

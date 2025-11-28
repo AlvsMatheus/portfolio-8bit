@@ -8,7 +8,7 @@ const MobileCards = () => {
   const [flippedIndex, setFlippedIndex] = useState(null)
 
   return (
-    <div className='flex overflow-hidden md:flex-row justify-center gap-5 w-[340px] h-[400px] md:w-[300px] md:h-[294px] md:mt-10 '>
+    <div className='anim-cards flex overflow-hidden md:flex-row justify-center gap-5 w-[340px] h-[400px] md:w-[300px] md:h-[294px] md:mt-10 '>
       <div className='flex flex-col items-center w-full  gap-10 overflow-y-auto px-2'>
           {projects.map((project, index) => (
 

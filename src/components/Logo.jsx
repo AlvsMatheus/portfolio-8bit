@@ -2,10 +2,7 @@ import { alves } from "../constants/index.jsx";
 
 const Logo = ({ img }) => {
   return (
-    // Container principal: Garante que todo o logo (imagem + texto) esteja em um bloco
-    // Removi 'w-full h-auto pt-10' para dar mais flexibilidade de layout ao container pai (o Header)
-    // Mantive 'pt-10' se você quiser o espaçamento de topo fixo aqui.
-    <div className="flex flex-col pt-10 gap-3"> 
+    <div className="flex flex-col pt-10 gap-3 anim-logo"> 
       
       {/* 1. Linha do Título (ALVES + Ícone) */}
       <div className="flex items-center">

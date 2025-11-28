@@ -7,7 +7,9 @@ import starGreen from "../assets/star-green.png";
 import starBlue from "../assets/star-blue.png";
 
 import arrowLeft from "../assets/arrow-left.png";
+import arrowLeft2 from "../assets/arrow-left-2.png"
 import arrowRight from "../assets/arrow-right.png";
+import arrowRight2 from "../assets/arrow-right-2.png";
 
 import pacmanImg from "../assets/pacman.webp";
 import tailwind from "../assets/logo-tailwind.png";
@@ -58,6 +60,8 @@ const star = {
 const arrows = {
   left: arrowLeft,
   right: arrowRight,
+  left2: arrowLeft2,
+  right2: arrowRight2
 };
 
 const words = [
