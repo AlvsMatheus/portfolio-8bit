@@ -6,15 +6,19 @@ import { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { arrows, star, github, linkedin } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
-import { useTheme } from "../contexts/ThemeContext.jsx"; 
-import footerVideo from "../assets/videos/footer.mp4"
+import { useTheme } from "../contexts/ThemeContext.jsx";
+import footerVideo from "../assets/videos/header.mp4";
 
 const Footer = () => {
   const { contactRef, headerRef } = useScroll();
+  const { scrollTo } = useScroll();
   const { is8Bit } = useTheme();
   const moonRef = useRef(null);
   const [afterMoon, setAfterMoon] = useState(false);
 
+  const handleClick = () => {
+    scrollTo(headerRef);
+  }
 
   useGSAP(() => {
     if (!moonRef.current) return;
@@ -53,24 +57,23 @@ const Footer = () => {
 
   return (
     <section id="footer" className="overflow-hidden">
-      {
-        is8Bit ?
-
-      <div className="absolute inset-0 bg-violet-950 bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute z-10 top-10 -left-260 w-1000 h-960 xl:w-1200 rounded-full bg-[url('/backgrounds/star-background.png')] bg-bottom" />
-        <div
-          ref={moonRef}
-          onClick={() => setAfterMoon((prev) => !prev)}
-          className={`absolute cursor-pointer z-10 xl:left-[10%]  lg:w-100 lg:h-100 bg-[url('/backgrounds/moon-8bit.png')] bg-cover bg-center
+      {is8Bit ? (
+        <div className="absolute inset-0 bg-violet-950 bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center">
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute z-10 top-10 -left-260 w-1000 h-960 xl:w-1200 rounded-full bg-[url('/backgrounds/star-background.png')] bg-bottom" />
+          <div
+            ref={moonRef}
+            onClick={() => setAfterMoon((prev) => !prev)}
+            className={`absolute cursor-pointer z-10 xl:left-[10%]  lg:w-100 lg:h-100 bg-[url('/backgrounds/moon-8bit.png')] bg-cover bg-center
         ${afterMoon ? "xl:-bottom-[20%]" : "xl:top-[15%] "} transition-all duration-700 ease-in-out
       `}
-        />
-      </div>
-      :
-      <>
+          />
+        </div>
+      ) : (
+        <>
           <video
             autoPlay
+            loop
             muted
             playsInline
             className={`absolute inset-0 w-full h-full object-cover`}
@@ -78,13 +81,15 @@ const Footer = () => {
             <source src={footerVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/30" />
-      </>
-      }
+        </>
+      )}
 
       <div className="flex flex-col md:flex-row relative z-10 w-full h-screen">
         <div className="child ps-10 flex-col">
           {/* left side md-lg*/}
-          <Logo img={star.purple} />
+
+          {is8Bit && <Logo img={star.purple} />}
+
           <div className="hidden md:block ">
             <ArrowLeft refBack={contactRef} img={arrows.left} />
           </div>
@@ -92,22 +97,32 @@ const Footer = () => {
         <div className="flex flex-col justify-evenly md:gap-20 lg:gap-0 h-full md:w-1/2 lg:pt-7">
           <div className="flex justify-center">
             <div className="flex items-center flex-col">
-              <p className="text-3xl md:text-4xl lg:text-[90px] text-violet-700/90 whitespace-nowrap backdrop-blur-md bg-gray-950/60 p-5 rounded-3xl border-b border-white/20 ">
-                THE END
-              </p>
+              {is8Bit ? (
+                <p className="text-3xl md:text-4xl lg:text-[90px] text-violet-700/90 whitespace-nowrap backdrop-blur-md bg-gray-950/60 p-5 rounded-3xl border-b border-white/20 ">
+                  THE END
+                </p>
+              ) : (
+                <p className="font-fair text-3xl md:text-4xl lg:text-[90px] text-pink-600 text-center p-5 rounded-3xl ">
+                  Thanks for your interest .
+                </p>
+              )}
             </div>
           </div>
-          <div className="flex flex-col w-[100%] h-40 gap-10 text-center justify-center text-violet-700/70 lg:whitespace-nowrap backdrop-blur-md bg-gray/70 p-5 border-white/20">
-            <div className="flex flex-col gap-2 text-sm">
-              <p className="text-sm">Matheus Alves</p>
+
+          <div className="flex flex-col w-full h-40 gap-10 text-center justify-center text-violet-700/70 lg:whitespace-nowrap backdrop-blur-md bg-gray/70 p-5 border-white/20">
+            <div
+              className={`flex flex-col gap-2  ${is8Bit ? "text-sm" : "font-fair text-2xl text-indigo-400 "}`}
+            >
+              <p>Matheus Alves</p>
               <p>All rights reserved © 2025</p>
             </div>
-            <div className="flex justify-center gap-10 h-20 w-[100%]">
+
+            <div className="flex justify-center gap-10 h-20 w-full">
               <a target="_blank" href="https://github.com/AlvsMatheus">
                 <img
                   className="w-12 h-12 hover:scale-140 transition-all ease-in-out duration-200"
                   src={github}
-                  alt=""
+                  alt="github icon"
                 />
               </a>
               <a
@@ -117,22 +132,31 @@ const Footer = () => {
                 <img
                   className="w-12 h-12 hover:scale-140 transition-all ease-in-out duration-200"
                   src={linkedin}
-                  alt=""
+                  alt="linkedin icon"
                 />
               </a>
             </div>
           </div>
         </div>
-        <div className="child items-end h-auto md:h-full w-full">
+        <div className="child flex justify-center items-end h-full w-full">
           {/* right side md-lg*/}
 
-          <div className="hidden h-full md:flex md:justify-end ">
-            <Button
-              ref={headerRef}
-              phrase={"Let's Go!"}
-              phrasetwo={"Back journey?"}
-              img={arrows.right}
-            />
+          <div className="hidden md:flex md:justify-end ">
+            {is8Bit ? (
+              <Button
+                ref={headerRef}
+                phrase={"Let's Go!"}
+                phrasetwo={"Back journey?"}
+                img={arrows.right}
+              />
+            ) : (
+              <button
+                onClick={handleClick}
+                className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-pink-800 transition"
+              >
+                View Projects
+              </button>
+            )}
           </div>
         </div>
       </div>
