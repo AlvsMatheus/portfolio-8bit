@@ -236,6 +236,10 @@ html {
     animation: slidetwo 8s linear infinite;
   }
 
+  .animation-paused {
+    animation-play-state: paused;
+  }
+
   @keyframes slide {
     0% {
       transform: translateX(-100%);
