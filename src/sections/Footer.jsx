@@ -94,7 +94,7 @@ const Footer = () => {
             <ArrowLeft refBack={contactRef} img={arrows.left} />
           </div>
         </div>
-        <div className="flex flex-col justify-evenly md:gap-20 lg:gap-0 h-full md:w-1/2 lg:pt-7">
+        <div className="flex flex-col justify-evenly md:gap-20 lg:gap-0 h-full md:w-1/2 lg:pt-7 mt-40 md:mt-0">
           <div className="flex justify-center">
             <div className="flex items-center flex-col">
               {is8Bit ? (

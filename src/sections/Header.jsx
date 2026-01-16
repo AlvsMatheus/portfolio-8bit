@@ -155,13 +155,13 @@ const Header = () => {
                 is8Bit ?
               <div className="button-wrapper">
                 <button
-                  onClick={() => scrollTo(projectsRef)}
+                  onClick={handleClick}
                   className="animatedbutton button-shine button-front"
                 >
                   Start
                 </button>
                 <button
-                  onClick={() => scrollTo(projectsRef)}
+                  onClick={handleClick}
                   className="animatedbutton button-shine button-back"
                 >
                   Start
@@ -169,7 +169,7 @@ const Header = () => {
               </div>
                 :
                 <button
-                  onClick={() => scrollTo(projectsRef)}
+                  onClick={handleClick}
                   className="p-2 rounded-2xl bg-gradient-to-br from-indigo-800/60 to-black border-1 text-pink-600 w-[50%] font-fair"
                 >
                   View Projects
