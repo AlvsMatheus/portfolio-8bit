@@ -71,16 +71,13 @@ const Skills = () => {
             }
 
           </div>
-          <div className="flex justify-center items-center w-full mb-20">
+          <div className="flex justify-center items-center w-full mb-70 md:mb-10 lg:mb-70">
             <div className="overflow-hidden lg:w-[90vw] lg:max-w-[800px]">
               <InfiniteSkills />
             </div>
           </div>
           {/* middle cell */}
-          <div>
-            {/* Progress Bar pc */}
-            <ProgressBar ghostPos={25} />
-          </div>
+          
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">
           {/* right side md-lg*/}

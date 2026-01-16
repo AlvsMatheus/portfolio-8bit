@@ -18,7 +18,7 @@ const InfiniteSkills = () => {
             {skills.map((logo, index) => (
             <div
              onClick={handleCard}
-             className='bg-gradient-to-b from-indigo-700/20 to-indigo-700/20 via-transparent border-2 border-indigo-800  h-90 w-70 flex justify-center items-center rounded-4xl'
+             className='bg-gradient-to-b from-indigo-700/20 to-indigo-700/20 via-transparent border-2 border-indigo-800  h-90 w-60 md:h-60  lg:h-90 lg:w-70 flex justify-center items-center rounded-4xl'
              key={index}>
              <img 
                 src={logo.imgPath} 
