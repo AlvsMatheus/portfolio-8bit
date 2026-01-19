@@ -4,7 +4,6 @@ import InfiniteSkills from "../components/InfiniteSkills.jsx";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import NavBarProf from "../components/NavBarProf.jsx";
-import ProgressBar from "../components/ProgressBar.jsx";
 import Title from "../components/Title.jsx";
 import { arrows, star } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";

@@ -204,6 +204,11 @@ html {
   .perspective {
     perspective: 2000px;
   }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
   .transform-style-preserve-3d {
     transform-style: preserve-3d;
   }
