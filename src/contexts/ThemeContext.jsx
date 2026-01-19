@@ -12,10 +12,10 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
 
-    const [ theme, setTheme ] = useState('8bit')
+    const [ theme, setTheme ] = useState('professional')
 
     const toggleTheme = () => {
-        setTheme(prevTheme => (prevTheme === '8bit' ? 'professional' : '8bit'))
+        setTheme(prevTheme => (prevTheme === 'professional' ? '8bit' : 'professional'))
     }
 
     const contextValue = useMemo(() => ({

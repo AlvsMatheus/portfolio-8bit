@@ -1,8 +1,6 @@
-import Logo from "../components/Logo";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { star } from "../constants/index.jsx";
 import AnimatedWords from "../components/AnimatedWords.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
@@ -32,9 +30,6 @@ const Header = () => {
     ? "md:row-start-2 md:self-center flex max-md:flex-col gap-20 md:gap-0  md:grid md:grid-cols-2 md:items-center"
     : "md:row-start-2 md:self-center flex max-md:flex-col gap-20 md:gap-0 h-full  md:grid md:grid-cols-2 md:items-center";
 
-  const logoIcon = is8Bit ? star.purple : star.professional || star.purple;
-  const logoTextStyle = is8Bit ? "font-8bit" : "font-sans text-xl font-bold";
-
   useGSAP(() => {
     gsap.fromTo(
       ".animatedwords",
@@ -48,7 +43,7 @@ const Header = () => {
         duration: 1,
         stagger: 0.2,
         ease: "power2.out",
-      }
+      },
     );
   }, [is8Bit]);
 
@@ -66,7 +61,7 @@ const Header = () => {
         duration: 1,
         ease: "power2.inOut",
         blur: 0,
-      }
+      },
     );
   }, [is8Bit]);
 
@@ -154,7 +149,7 @@ const Header = () => {
               ) : (
                 <button
                   onClick={handleClick}
-                  className="p-2 rounded-2xl bg-gradient-to-br from-indigo-800/60 to-black border-1 text-pink-600 w-[50%] font-fair"
+                  className="p-2 rounded-3xl border-2 text-white border-pink-500 w-[50%] font-fair"
                 >
                   View Projects
                 </button>
