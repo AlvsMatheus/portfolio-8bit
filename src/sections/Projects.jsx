@@ -37,7 +37,7 @@ const Projects = () => {
   )
   .fromTo(".anim-title", 
     { opacity: 0, scale: 0.8, filter: "blur(10px)" }, 
-    { opacity: 1, scale: 1, filter: "blur(0)", duration: 1 }, "<0.1"
+    { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1 }, "<0.1"
   )
   .fromTo(".anim-cards",
     { opacity: 0, y: 50 },
