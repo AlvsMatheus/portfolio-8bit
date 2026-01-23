@@ -156,13 +156,13 @@ const words = [
 ];
 
 const skills = [
-  { imgPath: pacmanImg, logo: "pacman" },
-  { imgPath: tailwind, logo: "tailwind" },
-  { imgPath: react, logo: "react" },
-  { imgPath: gsap, logo: "gsap" },
-  { imgPath: html, logo: "html" },
-  { imgPath: js, logo: "JavaScript" },
-  { imgPath: bootstrap, logo: "bootstrap" },
+  { imgPath: pacmanImg, logo: "Pacman", description: "Pacman" },
+  { imgPath: tailwind, logo: "Tailwind", description: "I learned Tailwind CSS through the JavaScript Mastery course on YouTube. Since then, I’ve been applying those skills to develop responsive websites, focusing on embracing modern standards and accelerating my styling workflow." },
+  { imgPath: react, logo: "React", description: "To push my development skills further, I moved beyond standard JavaScript and embraced React. Through dedicated courses at Net Ninja and Alura, I learned to create dynamic interfaces that are much faster and more user-friendly than traditional websites." },
+  { imgPath: gsap, logo: "Gsap", description: "I discovered GSAP through the JavaScript Mastery course and immediately fell in love with how it brings websites to life. By building independent projects, I mastered the art of creating high-performance animations that enhance user engagement and provide a premium feel to the interface." },
+  { imgPath: html, logo: "Html", description: "I began my journey into software development by mastering HTML and CSS through the 'Curso em Vídeo' program by Gustavo Guanabara. I built numerous projects to practice semantic HTML, SEO best practices, and modern CSS layouts like Flexbox and Grid." },
+  { imgPath: js, logo: "JavaScript", description: "JavaScript was the first programming language I mastered. Through Gustavo Guanabara’s 'Curso em Vídeo,' I learned the fundamentals of logic with the specific goal of bringing interactivity and dynamic behavior to my HTML and CSS projects." },
+  { imgPath: bootstrap, logo: "Bootstrap", description: "Bootstrap was my first introduction to CSS frameworks. I taught myself how to use its grid system and components through documentation and AI-guided practice. This experience gave me a solid foundation in responsive design and accelerated my ability to build clean, functional user interfaces." },
 ];
 
 const projects = [

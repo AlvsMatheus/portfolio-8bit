@@ -23,7 +23,7 @@ const AboutExp = () => {
         :
         <div className="flex flex-col gap-5 md:gap-2 text-white">
         <h1 className="font-fair text-[35px] text-center text-indigo-500 underline-offset-6 underline">Journey</h1>
-        <p className="font-fair text-[10px] md:text-[7px] lg:text-[18px] text-center">
+        <p className="font-sans text-[15px] md:text-[7px] lg:text-[18px] text-center">
             Front End Developer with <strong className="text-indigo-600">hands-on experience</strong> building responsive and user-focused web applications. <strong className="text-indigo-600">Strong background</strong> in <strong className="text-indigo-600">React, Next.js, Node.js, and Typescript</strong>. Proven ability to deliver <strong className="text-indigo-600">freelance projects</strong>. <strong className="text-indigo-600">Fast learner</strong> and motivated to grow into <strong className="text-indigo-600">mid-level positions</strong>.
         </p>
         </div>

@@ -80,7 +80,7 @@ const InfiniteSkills = () => {
           <div
             ref={animateEntrance}
             onClick={toggleFlip}
-            className="perspective-1000 w-80 h-110 lg:w-96 lg:h-[500px] cursor-pointer"
+            className="perspective-1000 w-80 h-90 lg:w-96 lg:h-[500px] cursor-pointer"
           >
             <div
               ref={cardRef}
@@ -97,7 +97,7 @@ const InfiniteSkills = () => {
                   {selectedSkill.name}
                 </h3>
                 <p className="text-indigo-300 mt-4 text-center">
-                  Click to see how I learned this!
+                  How did I learn this technology? 
                 </p>
               </div>
 
@@ -107,9 +107,8 @@ const InfiniteSkills = () => {
                 <h3 className="text-indigo-900 text-xl font-bold mb-4">
                   Journey
                 </h3>
-                <p className="text-gray-800 text-center leading-relaxed">
-                  "I mastered this skill through dedicated practice and
-                  real-world projects."
+                <p className="text-gray-800 text-center text-[10px] lg:text-sm leading-5">
+                  {selectedSkill.description} 
                 </p>
               </div>
             </div>
