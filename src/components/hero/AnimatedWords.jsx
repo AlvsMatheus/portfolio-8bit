@@ -1,11 +1,11 @@
-import { words } from "../constants/index.jsx";
+import { words } from "../../constants/index.jsx";
 const AnimatedWords = () => {
   return (
-    <div className="animatedwords flex flex-col justify-start md:items-start items-start w-full h-15 md:h-[auto]">
+    <div className="animatedwords font-retro flex flex-col justify-start md:items-start items-start w-full h-15 md:h-[auto]">
       <h1 className="text-white">
         <div className="hero-text">
           <span className="slide">
-            <span className="wrapper">
+            <span className="wrapper max-w-md:text-[15px]">
               {words.map((word, index) => (
                 <span
                   key={index}

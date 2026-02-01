@@ -1,4 +1,4 @@
-import { skills } from "../constants/index";
+import { skills } from "../../constants/index";
 import { useState, useRef } from "react";
 import gsap from "gsap";
 

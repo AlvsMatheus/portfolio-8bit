@@ -1,6 +1,6 @@
 const NavBar = ({bgColor}) => {
   return (
-    <div className='hidden lg:flex lg:justify-center '>
+    <div className='hidden lg:flex lg:justify-center font-retro'>
     <nav className={`flex justify-evenly items-center rounded-2xl text-[12px] w-full max-w-[838px] h-10 ${bgColor} anim-navbar `}>
         <a className="linknav relative inline-block" href="#home">Home</a>
         <a className="linknav relative inline-block" href="#projects">Projects</a>

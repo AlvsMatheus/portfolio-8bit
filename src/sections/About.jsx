@@ -2,13 +2,12 @@ import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
-import { arrows, star, aboutimgs } from "../constants/index.jsx";
+import { arrows, star, aboutImgs } from "../constants/index.jsx";
 import Title from "../components/Title.jsx";
-import ProgressBar from "../components/ProgressBar.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-import AboutTitle from "../components/AboutTitle.jsx";
-import AboutExp from "../components/AboutExp.jsx";
+import AboutTitle from "../components/about/AboutTitle.jsx";
+import AboutExp from "../components/about/AboutExp.jsx";
 import NavBarProf from "../components/NavBarProf.jsx";
 
 const About = () => {
@@ -17,7 +16,7 @@ const About = () => {
 
   const backgroundStyle = is8Bit
     ? "bg-[url('/backgrounds/background-about.gif')] md:bg-right lg:bg-center"
-    : "bg-gradient-to-b from-black via-black to-purple-700";
+    : "bg-gradient-to-b from-black via-black to-purple-950";
 
   return (
     <section id="about">
@@ -46,40 +45,24 @@ const About = () => {
             {is8Bit ? (
               <NavBar bgColor="bg-[var(--color-red)]" />
             ) : (
-              <NavBarProf bgColor="text-purple from-purple-950 to-black"/>
+              <NavBarProf bgColor="text-purple from-purple-950 to-black" />
             )}
-            <div className="md:hidden">
-              <Title
-                text={
-                  <p className="text-white">
-                    <span className="text-[var(--color-red)]">A</span>bo
-                    <span className="text-[var(--color-red)]">ut</span>{" "}
-                    <span className="text-[var(--color-red)]">M</span>e
-                  </p>
-                }
-                gradient="from-red-500 via-red-400 "
-                width="w-50 md:w-50 lg:w-120"
-              />
-            </div>
+            
           </div>
           {/*middle pc */}
-          <div className="grid grid-cols-1 gap-5 lg:gap-0 w-full h-full ">
-            <div className="flex items-center lg:gap-0 h-auto">
+          <div className="grid grid-cols-1 gap-20 lg:gap-0 w-full h-full ">
+            <div className="flex justify-center items-center gap-15 h-auto">
               {/*img pc*/}
-              <div className="hidden md:flex items-center  lg:w-[260px] h-full">
+              <div className="hidden md:flex items-center h-full">
                 <img
-                  className="md:w-[170px] md:h-[120px]  lg:w-[160px] lg:h-[150px] object-cover rounded-3xl"
-                  src={aboutimgs.me}
+                  className={`md:w-[170px] md:h-[120px] lg:w-[160px] lg:h-[150px] object-cover rounded-full border-3 ${is8Bit ? 'border-red' : 'border-indigo-500'}`}
+                  src={`${is8Bit ? aboutImgs.me8bit : aboutImgs.me}`}
                   alt="Matheus Alves"
                 />
               </div>
               <AboutTitle />
             </div>
             <AboutExp />
-          </div>
-          <div>
-            {/* Progress Bar pc */}
-            <ProgressBar />
           </div>
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">

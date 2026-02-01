@@ -1,11 +1,11 @@
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import AnimatedWords from "../components/AnimatedWords.jsx";
+import AnimatedWords from "../components/hero/AnimatedWords.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import headerVideo from "../assets/videos/header.mp4";
-import ProfessionalWords from "../components/ProfessionalWords.jsx";
+import ProfessionalWords from "../components/header/ProfessionalWords.jsx";
 
 const Header = () => {
   const { scrollTo } = useScroll();
@@ -84,7 +84,7 @@ const Header = () => {
           >
             <source src={headerVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/70" />
         </>
       )}
 
@@ -97,7 +97,7 @@ const Header = () => {
         <button
           onClick={toggleTheme}
           className={`absolute top-20 left-10 md:top-10 lg:top-15 lg:left-20 w-30 p-2 cursor-pointer text-white border-2 z-20 transition-all duration-300 
-                     ${is8Bit ? "bg-purple-700 border-white font-8bit text-[10px] rounded-full" : "font-fair bg-transparent border-pink-500 rounded-full font-sans text-sm text-nowrap"}`}
+                     ${is8Bit ? "bg-purple-700 border-white font-retro text-[10px] rounded-full" : "font-fair bg-transparent border-pink-500 rounded-full font-sans text-sm text-nowrap"}`}
         >
           {is8Bit ? "main theme" : "retro theme"}
         </button>
@@ -132,16 +132,16 @@ const Header = () => {
               className={`md:hidden flex justify-center h-15 w-full ${!is8Bit && "items-center"}`}
             >
               {is8Bit ? (
-                <div className="button-wrapper">
+                <div className="button-wrapper ">
                   <button
                     onClick={handleClick}
-                    className="animatedbutton button-shine button-front"
+                    className="animatedbutton font-retro button-shine button-front"
                   >
                     Start
                   </button>
                   <button
                     onClick={handleClick}
-                    className="animatedbutton button-shine button-back"
+                    className="animatedbutton font-retro button-shine button-back"
                   >
                     Start
                   </button>

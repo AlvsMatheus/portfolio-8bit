@@ -15,7 +15,7 @@
 }
 
 html {
-  font-family: "pixel", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @theme {
@@ -70,23 +70,8 @@ html {
     font-family: "playfair", Arial, Helvetica, sans-serif;
   }
 
-  .glow-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 300px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(89, 215, 87, 0.742),
-      transparent 90%
-    );
-    filter: blur(80px);
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: 0;
+  .font-retro{
+    font-family: "pixel", Arial, Helvetica, sans-serif;
   }
 
   .button-wrapper {
@@ -177,7 +162,7 @@ html {
     background: linear-gradient(
       to right bottom,
       transparent,
-      #fd5d00,
+      #70094e,
       #0d01b9,
       transparent
     );
@@ -193,11 +178,11 @@ html {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-b-full rounded-l-full bg-green-400 flex justify-center items-center relative cursor-pointer overflow-hidden;
+    @apply px-4 py-4 rounded-b-full rounded-l-full bg-emerald-800 flex justify-between items-center relative cursor-pointer overflow-hidden;
   }
 
   .bg-circle {
-    @apply absolute -right-10 origin-center bg-[var(--color-green)] top-1/2 -translate-y-1/2 w-[120%] h-[120%] group-hover:size-12 group-hover:right-3  rounded-full transition-all duration-500 ease-in-out;
+    @apply absolute -right-10 origin-center bg-emerald-400 top-1/2 -translate-y-1/2 w-[120%] h-[120%] group-hover:size-12 group-hover:right-3  rounded-full transition-all duration-500 ease-in-out;
   }
 
   /* Tailwind custom utilities */
@@ -299,7 +284,7 @@ html {
   }
 
   .input {
-    @apply w-[190px] lg:w-[50%] transition-all duration-400 ease-in-out text-sm bg-green rounded-2xl outline-none hover:bg-green-400 focus:border-black focus:bg-green-400 focus:ring-2 focus:ring-cyan-300/50 px-2 pt-1;
+    @apply w-[190px] lg:w-full transition-all duration-400 ease-in-out text-sm bg-green rounded-2xl outline-none hover:bg-green-400 focus:border-black focus:bg-green-400 focus:ring-2 focus:ring-cyan-300/50 px-2 py-2;
   }
 
   .rounded-new {

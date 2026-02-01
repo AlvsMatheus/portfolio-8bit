@@ -1,6 +1,6 @@
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
-import InfiniteSkills from "../components/InfiniteSkills.jsx";
+import InfiniteSkills from "../components/skills/InfiniteSkills.jsx";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import NavBarProf from "../components/NavBarProf.jsx";
@@ -15,7 +15,7 @@ const Skills = () => {
 
   const backgroundStyle = is8Bit 
   ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center" 
-  : "bg-gradient-to-b from-black via-black to-indigo-700"
+  : "bg-gradient-to-b from-black via-black to-indigo-800"
 
   return (
     <section id="skills" >
@@ -60,7 +60,7 @@ const Skills = () => {
             :
             <Title
               text={
-                <p className="font-fair text-indigo-600 font-sans uppercase">
+                <p className="font-fair text-indigo-600 font-sans text-5xl uppercase">
                   Skills
                 </p>
               }

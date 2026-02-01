@@ -61,7 +61,7 @@ const Button = ({ ref, phrase, phrasetwo }) => {
 
           {/* Botão com texto dinâmico */}
           <p
-            className={`w-full h-full text-black transition-all duration-500 ease-in-out md:text-[10px] lg:text-[17px] ${
+            className={`w-full h-full font-retro text-black transition-all duration-500 ease-in-out md:text-[10px] lg:text-[17px] ${
               hovered ? "text-white" : "text-black"
             }`}
           >

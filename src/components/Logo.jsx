@@ -19,7 +19,7 @@ const Logo = ({ img }) => {
       </div>
       
       
-      <p className="text-white text-[10px] md:text-[10px] lg:text-[13px] mt-[-10px] md:mt-[-12px] lg:mt-[-15px]">
+      <p className="font-retro text-white text-[10px] md:text-[10px] lg:text-[13px] mt-[-10px] md:mt-[-12px] lg:mt-[-15px]">
         web developer
       </p>
     </div>
