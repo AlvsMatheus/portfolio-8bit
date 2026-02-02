@@ -60,7 +60,7 @@ const Skills = () => {
             :
             <Title
               text={
-                <p className="font-fair text-indigo-600 font-sans text-5xl uppercase">
+                <p className="font-fair text-indigo-600 font-sans text-4xl uppercase">
                   Skills
                 </p>
               }

@@ -63,7 +63,7 @@ const Projects = () => {
             ) : (
               <Title
                 text={
-                  <p className="font-fair text-pink-600 font-sans text-5xl uppercase">
+                  <p className="font-fair text-pink-600 font-sans text-4xl uppercase">
                     Projects
                   </p>
                 }

@@ -69,7 +69,7 @@ const Contact = () => {
                 ) : (
                   <Title
                     text={
-                      <p className="font-fair text-emerald-600 font-sans uppercase">
+                      <p className="font-fair text-4xl text-emerald-600 font-sans uppercase">
                         Contact me
                       </p>
                     }
