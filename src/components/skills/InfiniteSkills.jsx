@@ -1,13 +1,60 @@
 import { skills } from "../../constants/index";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
+
+gsap.registerPlugin(Draggable);
 
 const InfiniteSkills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [isFlipped, setIsFlipped] = useState(false);
   const cardRef = useRef(null);
+  const trackRef = useRef(null);
+  const animationRef = useRef(null);
+  const duplicatedSkills = [...skills, ...skills];
 
+  useEffect(() => {
+  const track = trackRef.current;
+  const totalWidth = track.scrollWidth / 2;
+
+  const animation = gsap.to(track, {
+    x: -totalWidth,
+    duration: 80, // 👈 bem devagar
+    ease: "none",
+    repeat: -1,
+  });
+
+  animationRef.current = animation;
+
+  Draggable.create(track, {
+    type: "x",
+    inertia: true,
+
+    onPress() {
+      animation.pause();
+    },
+
+    onRelease() {
+      animation.resume();
+    },
+
+    onDrag() {
+      if (this.x <= -totalWidth) {
+        this.x += totalWidth;
+      }
+
+      if (this.x >= 0) {
+        this.x -= totalWidth;
+      }
+
+      gsap.set(track, { x: this.x });
+    },
+  });
+
+}, []);
+  
   const handleCardClick = (skill) => {
+    animationRef.current?.pause();
     setSelectedSkill(skill);
     setIsFlipped(false);
   };
@@ -35,17 +82,20 @@ const InfiniteSkills = () => {
     );
   };
 
-  const closeModule = () => setSelectedSkill(null);
-
-  const toggleAnimate = selectedSkill ? "animation-paused" : "";
+  const closeModule = () => {
+    setSelectedSkill(null);
+    animation.current?.resume();
+  }
 
   return (
     <div className="relative w-full h-auto mb-2 rounded-md">
       <div
-        className={`animate-slide-two ${toggleAnimate} flex gap-10 w-300 lg:min-w-max`}
+        className={`overflow-hidden w-full relative`}
       >
-        <div className="flex gap-10 items-center ">
-          {skills.map((skill, index) => (
+        <div 
+        ref={trackRef}
+        className="flex gap-10 w-max cursor-grab active:cursor-grabbing">
+          {duplicatedSkills.map((skill, index) => (
             <div
               key={index}
               onClick={() => handleCardClick(skill)}

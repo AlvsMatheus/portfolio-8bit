@@ -14,12 +14,6 @@ const Header = () => {
 
   const handleClick = () => {
     scrollTo(projectsRef);
-
-    setTimeout(() => {
-      if (window.projectsEnterAnimation) {
-        window.projectsEnterAnimation.restart();
-      }
-    }, 50);
   };
 
   const backgroundStyle = is8Bit

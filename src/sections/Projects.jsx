@@ -9,8 +9,6 @@ import { arrows, star } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import NavBarProf from "../components/NavBarProf.jsx";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const Projects = () => {
   const { headerRef, skillsRef } = useScroll();
@@ -20,55 +18,7 @@ const Projects = () => {
     ? "bg-[url('/backgrounds/space-invaders.jpg')] md:bg-right lg:bg-center"
     : "bg-gradient-to-b from-black via-black to-pink-900";
 
-  useGSAP(() => {
-    // timeline inicial PAUSADA
-    const tl = gsap.timeline({ paused: true });
-
-    tl.fromTo(
-      ".anim-logo",
-      { opacity: 0, y: -30, filter: "blur(10px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 0.8,
-        ease: "power2.out",
-      },
-    )
-      .fromTo(
-        ".anim-navbar",
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.7 },
-        "<0.1",
-      )
-      .fromTo(
-        ".anim-title",
-        { opacity: 0, scale: 0.8, filter: "blur(10px)" },
-        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1 },
-        "<0.1",
-      )
-      .fromTo(
-        ".anim-cards",
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "<0.2",
-      )
-      .fromTo(
-        ".anim-arrow-left",
-        { opacity: 0, x: -40 },
-        { opacity: 1, x: 0, duration: 0.6 },
-        "<0.2",
-      )
-      .fromTo(
-        ".anim-arrow-right",
-        { opacity: 0, x: 40 },
-        { opacity: 1, x: 0, duration: 0.6 },
-        "<0.1",
-      );
-
-    // deixa disponível globalmente
-    window.projectsEnterAnimation = tl;
-  }, []);
+  
 
   return (
     <section id="projects">
