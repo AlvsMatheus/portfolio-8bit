@@ -1,13 +1,15 @@
-import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useState, useRef, useEffect } from "react";
 import { useScroll } from "../contexts/Scroll.context";
 import { useTheme } from "../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const ArrowLeft = ({ refBack, img }) => {
-  const [isHover, setIsHover] = useState(false);
   const tooltipRef = useRef(null);
-  const { scrollTo } = useScroll()
-  const { is8Bit } = useTheme()
+  const [isHover, setIsHover] = useState(false);
+  const { scrollTo } = useScroll();
+  const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (tooltipRef.current) {
@@ -38,19 +40,19 @@ const ArrowLeft = ({ refBack, img }) => {
         className="relative flex cursor-pointer md:w-10 lg:w-40 "
       >
         <div className="anim-arrow-left bg-black rounded-full p-2">
-          <img
-            src={img}
-            className="lg:w-[40px] wobble"
-            alt="arrow"
-          />
+          <img src={img} className="lg:w-[40px] wobble" alt="arrow" />
         </div>
 
         <div
           ref={tooltipRef}
-          style={{ opacity: 0, transform: "translateY(-50%) translateX(-10px)", pointerEvents: "none" }}
-          className={`absolute left-14 top-1/2 text-white px-2 py-1 rounded-md shadow-md whitespace-nowrap md:text-[12px] ${!is8Bit && "font-fair md:text-[20px]"}`} 
+          style={{
+            opacity: 0,
+            transform: "translateY(-50%) translateX(-10px)",
+            pointerEvents: "none",
+          }}
+          className={`absolute left-14 top-1/2 text-white px-2 py-1 rounded-md shadow-md whitespace-nowrap md:text-[12px] ${!is8Bit && "font-fair md:text-[20px]"}`}
         >
-          Back
+          {t("arrows.back")}
         </div>
       </button>
     </div>

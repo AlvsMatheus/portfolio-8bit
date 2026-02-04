@@ -2,13 +2,12 @@ import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
 import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
-import { arrows, star, aboutImgs } from "../constants/index.jsx";
-import Title from "../components/Title.jsx";
-import { useScroll } from "../contexts/Scroll.context.jsx";
-import { useTheme } from "../contexts/ThemeContext.jsx";
 import AboutTitle from "../components/about/AboutTitle.jsx";
 import AboutExp from "../components/about/AboutExp.jsx";
 import NavBarProf from "../components/NavBarProf.jsx";
+import { arrows, star, aboutImgs } from "../constants/index.jsx";
+import { useScroll } from "../contexts/Scroll.context.jsx";
+import { useTheme } from "../contexts/ThemeContext.jsx";
 
 const About = () => {
   const { skillsRef, contactRef } = useScroll();

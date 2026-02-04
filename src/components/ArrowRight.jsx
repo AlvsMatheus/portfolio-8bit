@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useState, useEffect, useRef } from "react";
 import { useScroll } from "../contexts/Scroll.context";
 import { useTheme } from "../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const ArrowRight = ({refNext,img}) => {
-  const [isHover, setIsHover] = useState(false);
   const tooltipRef = useRef(null);
+  const [isHover, setIsHover] = useState(false);
   const { scrollTo } = useScroll();
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const ArrowRight = ({refNext,img}) => {
             style={{ opacity: 0, transform: "translateY(-50%) translateX(-10px)", pointerEvents: "none" }}
             className={`absolute right-14 top-1/2 text-white px-2 py-1 rounded-md shadow-md whitespace-nowrap md:text-[12px] ${!is8Bit && "font-fair md:text-[20px]"}`}
           >
-            Next
+            {t("arrows.next")}
           </div>
           <div className="anim-arrow-right bg-black rounded-full p-2">
             <img

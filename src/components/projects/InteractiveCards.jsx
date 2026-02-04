@@ -1,7 +1,8 @@
+import InfiniteRow from "./InfiniteRow.jsx";
 import { useState } from "react";
 import { projects } from "../../constants/index.jsx";
-import InfiniteRow from "./InfiniteRow.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
+import { useTranslation } from "react-i18next";
 
 const Card = ({
   index,
@@ -12,12 +13,13 @@ const Card = ({
   name,
   bg,
   resource,
-  info,
+  descriptionKey,
   link,
 }) => {
   const isHovered = hoveredIndex === index;
   const isFlipped = flippedIndex === index;
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   const backBorderCard = is8Bit ? "gradient-border" : "gradient-border-prof";
 
@@ -89,7 +91,7 @@ const Card = ({
                     <h1
                       className={`text-2xl ${is8Bit ? "font-retro text-purple" : "font-fair text-pink-700 uppercase"}`}
                     >
-                      About
+                      {t("projectcard.about")}
                     </h1>
                     <div
                       className={`h-[2px] w-full mt-1 ${is8Bit ? "bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)]" : "bg-[linear-gradient(to_right,_transparent,_indigo,_purple,_purple,_indigo,_transparent)]"}   `}
@@ -97,7 +99,7 @@ const Card = ({
                   </div>
                   <div className="flex w-full h-auto">
                     <p className="text-md mt-5 text-gray-400 text-center leading-normal">
-                      {info}
+                      {descriptionKey}
                     </p>
                   </div>
                 </div>
@@ -111,7 +113,7 @@ const Card = ({
                     }}
                     className="cursor-pointer text-md p-2 bg-gradient-to-r border-3 border-black from-purple-900 via-purple-700 to-pink-600 rounded-full"
                   >
-                    visit website
+                    {t("projectcard.visit")}
                   </button>
                 </div>
 
@@ -132,6 +134,7 @@ const Card = ({
 const InteractiveCards = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [flippedIndex, setFlippedIndex] = useState(null);
+  const { t } = useTranslation();
 
   return (
     <div className="anim-cards flex flex-row items-center justify-center gap-4 h-full w-full px-4 ">
@@ -146,7 +149,7 @@ const InteractiveCards = () => {
           setFlippedIndex={setFlippedIndex}
           bg={project.img}
           resource={project.lenguages}
-          info={project.info}
+          descriptionKey={t(project.descriptionKey)}
           link={project.link}
         />
       ))}

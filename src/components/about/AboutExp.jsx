@@ -1,9 +1,11 @@
 import Percentage from "../Percentage.jsx";
 import { hardSkills, softSkills } from "../../constants/index.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
+import { useTranslation, Trans } from "react-i18next";
 
 const AboutExp = () => {
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   const expColor = is8Bit
     ? "from-[#F9B700] to-[#FFEB50] underline"
@@ -13,21 +15,15 @@ const AboutExp = () => {
     <div className="flex flex-col gap-10 lg:gap-10 bg-indigo-950/10 border-2 border-indigo-950 shadow-lg shadow-indigo-900/10 rounded-3xl w-full h-[86%] p-10 lg:px-6 lg:py-10">
         <div className="flex flex-col gap-15 text-white">
           <h1 className={`${is8Bit ? 'font-retro text-red-300' : 'font-fair text-indigo-500'} text-3xl text-center  uppercase`}>
-            Journey
+            {t("about.journey")}
           </h1>
           <p className="font-sans text-[15px] md:text-[7px] lg:text-[18px] text-center">
-            Front End Developer with{" "}
-            <strong className="text-indigo-600">hands-on experience</strong>{" "}
-            building responsive and user-focused web applications.{" "}
-            <strong className="text-indigo-600">Strong background</strong> in{" "}
-            <strong className="text-indigo-600">
-              React, Next.js, Node.js, and Typescript
-            </strong>
-            . Proven ability to deliver{" "}
-            <strong className="text-indigo-600">freelance projects</strong>.{" "}
-            <strong className="text-indigo-600">Fast learner</strong> and
-            motivated to grow into{" "}
-            <strong className="text-indigo-600">mid-level positions</strong>.
+            <Trans
+              i18nKey="about.text"
+              components={{
+              strong: <strong className="text-indigo-600 font-semibold" />
+              }}
+            />
           </p>
         </div>
       <div className="flex gap-10 justify-center lg:justify-evenly flex-wrap w-full h-full lg:h-[240px] overflow-auto">
@@ -41,7 +37,7 @@ const AboutExp = () => {
             {hardSkills.map((hard, index) => (
               <li key={index}>
                 {" "}
-                <Percentage label={hard.label} percentage={hard.percentage} />
+                <Percentage label={t(hard.labelKey)} percentage={hard.percentage} />
               </li>
             ))}
           </ul>
@@ -56,7 +52,7 @@ const AboutExp = () => {
             {softSkills.map((soft, index) => (
               <li key={index}>
                 {" "}
-                <Percentage label={soft.label} percentage={soft.percentage} />
+                <Percentage label={t(soft.labelKey)} percentage={soft.percentage} />
               </li>
             ))}
           </ul>

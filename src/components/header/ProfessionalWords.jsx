@@ -1,9 +1,10 @@
 import gsap from "gsap";
-// Importe o useGSAP do pacote @gsap/react
 import { useGSAP } from "@gsap/react";
+import { useTranslation } from "react-i18next";
 
 const ProfessionalWords = () => {
-  // Use o hook useGSAP em vez do useEffect
+  const { t } = useTranslation()
+
   useGSAP(() => {
     // 1. Crie uma timeline.
     // Adicionamos um pequeno delay (0.2s) para dar tempo à troca de tema.
@@ -53,15 +54,15 @@ const ProfessionalWords = () => {
         .prof-line-1, .prof-line-2, .prof-line-3, e .prof-welcome
       */}
       <section className="mainwords flex flex-col gap-5 col-span-3 row-start-2">
-        <h1 className="text-white text-4xl lg:text-6xl prof-line-1">Hi</h1>
+        <h1 className="text-white text-4xl lg:text-6xl prof-line-1">{t("professionalword.hi")}</h1>
         <h1 className="text-4xl lg:text-6xl text-pink-700 prof-line-2">
-          I'm Matheus Alves
+          {t("professionalword.matheus")}
         </h1>
-        <h1 className="text-white text-4xl lg:text-6xl prof-line-3">Web Developer</h1>
+        <h1 className="text-white text-4xl lg:text-6xl prof-line-3">{t("professionalword.dev")}</h1>
       </section>
       <section className="prof-welcome col-span-3 row-start-3 w-full">
         <p className="text-[18px] lg:text-3xl text-indigo-300 font-[100] text-nowrap mt-10 md:mt-0">
-          Welcome to my portfolio
+          {t("professionalword.welcome")}
         </p>
       </section>
     </div>

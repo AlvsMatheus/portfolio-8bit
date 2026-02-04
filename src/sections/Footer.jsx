@@ -2,23 +2,27 @@ import gsap from "gsap";
 import Logo from "../components/Logo";
 import ArrowLeft from "../components/ArrowLeft";
 import Button from "../components/Button.jsx";
+import footerVideo from "../assets/videos/header.mp4";
 import { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { arrows, star, github, linkedin } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-import footerVideo from "../assets/videos/header.mp4";
+import { useTranslation } from "react-i18next";
+
 
 const Footer = () => {
+  const moonRef = useRef(null);
+  const [afterMoon, setAfterMoon] = useState(false);
   const { contactRef, headerRef } = useScroll();
   const { scrollTo } = useScroll();
   const { is8Bit } = useTheme();
-  const moonRef = useRef(null);
-  const [afterMoon, setAfterMoon] = useState(false);
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
 
   const handleClick = () => {
     scrollTo(headerRef);
-  }
+  };
 
   useGSAP(() => {
     if (!moonRef.current) return;
@@ -33,7 +37,7 @@ const Footer = () => {
           yoyo: true,
           repeat: 1,
           ease: "power1.inOut",
-        }
+        },
       );
     });
   }, []);
@@ -51,7 +55,7 @@ const Footer = () => {
         duration: 1,
         stagger: 0.2,
         ease: "power2.out",
-      }
+      },
     );
   }, []);
 
@@ -98,12 +102,12 @@ const Footer = () => {
           <div className="flex justify-center">
             <div className="flex items-center flex-col">
               {is8Bit ? (
-                <p className="text-3xl md:text-4xl lg:text-[90px] text-violet-700/90 whitespace-nowrap backdrop-blur-md bg-gray-950/60 p-5 rounded-3xl border-b border-white/20 ">
-                  THE END
+                <p className="text-3xl uppercase md:text-4xl lg:text-[90px] text-violet-700/90 whitespace-nowrap backdrop-blur-md bg-gray-950/60 p-5 rounded-3xl border-b border-white/20 ">
+                  {t("footer.end")}
                 </p>
               ) : (
                 <p className="font-fair text-3xl md:text-4xl lg:text-[90px] text-pink-600 text-center p-5 rounded-3xl ">
-                  Thanks for your interest .
+                  {t("footer.thanks")}
                 </p>
               )}
             </div>
@@ -114,7 +118,7 @@ const Footer = () => {
               className={`flex flex-col gap-2  ${is8Bit ? "text-sm" : "font-fair text-2xl text-indigo-400 "}`}
             >
               <p>Matheus Alves</p>
-              <p>All rights reserved © 2025</p>
+              <p>{t("footer.rights")} © {year}</p>
             </div>
 
             <div className="flex justify-center gap-10 h-20 w-full">
@@ -154,7 +158,7 @@ const Footer = () => {
                 onClick={handleClick}
                 className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-pink-800 transition"
               >
-                View Projects
+                {t("header.button")}
               </button>
             )}
           </div>

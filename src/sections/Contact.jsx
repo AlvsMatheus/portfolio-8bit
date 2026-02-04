@@ -10,10 +10,12 @@ import Title from "../components/Title.jsx";
 import { arrows, star, pcImg } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { aboutRef, footerRef } = useScroll();
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   const backgroundStyle = is8Bit
     ? "bg-[url('/backgrounds/contact-me.gif')] md:bg-right lg:bg-center "
@@ -70,7 +72,7 @@ const Contact = () => {
                   <Title
                     text={
                       <p className="font-fair text-4xl text-emerald-600 font-sans uppercase">
-                        Contact me
+                        { t("titles.contact") }
                       </p>
                     }
                     gradient="from-transparent via-emerald-700 to-transparent"

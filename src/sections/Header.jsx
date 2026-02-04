@@ -6,11 +6,22 @@ import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import headerVideo from "../assets/videos/header.mp4";
 import ProfessionalWords from "../components/header/ProfessionalWords.jsx";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+
 
 const Header = () => {
   const { scrollTo } = useScroll();
   const { projectsRef } = useScroll();
   const { is8Bit, toggleTheme } = useTheme();
+  const { i18n } = useTranslation();
+  const { t } = useTranslation();
+  const [ openLang, setOpenLang ] = useState(false);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setOpenLang(false)
+  }
 
   const handleClick = () => {
     scrollTo(projectsRef);
@@ -88,14 +99,51 @@ const Header = () => {
                      md:grid md:grid-rows-[auto_1fr] md:p-10`}
       >
         {/* Toggle de Tema no Topo e Canto Direito absolute*/}
+        <div className="flex justify-center items-center gap-10 absolute top-20 left-10 md:top-10 lg:top-15 lg:left-20">
+          <button
+            onClick={toggleTheme}
+            className={`flex items-center gap-4 px-4 py-2 cursor-pointer text-white border-2 z-20 transition-all duration-300
+                       ${is8Bit ? "bg-purple-700 border-white font-retro text-[10px] rounded-full" : "font-fair bg-transparent border-pink-500 rounded-full font-sans text-sm text-nowrap"}`}
+          >
+            {is8Bit ? "main theme" : "retro theme"}
+          </button>
+          <button
+      onClick={() => setOpenLang(!openLang)}
+      className={`px-4 py-2 border-2 rounded-full text-white transition
+        ${
+          is8Bit
+            ? "bg-black border-white font-retro text-[10px]"
+            : "border-pink-500 font-sans text-sm font-fair"
+        }`}
+    >
+      Language
+    </button>
+    {openLang && (
+      <div
+        className={`absolute mt-2 -right-4 top-10 flex flex-col overflow-hidden border rounded-lg shadow-lg
+          ${
+            is8Bit
+              ? " border-white text-white font-retro text-[10px]"
+              : " border-pink-500 text-white font-sans text-sm"
+          }`}
+      >
         <button
-          onClick={toggleTheme}
-          className={`absolute top-20 left-10 md:top-10 lg:top-15 lg:left-20 w-30 p-2 cursor-pointer text-white border-2 z-20 transition-all duration-300 
-                     ${is8Bit ? "bg-purple-700 border-white font-retro text-[10px] rounded-full" : "font-fair bg-transparent border-pink-500 rounded-full font-sans text-sm text-nowrap"}`}
+          onClick={() => changeLanguage("en")}
+          className="px-4 py-2 hover:bg-pink-600 transition text-left"
         >
-          {is8Bit ? "main theme" : "retro theme"}
+          English
         </button>
+        <button
+          onClick={() => changeLanguage("pt")}
+          className="px-4 py-2 hover:bg-pink-600 transition text-left"
+        >
+          Português
+        </button>
+      </div>
+    )}
+        </div>
         {/* Fim Toggle de Tema no Topo e Canto Direito */}
+        
 
         {/* 2. MEIO: Conteúdo Principal (Centralizado Verticalmente) */}
         <div className={`${middleContentStyle}`}>
@@ -114,9 +162,9 @@ const Header = () => {
               ) : (
                 <button
                   onClick={handleClick}
-                  className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-pink-800 transition"
+                  className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight cursor-pointer rounded-l-full hover:bg-pink-800 transition"
                 >
-                  View Projects
+                  {t("header.button")}
                 </button>
               )}
             </div>

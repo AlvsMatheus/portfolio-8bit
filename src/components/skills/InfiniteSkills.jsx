@@ -1,58 +1,59 @@
-import { skills } from "../../constants/index";
-import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useState, useRef, useEffect } from "react";
+import { skills } from "../../constants/index";
 import { Draggable } from "gsap/Draggable";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(Draggable);
 
 const InfiniteSkills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [isFlipped, setIsFlipped] = useState(false);
+  const { t } = useTranslation();
   const cardRef = useRef(null);
   const trackRef = useRef(null);
   const animationRef = useRef(null);
   const duplicatedSkills = [...skills, ...skills];
 
   useEffect(() => {
-  const track = trackRef.current;
-  const totalWidth = track.scrollWidth / 2;
+    const track = trackRef.current;
+    const totalWidth = track.scrollWidth / 2;
 
-  const animation = gsap.to(track, {
-    x: -totalWidth,
-    duration: 80, // 👈 bem devagar
-    ease: "none",
-    repeat: -1,
-  });
+    const animation = gsap.to(track, {
+      x: -totalWidth,
+      duration: 80, 
+      ease: "none",
+      repeat: -1,
+    });
 
-  animationRef.current = animation;
+    animationRef.current = animation;
 
-  Draggable.create(track, {
-    type: "x",
-    inertia: true,
+    Draggable.create(track, {
+      type: "x",
+      inertia: true,
 
-    onPress() {
-      animation.pause();
-    },
+      onPress() {
+        animation.pause();
+      },
 
-    onRelease() {
-      animation.resume();
-    },
+      onRelease() {
+        animation.resume();
+      },
 
-    onDrag() {
-      if (this.x <= -totalWidth) {
-        this.x += totalWidth;
-      }
+      onDrag() {
+        if (this.x <= -totalWidth) {
+          this.x += totalWidth;
+        }
 
-      if (this.x >= 0) {
-        this.x -= totalWidth;
-      }
+        if (this.x >= 0) {
+          this.x -= totalWidth;
+        }
 
-      gsap.set(track, { x: this.x });
-    },
-  });
+        gsap.set(track, { x: this.x });
+      },
+    });
+  }, []);
 
-}, []);
-  
   const handleCardClick = (skill) => {
     animationRef.current?.pause();
     setSelectedSkill(skill);
@@ -85,16 +86,15 @@ const InfiniteSkills = () => {
   const closeModule = () => {
     setSelectedSkill(null);
     animation.current?.resume();
-  }
+  };
 
   return (
     <div className="relative w-full h-auto mb-2 rounded-md">
-      <div
-        className={`overflow-hidden w-full relative`}
-      >
-        <div 
-        ref={trackRef}
-        className="flex gap-10 w-max cursor-grab active:cursor-grabbing">
+      <div className={`overflow-hidden w-full relative`}>
+        <div
+          ref={trackRef}
+          className="flex gap-10 w-max cursor-grab active:cursor-grabbing"
+        >
           {duplicatedSkills.map((skill, index) => (
             <div
               key={index}
@@ -147,7 +147,7 @@ const InfiniteSkills = () => {
                   {selectedSkill.name}
                 </h3>
                 <p className="text-indigo-300 mt-4 text-center">
-                  How did I learn this technology? 
+                  {t("skills.howilearn")}
                 </p>
               </div>
 
@@ -155,10 +155,10 @@ const InfiniteSkills = () => {
 
               <div className="absolute inset-0 backface-hidden bg-white rounded-3xl flex flex-col items-center justify-center p-8 rotate-y-180">
                 <h3 className="text-indigo-900 text-xl font-bold mb-4">
-                  Journey
+                  {t("about.journey")}
                 </h3>
                 <p className="text-gray-800 text-center text-[10px] lg:text-sm leading-5">
-                  {selectedSkill.description} 
+                  {t(selectedSkill.descriptionKey)}
                 </p>
               </div>
             </div>

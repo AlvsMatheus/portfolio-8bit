@@ -2,11 +2,13 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { arrows } from "../../constants"; 
 import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 
 const ContactForm = () => {
 
-    const {is8Bit} = useTheme()
+    const {is8Bit} = useTheme();
+    const { t } = useTranslation();
 
     const formRef = useRef(null);
 
@@ -54,13 +56,13 @@ const ContactForm = () => {
       <div className="flex flex-col w-full">
         <div className="flex items-center">
           <label htmlFor="iname" className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white text-shadow-black-5 me-2`}>
-            Name:
+            {t("contactform.name")}:
           </label>
           <input
             id="iname"
             name="name"
             type="text"
-            placeholder="your name"
+            placeholder={t("contactform.name")}
             onChange={handleChange}
             value={formData.name}
             required
@@ -75,7 +77,7 @@ const ContactForm = () => {
             id="iemail"
             name="email"
             type="email"
-            placeholder="example@gmail.com"
+            placeholder={t("contactform.emailplaceholder")}
             onChange={handleChange}
             value={formData.email}
             required
@@ -85,14 +87,14 @@ const ContactForm = () => {
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="imessage" className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white`}>
-          Message:
+          {t("contactform.message")}:
         </label>
         <textarea
           id="imessage"
           name="message"
           cols="30"
           rows="10"
-          placeholder="Write your message here..."
+          placeholder={t("contactform.messageplaceholder")}
           onChange={handleChange}
           value={formData.message}
           required
@@ -104,7 +106,7 @@ const ContactForm = () => {
           <div className="cta-button group h-15">
             <div className="bg-circle" />
             <p className={`text-white uppercase font-extrabold ${is8Bit ? 'font-retro' : 'font-fair'} z-10 relative me-15 lg:me-2 group-hover:text-emerald-200`}>
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? (<p>{t("contactbutton.sending")}</p>) : (<p>{t("contactbutton.send")}</p>) }
             </p>
             <img
               src={arrows.right}

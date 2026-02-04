@@ -1,11 +1,13 @@
+import InfiniteRow from "./InfiniteRow.jsx";
 import { projects } from "../../constants/index.jsx";
 import { useState } from "react";
-import InfiniteRow from "./InfiniteRow.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
+import { useTranslation } from "react-i18next";
 
 const MobileCards = () => {
   const [flippedIndex, setFlippedIndex] = useState(null);
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -54,12 +56,12 @@ const MobileCards = () => {
                   <div className="absolute rounded-2xl inset-0 bg-black/20" />
                   <div className="flex flex-col w-full justify-between h-[270px] ">
                     <div className="flex flex-col justify-center items-center mt-2">
-                      <h1 className="text-purple text-[14px]">About</h1>
+                      <h1 className="text-purple text-[14px]">{t("projectcard.about")}</h1>
                       <div className="h-[2px] w-full bg-[linear-gradient(to_right,_transparent,_purple,_magenta,_magenta,_purple,_transparent)] mt-1" />
                     </div>
                     <div className="px-10">
                       <p className="text-white text-center text-[11px]">
-                        {project.info}
+                        {t(project.descriptionKey)}
                       </p>
                     </div>
                     <div className="flex w-full justify-center">
@@ -70,7 +72,7 @@ const MobileCards = () => {
                         }}
                         className="relative z-20 text-white text-[10px] p-2 bg-gradient-to-r border-3 border-black from-purple-900 via-purple-700 to-pink-600 rounded-full "
                       >
-                        visit website
+                        {t("projectcard.visit")}
                       </button>
                     </div>
                     <div>

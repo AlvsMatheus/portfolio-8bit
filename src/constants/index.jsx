@@ -152,13 +152,13 @@ const words = [
 ];
 
 const skills = [
-  { imgPath: pacmanImg, logo: "Pacman", description: "Pacman" },
-  { imgPath: tailwind, logo: "Tailwind", description: "I learned Tailwind CSS through the JavaScript Mastery course on YouTube. Since then, I’ve been applying those skills to develop responsive websites, focusing on embracing modern standards and accelerating my styling workflow." },
-  { imgPath: react, logo: "React", description: "To push my development skills further, I moved beyond standard JavaScript and embraced React. Through dedicated courses at Net Ninja and Alura, I learned to create dynamic interfaces that are much faster and more user-friendly than traditional websites." },
-  { imgPath: gsap, logo: "Gsap", description: "I discovered GSAP through the JavaScript Mastery course and immediately fell in love with how it brings websites to life. By building independent projects, I mastered the art of creating high-performance animations that enhance user engagement and provide a premium feel to the interface." },
-  { imgPath: html, logo: "Html", description: "I began my journey into software development by mastering HTML and CSS through the 'Curso em Vídeo' program by Gustavo Guanabara. I built numerous projects to practice semantic HTML, SEO best practices, and modern CSS layouts like Flexbox and Grid." },
-  { imgPath: js, logo: "JavaScript", description: "JavaScript was the first programming language I mastered. Through Gustavo Guanabara’s 'Curso em Vídeo,' I learned the fundamentals of logic with the specific goal of bringing interactivity and dynamic behavior to my HTML and CSS projects." },
-  { imgPath: bootstrap, logo: "Bootstrap", description: "Bootstrap was my first introduction to CSS frameworks. I taught myself how to use its grid system and components through documentation and AI-guided practice. This experience gave me a solid foundation in responsive design and accelerated my ability to build clean, functional user interfaces." },
+  { imgPath: pacmanImg, logo: "Pacman", descriptionKey: "Pacman" },
+  { imgPath: tailwind, logo: "Tailwind", descriptionKey: "skills.tailwind.description" },
+  { imgPath: react, logo: "React", descriptionKey: "skills.react.description" },
+  { imgPath: gsap, logo: "Gsap", descriptionKey: "skills.gsap.description" },
+  { imgPath: html, logo: "Html", descriptionKey: "skills.html.description" },
+  { imgPath: js, logo: "JavaScript", descriptionKey: "skills.javascript.description" },
+  { imgPath: bootstrap, logo: "Bootstrap", descriptionKey: "skills.bootstrap.description" },
 ];
 
 const projects = [
@@ -174,7 +174,7 @@ const projects = [
         <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
       </div>
     ),
-    info: "An complete ecommerce made using Next and Firebase Api",
+    descriptionKey: "projectcard.projects.laclothes",
     link: "https://la-clothes-sage.vercel.app/",
   },
   {
@@ -190,7 +190,7 @@ const projects = [
         </span>
       </div>
     ),
-    info: "A management panel built for a technical test, featuring a modular React architecture, state management, and simulated API interactions using Node.js.",
+    descriptionKey: "projectcard.projects.panelmanagement",
     link: "https://smi-group-test.vercel.app/",
   },
   {
@@ -204,7 +204,7 @@ const projects = [
         <span className="lenguages bg-green-400">StoreFront API</span>
       </div>
     ),
-    info: "The front end of an ecommerce with functional filter system integrated with shopify that I made for MENSCH company",
+    descriptionKey: "projectcard.projects.mensch",
     link: "https://cliente-git-main-alvsmatheus-projects.vercel.app/",
   },
   {
@@ -218,7 +218,7 @@ const projects = [
         <span className="lenguages bg-green-400">Next-intl api</span>
       </div>
     ),
-    info: "That project is a Portfolio that I made for a youtuber client",
+    descriptionKey: "projectcard.projects.patrickportfolio",
     link: "https://patrick-s-portfolio.vercel.app/",
   },
   {
@@ -238,7 +238,7 @@ const projects = [
         </span>
       </div>
     ),
-    info: "A modern portfolio with 3D animations, based on a JavaScript Mastery tutorial.",
+    descriptionKey: "projectcard.projects.portfolio3d",
     link: "https://3d-portfolio-mocha-delta.vercel.app/",
   },
   {
@@ -257,7 +257,7 @@ const projects = [
       </div>
     ),
     link: "https://recipe-book-eight-olive.vercel.app/",
-    info: "That website is a blog with a recipe book theme and the first site that I made using React.",
+    descriptionKey: "projectcard.projects.recipebook",
   },
   {
     name: "Nike website",
@@ -271,7 +271,7 @@ const projects = [
         </span>
       </div>
     ),
-    info: "That is a copy of Nike website was made by following a JavaScript Mastery project and includes my TypeScript implementation.",
+    descriptionKey: "projectcard.projects.nike",
     link: "https://alvsmatheus.github.io/nike-project/",
   },
   
@@ -292,19 +292,19 @@ const aboutImgs = {
 };
 
 const hardSkills = [
-  { label: "React/Next", percentage: 100 },
-  { label: "Tailwind CSS", percentage: 95 },
-  { label: "Typescript", percentage: 80 },
-  { label: "Node.js", percentage: 60 },
-  { label: "MySQL", percentage: 60 },
+  { labelKey: "hardskills.skills.react", percentage: 100 },
+  { labelKey: "hardskills.skills.tailwind", percentage: 100 },
+  { labelKey: "hardskills.skills.typescript", percentage: 70 },
+  { labelKey: "hardskills.skills.node", percentage: 60 },
+  { labelKey: "hardskills.skills.mysql", percentage: 60 },
 ];
 
 const softSkills = [
-  { label: "Communication", percentage: 100 },
-  { label: "Teamwork", percentage: 100 },
-  { label: "Curiosity", percentage: 100 },
-  { label: "Adaptability", percentage: 90 },
-  { label: "English C1", percentage: 90 },
+  { labelKey: "softskills.skills.teamwork", percentage: 100 },
+  { labelKey: "softskills.skills.curiosity", percentage: 100 },
+  { labelKey: "softskills.skills.adaptability", percentage: 100 },
+  { labelKey: "softskills.skills.communication", percentage: 90 },
+  { labelKey: "softskills.skills.english", percentage: 80 },
 ];
 
 export {

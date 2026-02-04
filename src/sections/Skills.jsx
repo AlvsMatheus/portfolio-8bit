@@ -8,10 +8,12 @@ import Title from "../components/Title.jsx";
 import { arrows, star } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
   const { projectsRef, aboutRef } = useScroll();
-  const { is8Bit } = useTheme()
+  const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   const backgroundStyle = is8Bit 
   ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center" 
@@ -61,7 +63,7 @@ const Skills = () => {
             <Title
               text={
                 <p className="font-fair text-indigo-600 font-sans text-4xl uppercase">
-                  Skills
+                  {t("titles.skills")}
                 </p>
               }
               gradient="from-transparent via-indigo-700 to-transparent"

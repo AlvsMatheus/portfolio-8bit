@@ -2,17 +2,19 @@ import ArrowLeft from "../components/ArrowLeft.jsx";
 import ArrowRight from "../components/ArrowRight.jsx";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar.jsx";
+import NavBarProf from "../components/NavBarProf.jsx";
 import Title from "../components/Title.jsx";
 import MobileCards from "../components/projects/MobileCards.jsx";
 import InteractiveCards from "../components/projects/InteractiveCards.jsx";
 import { arrows, star } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
-import NavBarProf from "../components/NavBarProf.jsx";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const { headerRef, skillsRef } = useScroll();
   const { is8Bit } = useTheme();
+  const { t } = useTranslation();
 
   const backgroundStyle = is8Bit
     ? "bg-[url('/backgrounds/space-invaders.jpg')] md:bg-right lg:bg-center"
@@ -64,7 +66,7 @@ const Projects = () => {
               <Title
                 text={
                   <p className="font-fair text-pink-600 font-sans text-4xl uppercase">
-                    Projects
+                    {t("titles.projects")}
                   </p>
                 }
                 gradient="from-transparent via-pink-700 to-transparent"
