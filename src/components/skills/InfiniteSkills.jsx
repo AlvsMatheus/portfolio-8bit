@@ -146,7 +146,7 @@ const InfiniteSkills = () => {
                 <h3 className="text-white text-2xl font-bold uppercase">
                   {selectedSkill.name}
                 </h3>
-                <p className="text-indigo-300 mt-4 text-center">
+                <p className="text-indigo-300 mt-4 text-center text-lg">
                   {t("skills.howilearn")}
                 </p>
               </div>
@@ -157,7 +157,7 @@ const InfiniteSkills = () => {
                 <h3 className="text-indigo-900 text-xl font-bold mb-4">
                   {t("about.journey")}
                 </h3>
-                <p className="text-gray-800 text-center text-[10px] lg:text-sm leading-5">
+                <p className="text-gray-800 text-center text-lg leading-5">
                   {t(selectedSkill.descriptionKey)}
                 </p>
               </div>
