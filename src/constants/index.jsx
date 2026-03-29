@@ -206,7 +206,7 @@ const projects = [
       </div>
     ),
     descriptionKey: "projectcard.projects.invent",
-    link: "https://alvsmatheus.github.io/nike-project/",
+    link: "https://github.com/AlvsMatheus/autoflex-system",
   },
   
   {
