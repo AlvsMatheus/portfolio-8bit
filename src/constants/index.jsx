@@ -19,7 +19,8 @@ import html from "../assets/logo-html.png";
 import js from "../assets/logo-js.png";
 import bootstrap from "../assets/logo-bootstrap.png";
 
-import smi from "../assets/project-smi.png";
+import management from "../assets/project-management.png";
+import music from "../assets/project-music-explorer.png"
 import recipe from "../assets/project-recipe.jpg";
 import mensch from "../assets/project-mensch.jpg";
 import patrick from "../assets/project-patrick.jpg";
@@ -178,8 +179,36 @@ const projects = [
     link: "https://la-clothes-sage.vercel.app/",
   },
   {
+    name: "Client's Portfolio",
+    img: patrick,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span> <br />
+        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+        <span className="lenguages bg-green-400">Next-intl api</span>
+      </div>
+    ),
+    descriptionKey: "projectcard.projects.patrickportfolio",
+    link: "https://patrick-s-portfolio.vercel.app/",
+  },
+  {
+    name: "Music-Explorer",
+    img: music,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span> 
+        <span className="lenguages bg-blue">Tailwind</span>
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span> <br />
+        <span className="lenguages bg-green-400">Deezer API</span>
+      </div>
+    ),
+    descriptionKey: "projectcard.projects.music",
+    link: "https://la-clothes-sage.vercel.app/",
+  },
+  {
     name: "Panel Management",
-    img: smi,
+    img: management,
     lenguages: (
       <div className="p-1">
         <span className="lenguages bg-gray-500">Next</span> 
@@ -206,20 +235,6 @@ const projects = [
     ),
     descriptionKey: "projectcard.projects.mensch",
     link: "https://cliente-git-main-alvsmatheus-projects.vercel.app/",
-  },
-  {
-    name: "Client's Portfolio",
-    img: patrick,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> <br />
-        <span className="lenguages bg-blue">TailwindCss</span> <br />
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-        <span className="lenguages bg-green-400">Next-intl api</span>
-      </div>
-    ),
-    descriptionKey: "projectcard.projects.patrickportfolio",
-    link: "https://patrick-s-portfolio.vercel.app/",
   },
   {
     name: "3D portfolio",
