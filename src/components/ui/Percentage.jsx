@@ -1,4 +1,4 @@
-import { useTheme } from "../contexts/ThemeContext.jsx";
+import { useTheme } from "../../contexts/ThemeContext.jsx";
 
 const Percentage = ({ label, percentage }) => {
 

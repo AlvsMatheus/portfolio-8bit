@@ -1,12 +1,12 @@
 import { useState } from "react";
 import ContactForm from "../components/contact/contactForm.jsx";
-import ArrowLeft from "../components/ArrowLeft.jsx";
-import ArrowRight from "../components/ArrowRight.jsx";
-import BtnContact from "../components/BtnContact.jsx";
-import Logo from "../components/Logo";
-import NavBar from "../components/NavBar.jsx";
-import NavBarProf from "../components/NavBarProf.jsx";
-import Title from "../components/Title.jsx";
+import ArrowLeft from "../components/ui/ArrowLeft.jsx";
+import ArrowRight from "../components/ui/ArrowRight.jsx";
+import BtnContact from "../components/ui/BtnContact.jsx";
+import Logo from "../components/ui/Logo.jsx";
+import NavBar from "../components/ui/NavBar.jsx";
+import NavBarProf from "../components/ui/NavBarProf.jsx";
+import Title from "../components/ui/Title.jsx";
 import { arrows, star, pcImg } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
@@ -22,7 +22,6 @@ const Contact = () => {
     : "bg-gradient-to-b from-black via-black to-emerald-700";
 
   const [messageCase, setMessageCase] = useState(false);
-
 
   return (
     <section id="contact">
@@ -72,7 +71,7 @@ const Contact = () => {
                   <Title
                     text={
                       <p className="font-fair text-4xl text-emerald-600 font-sans uppercase">
-                        { t("titles.contact") }
+                        {t("titles.contact")}
                       </p>
                     }
                     gradient="from-transparent via-emerald-700 to-transparent"

@@ -26,7 +26,7 @@ import mensch from "../assets/project-mensch.jpg";
 import patrick from "../assets/project-patrick.jpg";
 import laclothes from "../assets/laclothes.jpg";
 import project3d from "../assets/project-3d.jpg";
-import nike from "../assets/project-nike.jpg";
+import inventflow from "../assets/project-inventFlow.png"
 
 import crabinvader from "../assets/space-invader.png";
 import crabanimated from "../assets/crab-animated.gif";
@@ -170,7 +170,7 @@ const projects = [
       <div className="p-1">
         <span className="lenguages bg-gray-500">Next</span> 
         <span className="lenguages bg-green-800">Node.js</span> 
-        <span className="lenguages bg-blue">Tailwind</span> <br />
+        <span className="lenguages bg-blue">Tailwind</span> 
         <span className="lenguages bg-red-400">Firebase</span>
         <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
       </div>
@@ -183,8 +183,8 @@ const projects = [
     img: patrick,
     lenguages: (
       <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> <br />
-        <span className="lenguages bg-blue">TailwindCss</span> <br />
+        <span className="lenguages bg-gray-500">Next</span> 
+        <span className="lenguages bg-blue">TailwindCss</span> 
         <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
         <span className="lenguages bg-green-400">Next-intl api</span>
       </div>
@@ -193,18 +193,49 @@ const projects = [
     link: "https://patrick-s-portfolio.vercel.app/",
   },
   {
+    name: "inventFlow",
+    img: inventflow,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-gray-500">Next</span>
+        <span className="lenguages bg-blue">TailwindCSS</span> 
+        <span className="lenguages bg-blue-200 whitespace-nowrap">
+          TypeScript
+        </span>
+        <span className="lenguages bg-green-800">Node.js</span> 
+      </div>
+    ),
+    descriptionKey: "projectcard.projects.invent",
+    link: "https://alvsmatheus.github.io/nike-project/",
+  },
+  
+  {
     name: "Music-Explorer",
     img: music,
     lenguages: (
       <div className="p-1">
         <span className="lenguages bg-gray-500">Next</span> 
         <span className="lenguages bg-blue">Tailwind</span>
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span> <br />
+        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
         <span className="lenguages bg-green-400">Deezer API</span>
       </div>
     ),
     descriptionKey: "projectcard.projects.music",
     link: "https://la-clothes-sage.vercel.app/",
+  },
+  {
+    name: "Mensch",
+    img: mensch,
+    lenguages: (
+      <div className="p-1">
+        <span className="lenguages bg-amber-400">Html</span>
+        <span className="lenguages bg-blue">Css</span>
+        <span className="lenguages bg-yellow-300">Javascript</span> 
+        <span className="lenguages bg-green-400">StoreFront API</span>
+      </div>
+    ),
+    descriptionKey: "projectcard.projects.mensch",
+    link: "https://cliente-git-main-alvsmatheus-projects.vercel.app/",
   },
   {
     name: "Panel Management",
@@ -223,26 +254,12 @@ const projects = [
     link: "https://smi-group-test.vercel.app/",
   },
   {
-    name: "Mensch",
-    img: mensch,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-amber-400">Html</span>
-        <span className="lenguages bg-blue">Css</span>
-        <span className="lenguages bg-yellow-300">Javascript</span> <br />
-        <span className="lenguages bg-green-400">StoreFront API</span>
-      </div>
-    ),
-    descriptionKey: "projectcard.projects.mensch",
-    link: "https://cliente-git-main-alvsmatheus-projects.vercel.app/",
-  },
-  {
     name: "3D portfolio",
     img: project3d,
     lenguages: (
       <div className="p-1">
         <span className="lenguages bg-blue-600">React</span>
-        <span className="lenguages bg-blue">TailwindCSS</span> <br />
+        <span className="lenguages bg-blue">TailwindCSS</span> 
         <span className="lenguages bg-green-600 ">Three.js</span>
         <span className="lenguages bg-indigo-500 whitespace-nowrap">
           Gsap
@@ -274,21 +291,7 @@ const projects = [
     link: "https://recipe-book-eight-olive.vercel.app/",
     descriptionKey: "projectcard.projects.recipebook",
   },
-  {
-    name: "Nike website",
-    img: nike,
-    lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-blue-600">React</span>
-        <span className="lenguages bg-blue">TailwindCSS</span> <br />
-        <span className="lenguages bg-blue-200 whitespace-nowrap">
-          TypeScript
-        </span>
-      </div>
-    ),
-    descriptionKey: "projectcard.projects.nike",
-    link: "https://alvsmatheus.github.io/nike-project/",
-  },
+  
   
   
 ];

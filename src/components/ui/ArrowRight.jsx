@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import { useState, useEffect, useRef } from "react";
-import { useScroll } from "../contexts/Scroll.context";
-import { useTheme } from "../contexts/ThemeContext";
+import { useScroll } from "../../contexts/Scroll.context";
+import { useTheme } from "../../contexts/ThemeContext";
 import { useTranslation } from "react-i18next";
 
 const ArrowRight = ({refNext,img}) => {

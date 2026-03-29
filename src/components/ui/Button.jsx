@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { crabanimated, crabwhite } from "../constants";
-import { useScroll } from "../contexts/Scroll.context";
+import { crabanimated, crabwhite } from "../../constants";
+import { useScroll } from "../../contexts/Scroll.context";
 
 const Button = ({ ref, phrase, phrasetwo }) => {
   const { scrollTo } = useScroll();

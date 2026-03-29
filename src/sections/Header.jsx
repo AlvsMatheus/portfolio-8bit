@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import Button from "../components/ui/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import AnimatedWords from "../components/hero/AnimatedWords.jsx";
@@ -9,19 +9,18 @@ import ProfessionalWords from "../components/header/ProfessionalWords.jsx";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
-
 const Header = () => {
   const { scrollTo } = useScroll();
   const { projectsRef } = useScroll();
   const { is8Bit, toggleTheme } = useTheme();
   const { i18n } = useTranslation();
   const { t } = useTranslation();
-  const [ openLang, setOpenLang ] = useState(false);
+  const [openLang, setOpenLang] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setOpenLang(false)
-  }
+    setOpenLang(false);
+  };
 
   const handleClick = () => {
     scrollTo(projectsRef);
@@ -108,42 +107,41 @@ const Header = () => {
             {is8Bit ? "main theme" : "retro theme"}
           </button>
           <button
-      onClick={() => setOpenLang(!openLang)}
-      className={`px-4 py-2 border-2 rounded-full text-white transition
+            onClick={() => setOpenLang(!openLang)}
+            className={`px-4 py-2 border-2 rounded-full text-white transition
         ${
           is8Bit
             ? "bg-black border-white font-retro text-[10px]"
             : "border-pink-500 font-sans text-sm font-fair"
         }`}
-    >
-      Language
-    </button>
-    {openLang && (
-      <div
-        className={`absolute mt-2 -right-4 top-10 flex flex-col overflow-hidden border rounded-lg shadow-lg
+          >
+            Language
+          </button>
+          {openLang && (
+            <div
+              className={`absolute mt-2 -right-4 top-10 flex flex-col overflow-hidden border rounded-lg shadow-lg
           ${
             is8Bit
               ? " border-white text-white font-retro text-[10px]"
               : " border-pink-500 text-white font-sans text-sm"
           }`}
-      >
-        <button
-          onClick={() => changeLanguage("en")}
-          className="px-4 py-2 hover:bg-pink-600 transition text-left"
-        >
-          English
-        </button>
-        <button
-          onClick={() => changeLanguage("pt")}
-          className="px-4 py-2 hover:bg-pink-600 transition text-left"
-        >
-          Português
-        </button>
-      </div>
-    )}
+            >
+              <button
+                onClick={() => changeLanguage("en")}
+                className="px-4 py-2 hover:bg-pink-600 transition text-left"
+              >
+                English
+              </button>
+              <button
+                onClick={() => changeLanguage("pt")}
+                className="px-4 py-2 hover:bg-pink-600 transition text-left"
+              >
+                Português
+              </button>
+            </div>
+          )}
         </div>
         {/* Fim Toggle de Tema no Topo e Canto Direito */}
-        
 
         {/* 2. MEIO: Conteúdo Principal (Centralizado Verticalmente) */}
         <div className={`${middleContentStyle}`}>

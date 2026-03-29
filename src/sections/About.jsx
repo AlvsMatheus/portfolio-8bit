@@ -1,10 +1,10 @@
-import Logo from "../components/Logo";
-import NavBar from "../components/NavBar.jsx";
-import ArrowLeft from "../components/ArrowLeft.jsx";
-import ArrowRight from "../components/ArrowRight.jsx";
+import Logo from "../components/ui/Logo";
+import NavBar from "../components/ui/NavBar.jsx";
+import ArrowLeft from "../components/ui/ArrowLeft.jsx";
+import ArrowRight from "../components/ui/ArrowRight.jsx";
 import AboutTitle from "../components/about/AboutTitle.jsx";
 import AboutExp from "../components/about/AboutExp.jsx";
-import NavBarProf from "../components/NavBarProf.jsx";
+import NavBarProf from "../components/ui/NavBarProf.jsx";
 import { arrows, star, aboutImgs } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
@@ -46,7 +46,6 @@ const About = () => {
             ) : (
               <NavBarProf bgColor="text-purple from-purple-950 to-black" />
             )}
-            
           </div>
           {/*middle pc */}
           <div className="grid grid-cols-1 gap-20 lg:gap-0 w-full h-full ">
@@ -54,7 +53,7 @@ const About = () => {
               {/*img pc*/}
               <div className="hidden md:flex items-center h-full">
                 <img
-                  className={`md:w-[170px] md:h-[120px] lg:w-[160px] lg:h-[150px] object-cover rounded-full border-3 ${is8Bit ? 'border-red' : 'border-indigo-500'}`}
+                  className={`md:w-[170px] md:h-[120px] lg:w-[160px] lg:h-[150px] object-cover rounded-full border-3 ${is8Bit ? "border-red" : "border-indigo-500"}`}
                   src={`${is8Bit ? aboutImgs.me8bit : aboutImgs.me}`}
                   alt="Matheus Alves"
                 />

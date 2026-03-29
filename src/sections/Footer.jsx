@@ -1,7 +1,7 @@
 import gsap from "gsap";
-import Logo from "../components/Logo";
-import ArrowLeft from "../components/ArrowLeft";
-import Button from "../components/Button.jsx";
+import Logo from "../components/ui/Logo";
+import ArrowLeft from "../components/ui/ArrowLeft.jsx";
+import Button from "../components/ui/Button.jsx";
 import footerVideo from "../assets/videos/header.mp4";
 import { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -9,7 +9,6 @@ import { arrows, star, github, linkedin } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import { useTranslation } from "react-i18next";
-
 
 const Footer = () => {
   const moonRef = useRef(null);
@@ -118,7 +117,9 @@ const Footer = () => {
               className={`flex flex-col gap-2  ${is8Bit ? "text-sm" : "font-fair text-2xl text-indigo-400 "}`}
             >
               <p>Matheus Alves</p>
-              <p>{t("footer.rights")} © {year}</p>
+              <p>
+                {t("footer.rights")} © {year}
+              </p>
             </div>
 
             <div className="flex justify-center gap-10 h-20 w-full">

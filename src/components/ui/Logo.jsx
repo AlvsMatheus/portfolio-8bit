@@ -1,4 +1,4 @@
-import { alves } from "../constants/index.jsx";
+import { alves } from "../../constants/index.jsx";
 
 const Logo = ({ img }) => {
   return (

@@ -89,8 +89,8 @@ i18n.use(initReactI18next).init({
                         patrickportfolio: "That project is a Portfolio that I made for a youtuber client",
                         portfolio3d: "A modern portfolio with 3D animations, based on a JavaScript Mastery tutorial.",
                         recipebook: "That website is a blog with a recipe book theme and the first site that I made using React.",
-                        nike: "That is a copy of Nike website was made by following a JavaScript Mastery project and includes my TypeScript implementation.",
-                        music: "Interactive music explorer application built with React and TypeScript, consuming external APIs to display dynamic content. Implemented debounced search to optimize performance and reduce unnecessary requests, enhancing user experience."
+                        invent: "Full-stack inventory management system developed for a technical assessment, featuring multiple CRUD operations. Built using Next.js, Node.js, Express, and MongoDB",
+                        music: "Interactive music explorer application built with React and TypeScript, consuming external APIs to display dynamic content. Implemented debounced search to optimize performance."
 
                     }
 
@@ -212,8 +212,8 @@ i18n.use(initReactI18next).init({
                             "Um portfólio moderno com animações 3D, baseado em um tutorial do JavaScript Mastery.",
                         recipebook:
                             "Um blog com tema de livro de receitas e o primeiro site que desenvolvi utilizando React.",
-                        nike:
-                            "Uma réplica do site da Nike, desenvolvida seguindo um projeto do JavaScript Mastery, incluindo minha implementação em TypeScript.",
+                        invent:
+                            "Sistema de gerenciamento de estoque full-stack desenvolvido para um teste técnico, com múltiplas operações CRUD para produtos e matérias-primas. Desenvolvido com Next.js, Node.js,Express e MongoDB, com foco em arquitetura escalável e manipulação eficiente de dados.",
                         music:
                             "Aplicação interativa de exploração musical desenvolvida com React e TypeScript, consumindo APIs externas para exibição de conteúdo dinâmico. Implementação de busca com debounce para otimizar performance e reduzir requisições desnecessárias."
                         }

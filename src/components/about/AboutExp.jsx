@@ -1,4 +1,4 @@
-import Percentage from "../Percentage.jsx";
+import Percentage from "../ui/Percentage.jsx";
 import { hardSkills, softSkills } from "../../constants/index.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import { useTranslation, Trans } from "react-i18next";

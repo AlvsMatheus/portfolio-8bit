@@ -1,4 +1,4 @@
-import { ScrollProvider, useScroll } from "./contexts/Scroll.context";
+import { useScroll } from "./contexts/Scroll.context";
 import Header from "./sections/Header";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";

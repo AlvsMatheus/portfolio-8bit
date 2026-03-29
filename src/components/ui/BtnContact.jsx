@@ -1,5 +1,5 @@
-import { arrows } from "../constants"
-import { useTheme } from "../contexts/ThemeContext"
+import { arrows } from "../../constants/index"
+import { useTheme } from "../../contexts/ThemeContext"
 import { useTranslation } from "react-i18next"
 
 const BtnContact = ({ onClick }) => {

@@ -1,9 +1,9 @@
-import ArrowLeft from "../components/ArrowLeft.jsx";
-import ArrowRight from "../components/ArrowRight.jsx";
-import Logo from "../components/Logo";
-import NavBar from "../components/NavBar.jsx";
-import NavBarProf from "../components/NavBarProf.jsx";
-import Title from "../components/Title.jsx";
+import ArrowLeft from "../components/ui/ArrowLeft.jsx";
+import ArrowRight from "../components/ui/ArrowRight.jsx";
+import Logo from "../components/ui/Logo.jsx";
+import NavBar from "../components/ui/NavBar.jsx";
+import NavBarProf from "../components/ui/NavBarProf.jsx";
+import Title from "../components/ui/Title.jsx";
 import MobileCards from "../components/projects/MobileCards.jsx";
 import InteractiveCards from "../components/projects/InteractiveCards.jsx";
 import { arrows, star } from "../constants/index.jsx";
@@ -19,8 +19,6 @@ const Projects = () => {
   const backgroundStyle = is8Bit
     ? "bg-[url('/backgrounds/space-invaders.jpg')] md:bg-right lg:bg-center"
     : "bg-gradient-to-b from-black via-black to-pink-900";
-
-  
 
   return (
     <section id="projects">
