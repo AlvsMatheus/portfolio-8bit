@@ -159,7 +159,7 @@ const Footer = () => {
                 onClick={handleClick}
                 className="font-fair px-8 py-3 bg-pink-600 text-white font-extralight font-sans rounded-l-full shadow-xl hover:bg-pink-800 transition"
               >
-                {t("header.button")}
+                {t("footer.button")}
               </button>
             )}
           </div>

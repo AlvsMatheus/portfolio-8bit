@@ -31,6 +31,7 @@ i18n.use(initReactI18next).init({
                     contact: "Contact"
                 },
                 footer: {
+                    button: "Back to home",
                     thanks: "Thanks for your interest.",
                     rights: "All rights reserved",
                     end: "The end"
@@ -142,6 +143,7 @@ i18n.use(initReactI18next).init({
                     contact: "contato"          
                 },
                 footer: {
+                    button: "Ir para o home",
                     thanks: "Obrigado pelo interesse.",
                     rights: "Todos os direitos reservados",
                     end: "Fim"

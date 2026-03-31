@@ -221,7 +221,7 @@ const projects = [
       </div>
     ),
     descriptionKey: "projectcard.projects.music",
-    link: "https://la-clothes-sage.vercel.app/",
+    link: "https://music-explorer-nine.vercel.app/",
   },
   {
     name: "Mensch",
@@ -235,7 +235,7 @@ const projects = [
       </div>
     ),
     descriptionKey: "projectcard.projects.mensch",
-    link: "https://cliente-git-main-alvsmatheus-projects.vercel.app/",
+    link: "https://cliente-psi.vercel.app/",
   },
   {
     name: "Panel Management",
