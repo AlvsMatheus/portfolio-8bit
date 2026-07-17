@@ -1,5 +1,3 @@
-import Percentage from "../ui/Percentage.jsx";
-import { hardSkills, softSkills } from "../../constants/index.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -26,38 +24,7 @@ const AboutExp = () => {
             />
           </p>
         </div>
-      <div className="flex gap-10 justify-center lg:justify-evenly flex-wrap w-full h-full lg:h-[240px] overflow-auto">
-        <div className="red w-[50%] lg:w-[30%]">
-          <h1
-            className={`bg-gradient-to-r ${expColor} bg-clip-text text-transparent md:text-[10px] lg:text-[14px] text-nowrap`}
-          >
-            Hard skills
-          </h1>
-          <ul>
-            {hardSkills.map((hard, index) => (
-              <li key={index}>
-                {" "}
-                <Percentage label={t(hard.labelKey)} percentage={hard.percentage} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="red w-[50%] lg:w-[30%]">
-          <h1
-            className={`bg-gradient-to-r ${expColor} bg-clip-text text-transparent md:text-[10px] lg:text-[14px] text-nowrap `}
-          >
-            Soft skills
-          </h1>
-          <ul>
-            {softSkills.map((soft, index) => (
-              <li key={index}>
-                {" "}
-                <Percentage label={t(soft.labelKey)} percentage={soft.percentage} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      
     </div>
   );
 };

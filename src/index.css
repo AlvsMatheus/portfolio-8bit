@@ -362,3 +362,14 @@ html {
     animation-play-state: paused;
   }
 }
+
+.skill-card .scanline {
+  transform: translateY(-100%);
+}
+.skill-card:hover .scanline {
+  animation: scan 1.6s linear infinite;
+}
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}

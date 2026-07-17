@@ -9,6 +9,8 @@ import { arrows, star } from "../constants/index.jsx";
 import { useScroll } from "../contexts/Scroll.context.jsx";
 import { useTheme } from "../contexts/ThemeContext.jsx";
 import { useTranslation } from "react-i18next";
+import AboutExp from "../components/about/AboutExp.jsx";
+import SkillsPercentage from "../components/skills/SkillsPercentage.jsx";
 
 const Skills = () => {
   const { projectsRef, aboutRef } = useScroll();
@@ -16,7 +18,7 @@ const Skills = () => {
   const { t } = useTranslation();
 
   const backgroundStyle = is8Bit
-    ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center"
+    ? "bg-[url('/backgrounds/pacman-game.gif')] bg-cover bg-no-repeat bg-center md:bg-right lg:bg-center brightness-20"
     : "bg-gradient-to-b from-black via-black to-indigo-800";
 
   return (
@@ -64,11 +66,13 @@ const Skills = () => {
               />
             )}
           </div>
-          <div className="flex justify-center items-center w-full mb-70 md:mb-10 lg:mb-70">
+          <div className="flex justify-center items-center w-full">
             <div className="overflow-hidden lg:w-[90vw] lg:max-w-[800px]">
               <InfiniteSkills />
             </div>
           </div>
+          <SkillsPercentage/>
+          
           {/* middle cell */}
         </div>
         <div className="child pe-10 items-end h-auto md:h-full w-full">
@@ -78,6 +82,7 @@ const Skills = () => {
             <ArrowRight refNext={aboutRef} img={arrows.right} />
           </div>
         </div>
+          
       </div>
     </section>
   );
