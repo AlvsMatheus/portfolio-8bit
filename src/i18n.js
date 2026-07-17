@@ -40,6 +40,7 @@ i18n.use(initReactI18next).init({
                     button: "Talk to me"
                 },
                 contactform: {
+                    title: "Let's get in touch!",
                     name: "Name",
                     message: "Message",
                     emailplaceholder: "example@gmail.com",
@@ -152,6 +153,7 @@ i18n.use(initReactI18next).init({
                     button: "Fale comigo"
                 },
                 contactform: {
+                    title: "Vamos conversar!",
                     name: "Nome",
                     message: "Mensagem",
                     emailplaceholder: "exemplo@gmail.com",

@@ -1,32 +1,22 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
-import { arrows } from "../../constants"; 
+import { arrows } from "../../constants";
 import { useTheme } from "../../contexts/ThemeContext";
 import { useTranslation } from "react-i18next";
 
-
 const ContactForm = () => {
+  const { is8Bit } = useTheme();
+  const { t } = useTranslation();
+  const formRef = useRef(null);
 
-    const {is8Bit} = useTheme();
-    const { t } = useTranslation();
-
-    const formRef = useRef(null);
-
-    const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const [formData, setFormData] = useState({
-      name: "",
-      email: "",
-      message: "",
-    });
-
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,8 +28,9 @@ const ContactForm = () => {
         formRef.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
-
       setFormData({ name: "", email: "", message: "" });
+      setSent(true);
+      setTimeout(() => setSent(false), 4000);
     } catch (error) {
       console.log("EMAILJS ERROR,", error);
     } finally {
@@ -47,77 +38,107 @@ const ContactForm = () => {
     }
   };
 
+  const inputBase = is8Bit
+    ? "peer w-full bg-black/40 border-2 border-[var(--color-green)]/30 rounded-lg px-4 pt-5 pb-2 text-emerald-100 font-retro text-sm outline-none focus:border-[#FFEB50] transition-colors"
+    : "peer w-full bg-white/5 border border-emerald-500/20 rounded-xl px-4 pt-5 pb-2 text-white outline-none focus:border-emerald-400/60 focus:bg-white/[0.07] transition-colors";
+
+  const labelBase = is8Bit
+    ? "absolute left-4 top-3.5 text-emerald-300/50 font-retro text-xs transition-all duration-200 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-[#FFEB50] peer-[&:not(:placeholder-shown)]:top-1.5 peer-[&:not(:placeholder-shown)]:text-[10px]"
+    : "absolute left-4 top-3.5 text-emerald-300/50 text-sm transition-all duration-200 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-emerald-300 peer-[&:not(:placeholder-shown)]:top-1.5 peer-[&:not(:placeholder-shown)]:text-xs";
+
   return (
     <form
       onSubmit={handleSubmit}
       ref={formRef}
-      className="flex flex-col gap-10 p-5 lg:gap-0 justify-between"
+      className="flex flex-col gap-5 w-full justify-center"
     >
-      <div className="flex flex-col w-full">
-        <div className="flex items-center">
-          <label htmlFor="iname" className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white text-shadow-black-5 me-2`}>
-            {t("contactform.name")}:
-          </label>
-          <input
-            id="iname"
-            name="name"
-            type="text"
-            placeholder={t("contactform.name")}
-            onChange={handleChange}
-            value={formData.name}
-            required
-            className="input"
-          />
-        </div>
-        <div className="flex items-center mt-7 ">
-          <label htmlFor="iemail" className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white me-2`}>
-            Email:
-          </label>
-          <input
-            id="iemail"
-            name="email"
-            type="email"
-            placeholder={t("contactform.emailplaceholder")}
-            onChange={handleChange}
-            value={formData.email}
-            required
-            className="input"
-          />
-        </div>
-      </div>
-      <div className="flex flex-col gap-2">
-        <label htmlFor="imessage" className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white`}>
-          {t("contactform.message")}:
+      <h2
+        className={
+          is8Bit
+            ? "font-retro text-[#FFEB50] uppercase text-sm tracking-widest mb-2"
+            : "font-fair text-2xl bg-gradient-to-r from-emerald-300 to-white bg-clip-text text-transparent mb-2"
+        }
+      >
+        {t("contactform.title")}
+      </h2>
+
+      <div className="relative">
+        <input
+          id="iname"
+          name="name"
+          type="text"
+          placeholder=" "
+          onChange={handleChange}
+          value={formData.name}
+          required
+          className={inputBase}
+        />
+        <label htmlFor="iname" className={labelBase}>
+          {t("contactform.name")}
         </label>
+      </div>
+
+      <div className="relative">
+        <input
+          id="iemail"
+          name="email"
+          type="email"
+          placeholder=" "
+          onChange={handleChange}
+          value={formData.email}
+          required
+          className={inputBase}
+        />
+        <label htmlFor="iemail" className={labelBase}>
+          Email
+        </label>
+      </div>
+
+      <div className="relative">
         <textarea
           id="imessage"
           name="message"
-          cols="30"
-          rows="10"
-          placeholder={t("contactform.messageplaceholder")}
+          rows="4"
+          placeholder=" "
           onChange={handleChange}
           value={formData.message}
           required
-          className="w-[100%] resize-none bg-green hover:bg-green-400 focus:bg-green-400 outline-0 p-2 rounded-2xl placeholder:text-sm transition-all duration-400 ease-in-out"
-        ></textarea>
+          className={`${inputBase} resize-none pt-5`}
+        />
+        <label htmlFor="imessage" className={labelBase}>
+          {t("contactform.message")}
+        </label>
       </div>
-      <div className="h-[20%]">
-        <button className="w-full" disabled={loading} type="submit">
-          <div className="cta-button group h-15">
-            <div className="bg-circle" />
-            <p className={`text-white uppercase font-extrabold ${is8Bit ? 'font-retro' : 'font-fair'} z-10 relative me-15 lg:me-2 group-hover:text-emerald-200`}>
-              {loading ? (<p>{t("contactbutton.sending")}</p>) : (<p>{t("contactbutton.send")}</p>) }
-            </p>
+
+      <button
+        type="submit"
+        disabled={loading}
+        className={
+          is8Bit
+            ? "relative mt-2 h-14 font-retro uppercase text-sm text-black bg-[#FFEB50] border-2 border-black shadow-[4px_4px_0px_0px_rgba(52,211,153,0.8)] active:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all duration-100 disabled:opacity-60 disabled:active:translate-x-0 disabled:active:translate-y-0 flex items-center justify-center gap-3"
+            : "group relative mt-2 h-14 rounded-full text-white font-medium bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 disabled:opacity-60 transition-all duration-300 flex items-center justify-center gap-3"
+        }
+      >
+        {loading ? (
+          <>
+            <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+            {t("contactbutton.sending")}
+          </>
+        ) : sent ? (
+          t("contactbutton.sent")
+        ) : (
+          <>
+            {t("contactbutton.send")}
             <img
               src={arrows.right}
-              width={40}
-              height={15}
-              alt="arrow right"
-              className="absolute right-3 z-10 wobble"
+              width={18}
+              height={18}
+              alt=""
+              className={is8Bit ? "" : "transition-transform duration-300 group-hover:translate-x-1"}
             />
-          </div>
-        </button>
-      </div>
+          </>
+        )}
+      </button>
     </form>
   );
 };
