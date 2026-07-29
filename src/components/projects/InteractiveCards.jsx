@@ -34,7 +34,7 @@ const Card = ({
       className={`
         lg:overflow-hidden relative cursor-pointer rounded-xl transition-all duration-500 ease-in-out perspective
         h-[200px] md:h-[250px] lg:h-[400px]
-        ${isHovered ? "w-[800px] scale-105 z-10 shadow-purplee" : "w-[80px]"}
+        ${isHovered ? "w-[800px] scale-105 z-10 shadow-purple" : "w-[80px]"}
         ${hoveredIndex !== null && !isHovered ? "opacity-50 scale-90" : ""}
       `}
       onMouseEnter={() => setHoveredIndex(index)}
@@ -67,14 +67,18 @@ const Card = ({
             <div className="relative z-10 flex flex-col h-full w-full p-4">
               <div className="flex w-full h-[50%]">
                 <div>
-                  <h1 className={`${is8Bit ? 'font-retro' : 'font-fair'} text-white p-2 bg-black/40 rounded-2xl underline`}>
+                  <h1 className={`${is8Bit ? "font-retro" : "font-fair"} text-white p-2 bg-black/40 rounded-2xl underline`}>
                     {name}
                   </h1>
                 </div>
               </div>
-              <span className="flex items-end mb-2 gap-5 p-1 w-full h-[50%]">
-                {resource}
-              </span>
+
+              {/* container que ocupa o resto do card e empurra as pills pro rodapé */}
+              <div className="flex flex-1 items-end w-full">
+                <span className="flex flex-wrap gap-2 p-1 w-full max-h-full overflow-y-auto">
+                  {resource}
+                </span>
+              </div>
             </div>
           )}
         </div>

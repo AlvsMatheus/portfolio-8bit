@@ -136,8 +136,12 @@ html {
   }
 
   .lenguages {
-    @apply m-1 p-1 lg:p-2 lg:mx-1 lg:mt-100 rounded-2xl text-[10px];
-  }
+  @apply py-1 px-2.5 lg:py-1.5 lg:px-3 rounded-full text-[10px] font-medium transition-transform duration-200;
+}
+
+.lenguages:hover {
+  @apply scale-105;
+}
 
   .shadow-purple {
     box-shadow: 0px 0px 15px 8px rgba(51, 2, 80, 0.227);

@@ -162,17 +162,49 @@ const skills = [
   { imgPath: bootstrap, logo: "Bootstrap", descriptionKey: "skills.bootstrap.description" },
 ];
 
+const TECH_COLORS = {
+  Next: "blue", "Node.js": "blue", React: "blue", TypeScript: "blue",
+  Tailwind: "teal", TailwindCss: "teal", TailwindCSS: "teal", Css: "teal", Scss: "teal", Bootstrap: "teal",
+  Html: "coral", Javascript: "coral",
+  Gsap: "purple", "Framer Motion": "purple", "Three.js": "purple",
+  Firebase: "pink", "Next-intl api": "pink", "Deezer API": "pink", "StoreFront API": "pink", RestApi: "pink",
+};
+
+const COLOR_HEX = {
+  blue:   { bg: "rgba(55,138,221,0.12)",  border: "#378ADD", text: "#B5D4F4" },
+  teal:   { bg: "rgba(29,158,117,0.12)",  border: "#1D9E75", text: "#9FE1CB" },
+  coral:  { bg: "rgba(216,90,48,0.12)",   border: "#D85A30", text: "#F5C4B3" },
+  purple: { bg: "rgba(127,119,221,0.12)", border: "#7F77DD", text: "#CECBF6" },
+  pink:   { bg: "rgba(212,83,126,0.12)",  border: "#D4537E", text: "#F4C0D1" },
+};
+
+const TechBadge = ({ name }) => {
+  const color = COLOR_HEX[TECH_COLORS[name] || "blue"];
+  return (
+    <span
+      className="lenguages inline-flex items-center gap-1.5 whitespace-nowrap"
+      style={{ background: color.bg, border: `0.5px solid ${color.border}`, color: color.text }}
+    >
+      <span
+        className="w-1.5 h-1.5 rounded-full"
+        style={{ background: color.border }}
+      />
+      {name}
+    </span>
+  );
+};
+
 const projects = [
   {
     name: "La Clothes",
     img: laclothes,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> 
-        <span className="lenguages bg-green-800">Node.js</span> 
-        <span className="lenguages bg-blue">Tailwind</span> 
-        <span className="lenguages bg-red-400">Firebase</span>
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Next" />
+        <TechBadge name="Node.js" />
+        <TechBadge name="Tailwind" />
+        <TechBadge name="Firebase" />
+        <TechBadge name="Gsap" />
       </div>
     ),
     descriptionKey: "projectcard.projects.laclothes",
@@ -182,11 +214,11 @@ const projects = [
     name: "Client's Portfolio",
     img: patrick,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> 
-        <span className="lenguages bg-blue">TailwindCss</span> 
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-        <span className="lenguages bg-green-400">Next-intl api</span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Next" />
+        <TechBadge name="Tailwind" /> 
+        <TechBadge name="Gsap" />
+        <TechBadge name="Next-intl api" />
       </div>
     ),
     descriptionKey: "projectcard.projects.patrickportfolio",
@@ -196,13 +228,11 @@ const projects = [
     name: "inventFlow",
     img: inventflow,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span>
-        <span className="lenguages bg-blue">TailwindCSS</span> 
-        <span className="lenguages bg-blue-200 whitespace-nowrap">
-          TypeScript
-        </span>
-        <span className="lenguages bg-green-800">Node.js</span> 
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Next" />
+        <TechBadge name="Tailwind" />  
+        <TechBadge name="Typescript" /> 
+        <TechBadge name="Node.js" />  
       </div>
     ),
     descriptionKey: "projectcard.projects.invent",
@@ -213,11 +243,12 @@ const projects = [
     name: "Music-Explorer",
     img: music,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> 
-        <span className="lenguages bg-blue">Tailwind</span>
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">Gsap</span>
-        <span className="lenguages bg-green-400">Deezer API</span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Next" /> 
+        <TechBadge name="Tailwind" />  
+        <TechBadge name="Gsap" />
+        <TechBadge name="Deezer API" />
+        
       </div>
     ),
     descriptionKey: "projectcard.projects.music",
@@ -227,11 +258,11 @@ const projects = [
     name: "Mensch",
     img: mensch,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-amber-400">Html</span>
-        <span className="lenguages bg-blue">Css</span>
-        <span className="lenguages bg-yellow-300">Javascript</span> 
-        <span className="lenguages bg-green-400">StoreFront API</span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Html" />
+        <TechBadge name="Css" />
+        <TechBadge name="Javascript" />
+        <TechBadge name="StoreFront API" />
       </div>
     ),
     descriptionKey: "projectcard.projects.mensch",
@@ -241,13 +272,11 @@ const projects = [
     name: "Panel Management",
     img: management,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-gray-500">Next</span> 
-        <span className="lenguages bg-green-800">Node.js</span> 
-        <span className="lenguages bg-blue">Tailwind</span>
-        <span className="lenguages bg-blue-200 whitespace-nowrap">
-          TypeScript
-        </span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="Next" />
+        <TechBadge name="Node.js" />       
+        <TechBadge name="Tailwind" />   
+        <TechBadge name="Typescript" /> 
       </div>
     ),
     descriptionKey: "projectcard.projects.panelmanagement",
@@ -257,17 +286,12 @@ const projects = [
     name: "3D portfolio",
     img: project3d,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-blue-600">React</span>
-        <span className="lenguages bg-blue">TailwindCSS</span> 
-        <span className="lenguages bg-green-600 ">Three.js</span>
-        <span className="lenguages bg-indigo-500 whitespace-nowrap">
-          Gsap
-        </span>
-        <br />
-        <span className="lenguages bg-blue-200 whitespace-nowrap">
-          TypeScript
-        </span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="React" /> 
+        <TechBadge name="Typescript" /> 
+        <TechBadge name="Tailwind" /> 
+        <TechBadge name="Three.js" /> 
+        <TechBadge name="Gsap" /> 
       </div>
     ),
     descriptionKey: "projectcard.projects.portfolio3d",
@@ -277,15 +301,13 @@ const projects = [
     name: "Recipe Book",
     img: recipe,
     lenguages: (
-      <div className="p-1">
-        <span className="lenguages bg-blue-600">React</span>
-        <span className="lenguages bg-blue">Css</span>
-        <span className="lenguages bg-pink-600 ">Scss</span> <br />
-        <span className="lenguages bg-purple-600">Bootstrap</span>
-        <span className="lenguages bg-green-400 ">RestApi</span> <br />
-        <span className="lenguages bg-gray-600 whitespace-nowrap">
-          Framer Motion
-        </span>
+      <div className="flex flex-wrap gap-2 p-1">
+        <TechBadge name="React" />              
+        <TechBadge name="Css" /> 
+        <TechBadge name="Scss" /> 
+        <TechBadge name="Bootstrap" /> 
+        <TechBadge name="RestApi" /> 
+        <TechBadge name="Framer Motion" /> 
       </div>
     ),
     link: "https://recipe-book-eight-olive.vercel.app/",
@@ -343,4 +365,5 @@ export {
   pcImg,
   github,
   linkedin,
+  TechBadge
 };
